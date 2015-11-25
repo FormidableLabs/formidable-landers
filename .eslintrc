@@ -1,0 +1,8 @@
+---
+"extends":
+  - "defaults/configurations/walmart/es6-browser"
+
+"parser": "babel-eslint"
+
+"rules":
+  "no-extra-parens": [0]

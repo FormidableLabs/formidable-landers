@@ -1,0 +1,35 @@
+{
+  "name": "formidable-landers",
+  "version": "0.0.1",
+  "description": "Reusable components for Formidable's marketing sites",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel": "rimraf lib && babel src/ -d lib/",
+    "lint": "eslint --ext .js,.jsx src",
+    "postinstall": "node -e \"require('fs').stat('lib', function(e,s){process.exit(e || !s.isDirectory() ? 1 : 0)})\" || npm run babel"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FormidableLabs/formidable-landers.git"
+  },
+  "author": "david.davidson@formidable.com, paula.lavalle@formidable.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FormidableLabs/formidable-landers/issues"
+  },
+  "homepage": "https://github.com/FormidableLabs/formidable-landers#readme",
+  "dependencies": {
+    "babel": "^5.8.23",
+    "radium": "^0.15.3",
+    "react": "^0.14.3",
+    "rimraf": "^2.4.4"
+  },
+  "devDependencies": {
+    "babel-eslint": "^4.1.6",
+    "eslint": "^1.10.1",
+    "eslint-config-defaults": "^3.0.3",
+    "eslint-plugin-filenames": "^0.1.1",
+    "eslint-plugin-react": "^2.6.4"
+  }
+}
