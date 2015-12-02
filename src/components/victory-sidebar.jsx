@@ -1,6 +1,5 @@
 import React from "react";
 import Radium from "radium";
-import { Link } from "react-router";
 
 import settings from "../themes/victory-settings";
 
@@ -59,9 +58,9 @@ class Sidebar extends React.Component {
       <nav
         className="Nav"
         style={sidebarStyles.base}>
-        <Link to="/" className="Link--unstyled">
+        <a href="/" className="Link--unstyled">
           <img width="40px" height="40px" src="/static/icon-victory.svg" alt="Victory Homepage" />
-        </Link>
+        </a>
         <ul style={sidebarStyles.defaultList}>
           <li style={sidebarStyles.defaultItem}>
             <a href="#" style={sidebarStyles.link}>Installation</a>
@@ -78,13 +77,13 @@ class Sidebar extends React.Component {
             </ul>
           </li>
           <li style={sidebarStyles.defaultItem}>
-            <a href="#" style={sidebarStyles.link}>Victory Chart</a>
+            <a href="#" style={sidebarStyles.link}>VictoryChart</a>
           </li>
           <li style={sidebarStyles.defaultItem}>
-            <a href="#" style={sidebarStyles.link}>Victory Pie</a>
+            <a href="#" style={sidebarStyles.link}>VictoryPie</a>
           </li>
           <li style={sidebarStyles.defaultItem}>
-            <a href="#" style={sidebarStyles.link}>Victory Scatter</a>
+            <a href="#" style={sidebarStyles.link}>VictoryScatter</a>
           </li>
         </ul>
       </nav>

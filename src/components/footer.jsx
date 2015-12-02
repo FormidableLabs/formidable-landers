@@ -21,6 +21,7 @@ class Footer extends React.Component {
     };
   }
 
+  /* eslint-disable max-len */
   render() {
     const footerStyles = this.getFooterStyles();
     return (
@@ -43,6 +44,7 @@ class Footer extends React.Component {
       </footer>
     );
   }
+  /* eslint-enable max-len */
 }
 
 Footer.propTypes = {
