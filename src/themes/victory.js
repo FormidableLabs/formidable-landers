@@ -2,7 +2,7 @@
 // VICTORY THEME
 // -------------------------------
 // Settings
-import settings from "../settings";
+import settings from "./victory-settings";
 
 // Stylesheet
 export default {

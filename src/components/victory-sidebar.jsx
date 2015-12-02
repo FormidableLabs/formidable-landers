@@ -2,7 +2,7 @@ import React from "react";
 import Radium from "radium";
 import { Link } from "react-router";
 
-import settings from "../settings";
+import settings from "../themes/victory-settings";
 
 @Radium
 class Sidebar extends React.Component {
