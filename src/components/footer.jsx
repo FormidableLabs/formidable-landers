@@ -34,7 +34,9 @@ class Footer extends React.Component {
         </span>
         <span style={[footerStyles.text]}>
           <a href="http://formidable.com/" style={{display: "block", boxShadow: "none"}}>
-            <img width="300px" height="100px" src="static/logo-formidable-black.svg" alt="Formidable" />
+            <img width="300px" height="100px"
+              src="static/logo-formidable-black.svg"
+              alt="Formidable" />
           </a>
         </span>
         <span style={[footerStyles.text]}>
