@@ -50,7 +50,7 @@ class Sidebar extends React.Component {
     };
   }
 
-  _renderListItems(items) {
+  generateListItems(items) {
     const styles = this.getSidebarStyles();
 
     return items.map((item) => {
@@ -84,7 +84,7 @@ class Sidebar extends React.Component {
           <img width="40px" height="40px" src="/static/icon-victory.svg" alt="Victory Homepage" />
         </a>
         <ul style={styles.list}>
-          {this._renderListItems(this.props.items)}
+          {this.generateListItems(this.props.items)}
         </ul>
       </nav>
     );
