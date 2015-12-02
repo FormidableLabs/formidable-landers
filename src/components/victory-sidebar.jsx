@@ -15,12 +15,12 @@ class Sidebar extends React.Component {
           flex: "0 0 12em"
         }
       },
-      defaultList: {
+      list: {
         margin: "0",
         padding: "6px",
         listStyle: "none"
       },
-      defaultItem: {
+      listItem: {
         marginTop: "0.3em",
         position: "relative",
         lineHeight: 1.4
@@ -50,46 +50,53 @@ class Sidebar extends React.Component {
     };
   }
 
+  _renderListItems(items) {
+    const styles = this.getSidebarStyles();
+
+    return items.map((item) => {
+      const isSelected = item.slug === this.props.active;
+      const itemStyles = isSelected ?
+        [styles.listItem, styles.selectedItem] :
+        styles.listItem;
+      const linkStyles = isSelected ?
+        [styles.link, styles.selectedLink] :
+        styles.link;
+
+      return (
+        <li style={itemStyles} key={item.slug}>
+          <RadiumLink to={`docs${item.slug}`} style={linkStyles}>
+            {item.text}
+          </RadiumLink>
+        </li>
+      );
+    });
+  }
+
   render() {
-    const sidebarStyles = this.getSidebarStyles();
+    const styles = this.getSidebarStyles();
 
     /* eslint-disable max-len */
     return (
       <nav
         className="Nav"
-        style={sidebarStyles.base}>
+        style={styles.base}>
         <a href="/" className="Link--unstyled">
           <img width="40px" height="40px" src="/static/icon-victory.svg" alt="Victory Homepage" />
         </a>
-        <ul style={sidebarStyles.defaultList}>
-          <li style={sidebarStyles.defaultItem}>
-            <a href="#" style={sidebarStyles.link}>Installation</a>
-          </li>
-          <li style={[sidebarStyles.defaultItem, sidebarStyles.selectedItem]}>
-            <a href="#" style={[sidebarStyles.link, sidebarStyles.selectedLink]}>Story time</a>
-            <ul style={sidebarStyles.openList}>
-              <li style={sidebarStyles.defaultItem}>
-                <a href="#" style={[sidebarStyles.link, sidebarStyles.selectedLink]}>Part I</a>
-              </li>
-              <li style={sidebarStyles.defaultItem}>
-                <a href="#" style={sidebarStyles.link}>Part II</a>
-              </li>
-            </ul>
-          </li>
-          <li style={sidebarStyles.defaultItem}>
-            <a href="#" style={sidebarStyles.link}>VictoryChart</a>
-          </li>
-          <li style={sidebarStyles.defaultItem}>
-            <a href="#" style={sidebarStyles.link}>VictoryPie</a>
-          </li>
-          <li style={sidebarStyles.defaultItem}>
-            <a href="#" style={sidebarStyles.link}>VictoryScatter</a>
-          </li>
+        <ul style={styles.list}>
+          {this._renderListItems(this.props.items)}
         </ul>
       </nav>
     );
   /* eslint-enable max-len */
   }
 }
+Sidebar.propTypes = {
+  items: React.PropTypes.array
+};
+
+Sidebar.defaultProps = {
+  items: []
+};
 
 export default Sidebar;
