@@ -1,5 +1,6 @@
 import React from "react";
 import Radium from "radium";
+import { Link } from "react-router";
 
 import settings from "../settings";
 
@@ -10,8 +11,8 @@ class Sidebar extends React.Component {
     return {
       base: {
         margin: 0,
-        padding: "0 1rem",
-        "@media (min-width: 768px)": {
+        padding: "0 1rem 0 0",
+        "@media (min-width: 70em)": {
           flex: "0 0 12em"
         }
       },
@@ -42,7 +43,10 @@ class Sidebar extends React.Component {
       link: {
         boxShadow: "none",
         color: settings.darkSand,
-        fontWeight: "normal"
+        fontWeight: "normal",
+        ":hover": {
+          color: settings.red
+        }
       }
     };
   }
@@ -55,7 +59,9 @@ class Sidebar extends React.Component {
       <nav
         className="Nav"
         style={sidebarStyles.base}>
-        <img width="40" src="/static/icon-victory.svg" />
+        <Link to="/" className="Link--unstyled">
+          <img width="40px" height="40px" src="/static/icon-victory.svg" alt="Victory Homepage" />
+        </Link>
         <ul style={sidebarStyles.defaultList}>
           <li style={sidebarStyles.defaultItem}>
             <a href="#" style={sidebarStyles.link}>Installation</a>
