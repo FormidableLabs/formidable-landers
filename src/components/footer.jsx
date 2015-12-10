@@ -10,9 +10,9 @@ class Footer extends React.Component {
         listStyle: "none",
         margin: "1rem 0 0 0",
         padding: "3rem 0.5rem",
-        backgroundColor: "#ebe3db",
+        backgroundColor: this.props.backgroundColor,
         textAlign: "center",
-        borderBottom: "1px solid rgba(35, 31, 32, 0.02)"
+        borderTop: "1px solid rgba(35, 31, 32, 0.02)"
       },
       text: {
         display: "block"
@@ -48,10 +48,12 @@ class Footer extends React.Component {
 }
 
 Footer.propTypes = {
+  backgroundColor: React.PropTypes.string,
   styleOverrides: React.PropTypes.object
 };
 
 Footer.defaultProps = {
+  backgroundColor: "#ebe3db",
   styleOverrides: null
 };
 

@@ -13,7 +13,7 @@ class Header extends React.Component {
         justifyContent: "space-between",
         margin: 0,
         padding: "1rem 0.5rem",
-        backgroundColor: "#ebe3db",
+        backgroundColor: this.props.backgroundColor,
         textAlign: "center",
         borderBottom: "1px solid rgba(35, 31, 32, 0.02)"
       },
@@ -38,10 +38,12 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
+  backgroundColor: React.PropTypes.string,
   styleOverrides: React.PropTypes.object
 };
 
 Header.defaultProps = {
+  backgroundColor: "#ebe3db",
   styleOverrides: null
 };
 
