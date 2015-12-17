@@ -30,7 +30,7 @@ class Header extends React.Component {
           this.props.styleOverrides && headerStyles.styleOverrides
         ]}>
         <a href="mailto:hello@formidable.com" style={{margin: "0 auto", lineHeight: 1}}>
-          Need React.js consulting? Let’s talk.
+          {this.props.text}
         </a>
       </header>
     );
@@ -38,11 +38,13 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-  styleOverrides: React.PropTypes.object
+  styleOverrides: React.PropTypes.object,
+  text: React.PropTypes.string
 };
 
 Header.defaultProps = {
-  styleOverrides: null
+  styleOverrides: null,
+  text: "Need React.js consulting? Let’s talk."
 };
 
 export default Header;
