@@ -121,12 +121,12 @@ export default {
     color: settings.navy,
     fontWeight: 700,
     textDecoration: "none",
-    boxShadow: "inset 0 -0.05em 0 " + settings.sand,
+    boxShadow: "inset 0 -1px 0 " + settings.sand,
     transition: "color 0.2s ease, box-shadow 0.5s ease"
   },
   "a:hover, a:focus": {
     color: settings.red,
-    boxShadow: "inset 0 -0.05em 0 " + settings.paleRed,
+    boxShadow: "inset 0 -1px 0 " + settings.palestRed,
     transition: "color 0.2s ease, box-shadow 0.5s ease"
   },
   ".Link--unstyled": {
