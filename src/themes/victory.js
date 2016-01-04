@@ -323,6 +323,9 @@ export default {
     fontFamily: settings.serif,
     fontWeight: "normal"
   },
+  ".Prop td:first-child": {
+    maxWidth: "30em"
+  },
   ".Prop-name": {
     fontFamily: settings.monospace
   },

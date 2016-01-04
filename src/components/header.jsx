@@ -13,7 +13,7 @@ class Header extends React.Component {
         justifyContent: "space-between",
         margin: 0,
         padding: "1rem 0.5rem",
-        backgroundColor: "#ebe3db",
+        backgroundColor: this.props.backgroundColor,
         textAlign: "center",
         borderBottom: "1px solid rgba(35, 31, 32, 0.02)"
       },
@@ -30,7 +30,7 @@ class Header extends React.Component {
           this.props.styleOverrides && headerStyles.styleOverrides
         ]}>
         <a href="mailto:hello@formidable.com" style={{margin: "0 auto", lineHeight: 1}}>
-          {this.props.text}
+          {this.props.children}
         </a>
       </header>
     );
@@ -38,13 +38,15 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-  styleOverrides: React.PropTypes.object,
-  text: React.PropTypes.string
+  backgroundColor: React.PropTypes.string,
+  children: React.PropTypes.node,
+  styleOverrides: React.PropTypes.object
 };
 
 Header.defaultProps = {
-  styleOverrides: null,
-  text: "Need React.js consulting? Let’s talk."
+  backgroundColor: "#ebe3db",
+  children: "Need React.js consulting? Let’s talk.",
+  styleOverrides: null
 };
 
 export default Header;
