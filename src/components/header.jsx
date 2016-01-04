@@ -39,7 +39,7 @@ class Header extends React.Component {
 
 Header.propTypes = {
   backgroundColor: React.PropTypes.string,
-  children: React.PropTypes.string,
+  children: React.PropTypes.node,
   styleOverrides: React.PropTypes.object
 };
 
