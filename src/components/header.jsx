@@ -38,23 +38,15 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-<<<<<<< HEAD
   backgroundColor: React.PropTypes.string,
-  styleOverrides: React.PropTypes.object
-};
-
-Header.defaultProps = {
-  backgroundColor: "#ebe3db",
-  styleOverrides: null
-=======
   styleOverrides: React.PropTypes.object,
   text: React.PropTypes.string
 };
 
 Header.defaultProps = {
+  backgroundColor: "#ebe3db",
   styleOverrides: null,
   text: "Need React.js consulting? Let’s talk."
->>>>>>> master
 };
 
 export default Header;
