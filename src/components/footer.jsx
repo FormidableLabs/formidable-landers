@@ -66,15 +66,11 @@ class Footer extends React.Component {
 }
 
 Footer.propTypes = {
-  backgroundColor: React.PropTypes.string,
-  linkStyles: React.PropTypes.object,
-  styleOverrides: React.PropTypes.object
+  backgroundColor: React.PropTypes.string
 };
 
 Footer.defaultProps = {
-  backgroundColor: "#ebe3db",
-  linkStyles: null,
-  styleOverrides: null
+  backgroundColor: "#ebe3db"
 };
 
 export default Footer;
