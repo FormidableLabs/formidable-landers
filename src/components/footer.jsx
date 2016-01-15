@@ -3,7 +3,6 @@ import Radium from "radium";
 
 @Radium
 class Footer extends React.Component {
-
   getFooterStyles() {
     return {
       base: {
@@ -17,6 +16,19 @@ class Footer extends React.Component {
       text: {
         display: "block"
       },
+      linkLogo: {
+        display: "block",
+        boxShadow: "none",
+        border: "none",
+        textDecoration: "none",
+        ":hover": {
+          backgroundColor: "transparent",
+          boxShadow: "none",
+          border: "none",
+          textDecoration: "none"
+        }
+      },
+      linkStyles: this.props.linkStyles,
       styleOverrides: this.props.styleOverrides
     };
   }
@@ -33,14 +45,17 @@ class Footer extends React.Component {
           Made with love in Seattle by
         </span>
         <span style={[footerStyles.text]}>
-          <a href="http://formidable.com/" style={{display: "block", boxShadow: "none"}}>
+          <a href="http://formidable.com/" style={footerStyles.linkLogo}>
             <img width="300px" height="100px"
               src="static/logo-formidable-black.svg"
               alt="Formidable" />
           </a>
         </span>
         <span style={[footerStyles.text]}>
-          P.S. <a href="http://formidable.com/studio/" style={{lineHeight: 1}}>We’re hiring</a>.
+          P.S. <a href="http://formidable.com/studio/"
+            style={[this.props.linkStyles && footerStyles.linkStyles]}>
+            We’re hiring
+          </a>.
         </span>
         <span style={[footerStyles.text]}>
           {this.props.children}
@@ -51,13 +66,11 @@ class Footer extends React.Component {
 }
 
 Footer.propTypes = {
-  backgroundColor: React.PropTypes.string,
-  styleOverrides: React.PropTypes.object
+  backgroundColor: React.PropTypes.string
 };
 
 Footer.defaultProps = {
-  backgroundColor: "#ebe3db",
-  styleOverrides: null
+  backgroundColor: "#ebe3db"
 };
 
 export default Footer;
