@@ -26,7 +26,7 @@ Our goal is consistent branding and wording across all of our visible projects. 
 | Builder | formidable-landers' `<Header />` |
 | Ecology | - |
 | ES6 Interactive Guide | [Footer](https://github.com/FormidableLabs/es6-interactive-guide/blob/gh-pages/components/footer.jsx) |
-| Projects. | [Header](https://github.com/FormidableLabs/formidablelabs.github.io/blob/master/js/header.jsx), [Footer](https://github.com/FormidableLabs/formidablelabs.github.io/blob/master/js/footer.jsx) |
+| Stack. | [Header](https://github.com/FormidableLabs/formidablelabs.github.io/blob/master/js/header.jsx), [Footer](https://github.com/FormidableLabs/formidablelabs.github.io/blob/master/js/footer.jsx) |
 | Radium | [Header](https://github.com/FormidableLabs/radium/blob/gh-pages/_layouts/default.html#L28-L31), [Footer](https://github.com/FormidableLabs/radium/blob/gh-pages/_layouts/default.html#L64-L76) |
 | Spectacle | [gh-pages](https://github.com/FormidableLabs/spectacle/tree/gh-pages) |
 | Victory | formidable-landers' `<Header />` |
