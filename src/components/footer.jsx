@@ -3,7 +3,6 @@ import Radium from "radium";
 
 @Radium
 class Footer extends React.Component {
-
   getFooterStyles() {
     return {
       base: {
@@ -16,6 +15,18 @@ class Footer extends React.Component {
       },
       text: {
         display: "block"
+      },
+      linkLogo: {
+        display: "block",
+        boxShadow: "none",
+        border: "none",
+        textDecoration: "none",
+        ":hover": {
+          backgroundColor: "transparent",
+          boxShadow: "none",
+          border: "none",
+          textDecoration: "none"
+        }
       },
       styleOverrides: this.props.styleOverrides
     };
@@ -33,7 +44,7 @@ class Footer extends React.Component {
           Made with love in Seattle by
         </span>
         <span style={[footerStyles.text]}>
-          <a href="http://formidable.com/" style={{display: "block", boxShadow: "none"}}>
+          <a href="http://formidable.com/" style={footerStyles.linkLogo}>
             <img width="300px" height="100px"
               src="static/logo-formidable-black.svg"
               alt="Formidable" />
