@@ -6,10 +6,7 @@ class Header extends React.Component {
   getHeaderStyles() {
     return {
       base: {
-        display: "flex",
-        flexWrap: "wrap",
-        listStyle: "none",
-        justifyContent: "space-between",
+        display: "block",
         margin: 0,
         padding: "1rem 0.5rem",
         backgroundColor: this.props.backgroundColor,
