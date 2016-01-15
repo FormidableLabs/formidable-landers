@@ -28,6 +28,7 @@ class Footer extends React.Component {
           textDecoration: "none"
         }
       },
+      linkStyles: this.props.linkStyles,
       styleOverrides: this.props.styleOverrides
     };
   }
@@ -51,7 +52,10 @@ class Footer extends React.Component {
           </a>
         </span>
         <span style={[footerStyles.text]}>
-          P.S. <a href="http://formidable.com/studio/" style={{lineHeight: 1}}>We’re hiring</a>.
+          P.S. <a href="http://formidable.com/studio/"
+            style={[this.props.linkStyles && footerStyles.linkStyles]}>
+            We’re hiring
+          </a>.
         </span>
         <span style={[footerStyles.text]}>
           {this.props.children}
@@ -63,11 +67,13 @@ class Footer extends React.Component {
 
 Footer.propTypes = {
   backgroundColor: React.PropTypes.string,
+  linkStyles: React.PropTypes.object,
   styleOverrides: React.PropTypes.object
 };
 
 Footer.defaultProps = {
   backgroundColor: "#ebe3db",
+  linkStyles: null,
   styleOverrides: null
 };
 
