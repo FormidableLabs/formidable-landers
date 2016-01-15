@@ -6,7 +6,10 @@ class Header extends React.Component {
   getHeaderStyles() {
     return {
       base: {
-        display: "block",
+        display: "flex",
+        flexWrap: "wrap",
+        listStyle: "none",
+        justifyContent: "space-between",
         margin: 0,
         padding: "1rem 0.5rem",
         backgroundColor: this.props.backgroundColor,
@@ -30,14 +33,16 @@ class Header extends React.Component {
           headerStyles.base,
           this.props.styleOverrides && headerStyles.styleOverrides
         ]}>
-        <a
-          href="mailto:hello@formidable.com"
-          style={[
-            headerStyles.link,
-            this.props.linkStyles && headerStyles.linkStyles
-          ]}>
-          {this.props.children}
-        </a>
+        <span style={{display: "block"}}>
+          <a
+            href="mailto:hello@formidable.com"
+            style={[
+              headerStyles.link,
+              this.props.linkStyles && headerStyles.linkStyles
+            ]}>
+            {this.props.children}
+          </a>
+        </span>
       </header>
     );
   }
