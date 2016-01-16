@@ -6,10 +6,7 @@ class Header extends React.Component {
   getHeaderStyles() {
     return {
       base: {
-        display: "flex",
-        flexWrap: "wrap",
-        listStyle: "none",
-        justifyContent: "space-between",
+        flex: "none",  // Sticky footer setup
         margin: 0,
         padding: "1rem 0.5rem",
         backgroundColor: this.props.backgroundColor,
@@ -33,7 +30,7 @@ class Header extends React.Component {
           headerStyles.base,
           this.props.styleOverrides && headerStyles.styleOverrides
         ]}>
-        <span style={{display: "block"}}>
+        <span style={{display: "block", margin: "0 auto"}}>
           <a
             href="mailto:hello@formidable.com"
             style={[
