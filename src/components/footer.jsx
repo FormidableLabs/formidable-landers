@@ -6,7 +6,7 @@ class Footer extends React.Component {
   getFooterStyles() {
     return {
       base: {
-        listStyle: "none",
+        flex: "none", // Sticky footer setup
         margin: "1rem 0 0 0",
         padding: "3rem 0.5rem",
         backgroundColor: this.props.backgroundColor,
