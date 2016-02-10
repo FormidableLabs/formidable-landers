@@ -35,6 +35,7 @@ class Footer extends React.Component {
 
   render() {
     const footerStyles = this.getFooterStyles();
+    const footerLogo = this.props.footerLogo ? this.props.footerLogo : "static/logo-formidable-black.svg";
     return (
       <footer
         style={[
@@ -47,12 +48,12 @@ class Footer extends React.Component {
         <span style={[footerStyles.text]}>
           <a href="http://formidable.com/" style={footerStyles.linkLogo}>
             <img width="300px" height="100px"
-              src="static/logo-formidable-black.svg"
+              src={footerLogo}
               alt="Formidable" />
           </a>
         </span>
         <span style={[footerStyles.text]}>
-          P.S. <a href="http://formidable.com/studio/"
+          P.S. <a href="http://formidable.com/team/"
             style={[this.props.linkStyles && footerStyles.linkStyles]}>
             We’re hiring
           </a>.
@@ -66,11 +67,13 @@ class Footer extends React.Component {
 }
 
 Footer.propTypes = {
-  backgroundColor: React.PropTypes.string
+  backgroundColor: React.PropTypes.string,
+  footerLogo: React.PropTypes.string
 };
 
 Footer.defaultProps = {
-  backgroundColor: "#ebe3db"
+  backgroundColor: "#ebe3db",
+  footerLogo: null
 };
 
 export default Footer;
