@@ -35,7 +35,6 @@ class Footer extends React.Component {
 
   render() {
     const footerStyles = this.getFooterStyles();
-    const footerLogo = this.props.footerLogo ? this.props.footerLogo : "static/logo-formidable-black.svg";
     return (
       <footer
         style={[
@@ -73,7 +72,7 @@ Footer.propTypes = {
 
 Footer.defaultProps = {
   backgroundColor: "#ebe3db",
-  footerLogo: null
+  footerLogo: "static/logo-formidable-black.svg"
 };
 
 export default Footer;

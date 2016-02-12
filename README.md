@@ -8,7 +8,7 @@ Our goal is consistent branding and wording across all of our visible projects. 
 
 Add `formidable-landers` as a dependency.
 ```
-npm install formidable-landers --save-dev
+npm install formidable-landers --save
 ```
 
 Import the desired components and any variables/settings if available.
