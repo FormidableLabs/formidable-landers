@@ -1,6 +1,8 @@
 import React from "react";
 import Radium from "radium";
 
+import DarkFormidableLogo from "../assets/logo-formidable-dark.svg";
+
 @Radium
 class Footer extends React.Component {
   getFooterStyles() {
@@ -46,9 +48,9 @@ class Footer extends React.Component {
         </span>
         <span style={[footerStyles.text]}>
           <a href="http://formidable.com/" style={footerStyles.linkLogo}>
-            <img width="300px" height="100px"
-              src={footerLogo}
-              alt="Formidable" />
+            <span dangerouslySetInnerHTML={{__html: DarkFormidableLogo}}
+              style={{width: "300px", height: "100px"}}
+              />
           </a>
         </span>
         <span style={[footerStyles.text]}>
@@ -72,7 +74,7 @@ Footer.propTypes = {
 
 Footer.defaultProps = {
   backgroundColor: "#ebe3db",
-  footerLogo: "static/logo-formidable-black.svg"
+  footerLogo: "https://formidable.surge.sh/assets/logo-formidable-dark.svg" // See formidable-surge
 };
 
 export default Footer;
