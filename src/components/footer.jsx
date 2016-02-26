@@ -47,7 +47,7 @@ class Footer extends React.Component {
         <span style={[footerStyles.text]}>
           <a href="http://formidable.com/" style={footerStyles.linkLogo}>
             <img width="300px" height="100px"
-              src={footerLogo}
+              src={this.props.footerLogo}
               alt="Formidable" />
           </a>
         </span>
