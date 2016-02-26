@@ -1,7 +1,7 @@
 import React from "react";
 import Radium from "radium";
 
-import DarkFormidableLogo from "../assets/logo-formidable-dark.svg";
+import Logos from "../assets/logos";
 
 @Radium
 class Footer extends React.Component {
@@ -48,9 +48,12 @@ class Footer extends React.Component {
         </span>
         <span style={[footerStyles.text]}>
           <a href="http://formidable.com/" style={footerStyles.linkLogo}>
-            <span dangerouslySetInnerHTML={{__html: DarkFormidableLogo}}
+            <span dangerouslySetInnerHTML={{__html: Logos.darkFormidableLogo}}
               style={{width: "300px", height: "100px"}}
               />
+            <img width="300px" height="100px"
+              src={this.props.footerLogo}
+              alt="Formidable" />
           </a>
         </span>
         <span style={[footerStyles.text]}>
