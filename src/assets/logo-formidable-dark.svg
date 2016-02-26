@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 132 33" style="enable-background:new 0 0 132 33;max-width:100%;height:auto;" xml:space="preserve">
+	 viewBox="0 0 132 33" style="enable-background:new 0 0 132 33;max-width:100%;width:inherit;height:auto;" xml:space="preserve">
    <title>Formidable</title>
 <g>
 	<polygon style="fill:#242121;" points="34.3,12 40.3,12 40.3,9 31.1,9 31.1,23.2 34.3,23.2 34.3,17.9 39.6,17.9 39.6,15 34.3,15 	"/>
