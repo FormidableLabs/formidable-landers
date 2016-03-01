@@ -47,18 +47,20 @@ class Footer extends React.Component {
           Made with love in Seattle by
         </span>
         <span style={[footerStyles.text]}>
-          <a href="http://formidable.com/" style={footerStyles.linkLogo}>
-            <span dangerouslySetInnerHTML={{__html: Logos.darkFormidableLogo}}
-              style={{width: "300px", height: "100px"}}
-              />
             <img width="300px" height="100px"
               src={this.props.footerLogo}
               alt="Formidable" />
+          <a
+            key="fl-logo"
+            href="http://formidable.com/"
+            style={footerStyles.unstyledLink}>
           </a>
         </span>
         <span style={[footerStyles.text]}>
-          P.S. <a href="http://formidable.com/team/"
-            style={[this.props.linkStyles && footerStyles.linkStyles]}>
+          P.S. <a
+          key="fl-hiring"
+          href="http://formidable.com/team/"
+          style={[this.props.linkStyles && footerStyles.linkStyles]}>
             We’re hiring
           </a>.
         </span>
