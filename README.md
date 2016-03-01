@@ -93,3 +93,5 @@ npm publish
 ```sh
 git push origin master --tags
 ```
+
+[![Made with love by Formidable](https://formidable.surge.sh/assets/readme-foots.svg)](http://formidable.com/?utm_source=github&utm_medium=OSS&utm_campaign=repository)
