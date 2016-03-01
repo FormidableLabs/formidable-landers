@@ -1,7 +1,7 @@
 import React from "react";
 import Radium from "radium";
 
-import Logos from "../assets/logos";
+import { BlackFormidableLogo, WhiteFormidableLogo } from "../assets/logos";
 
 @Radium
 class Footer extends React.Component {
@@ -18,7 +18,7 @@ class Footer extends React.Component {
       text: {
         display: "block"
       },
-      linkLogo: {
+      unstyledLink: {
         display: "block",
         boxShadow: "none",
         border: "none",
@@ -44,16 +44,16 @@ class Footer extends React.Component {
           this.props.styleOverrides && footerStyles.styleOverrides
         ]}>
         <span style={[footerStyles.text]}>
-          Made with love in Seattle by
+          Made with love by
         </span>
         <span style={[footerStyles.text]}>
-            <img width="300px" height="100px"
-              src={this.props.footerLogo}
-              alt="Formidable" />
           <a
             key="fl-logo"
             href="http://formidable.com/"
             style={footerStyles.unstyledLink}>
+            <span style={{width: "300px", height: "100px"}}>
+              {this.props.logoColor === "white" ? WhiteFormidableLogo : BlackFormidableLogo}
+            </span>
           </a>
         </span>
         <span style={[footerStyles.text]}>
@@ -74,12 +74,12 @@ class Footer extends React.Component {
 
 Footer.propTypes = {
   backgroundColor: React.PropTypes.string,
-  footerLogo: React.PropTypes.string
+  logoColor: React.PropTypes.oneOf(["black", "white"])
 };
 
 Footer.defaultProps = {
   backgroundColor: "#ebe3db",
-  footerLogo: "https://formidable.surge.sh/assets/logo-formidable-dark.svg" // See formidable-surge
+  logoColor: "black"
 };
 
 export default Footer;
