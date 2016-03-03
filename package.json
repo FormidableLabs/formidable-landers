@@ -4,7 +4,7 @@
   "description": "Reusable components for Formidable's marketing sites",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "./node_modules/karma/bin/karma start",
     "babel": "rimraf lib && babel src/ -d lib/",
     "lint": "eslint --ext .js,.jsx src",
     "prepublish": "npm run babel",
@@ -28,9 +28,26 @@
   },
   "devDependencies": {
     "babel-eslint": "^4.1.6",
+    "babel-loader": "^5.3.1",
+    "chai": "^3.5.0",
+    "enzyme": "^2.0.0",
     "eslint": "^1.10.1",
     "eslint-config-defaults": "^3.0.3",
     "eslint-plugin-filenames": "^0.1.1",
-    "eslint-plugin-react": "^2.6.4"
+    "eslint-plugin-react": "^2.6.4",
+    "json-loader": "^0.5.4",
+    "karma": "^0.13.21",
+    "karma-babel-preprocessor": "^6.0.1",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-mocha": "^0.2.2",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-spec-reporter": "0.0.24",
+    "karma-webpack": "^1.7.0",
+    "mocha": "^2.4.5",
+    "phantomjs-prebuilt": "^2.1.4",
+    "react-addons-test-utils": "^0.14.6",
+    "react-dom": "^0.14.7",
+    "webpack": "^1.12.14"
   }
 }
