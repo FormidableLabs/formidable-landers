@@ -12,6 +12,7 @@ module.exports = function(config) {
     singleRun: false,
 
     files: [
+      "test/setup.js",
       // all files in `tests/`
       "test/**/*.js"
       // each file acts as entry point for the webpack configuration

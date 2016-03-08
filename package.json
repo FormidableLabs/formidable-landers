@@ -4,7 +4,7 @@
   "description": "Reusable components for Formidable's marketing sites",
   "main": "lib/index.js",
   "scripts": {
-    "test": "./node_modules/karma/bin/karma start",
+    "test": "./node_modules/karma/bin/karma start ./karma.conf.js",
     "babel": "rimraf lib && babel src/ -d lib/",
     "lint": "eslint --ext .js,.jsx src",
     "prepublish": "npm run babel",
