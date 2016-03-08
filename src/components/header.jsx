@@ -32,6 +32,7 @@ class Header extends React.Component {
         ]}>
         <span style={{display: "block", margin: "0 auto"}}>
           <a
+            key="fl-email"
             href="mailto:hello@formidable.com"
             style={[
               headerStyles.link,
