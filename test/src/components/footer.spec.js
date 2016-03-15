@@ -9,7 +9,15 @@ describe("Footer", () => {
   describe("<footer>", () => {
     it("has default styles", () => {
       const footer = shallow(<Footer />);
-      expect(footer.props()).to.have.property("style");
+      const defaultStyles = {
+        flex: "none",
+        margin: "1rem 0 0 0",
+        padding: "3rem 0.5rem",
+        backgroundColor: "#ebe3db",
+        textAlign: "center",
+        borderTop: "1px solid rgba(35, 31, 32, 0.02)"
+      };
+      expect(footer.props().style).to.deep.equal(defaultStyles);
     });
 
     it("accepts custom styles", () => {
