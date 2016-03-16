@@ -1,7 +1,6 @@
 import React from "react";
 import Radium from "radium";
 
-@Radium
 class Header extends React.Component {
   getHeaderStyles() {
     return {
@@ -56,4 +55,4 @@ Header.defaultProps = {
   children: "Need React.js consulting? Let’s talk."
 };
 
-export default Header;
+export default Radium(Header);

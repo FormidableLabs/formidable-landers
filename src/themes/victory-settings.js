@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-module.exports = {
+export default {
   // Fonts
   sansSerif: "'Karla', 'Helvetica Neue', Helvetica, Arial, sans-serif",
   serif: "'Didot', 'Bodoni MT', 'Cochin', 'Baskerville', 'Goudy Old Style', 'Bitstream Charter', serif",

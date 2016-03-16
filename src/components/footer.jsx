@@ -3,7 +3,6 @@ import Radium from "radium";
 
 import { BlackFormidableLogo, WhiteFormidableLogo } from "../assets/logos";
 
-@Radium
 class Footer extends React.Component {
   getFooterStyles() {
     return {
@@ -82,4 +81,4 @@ Footer.defaultProps = {
   logoColor: "black"
 };
 
-export default Footer;
+export default Radium(Footer);
