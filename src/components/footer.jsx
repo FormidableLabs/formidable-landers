@@ -1,7 +1,7 @@
 import React from "react";
 import Radium from "radium";
 
-import { BlackFormidableLogo, WhiteFormidableLogo } from "../assets/logos.jsx";
+import { BlackFormidableLogo, WhiteFormidableLogo } from "../assets/logos";
 
 class Footer extends React.Component {
   getFooterStyles() {

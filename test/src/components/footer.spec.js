@@ -1,8 +1,8 @@
 import React from "react";
 import { shallow, render } from "enzyme";
 
-import Footer from "../../../src/components/footer.jsx";
-import { BlackFormidableLogo, WhiteFormidableLogo } from "../../../src/assets/logos.jsx";
+import Footer from "../../../src/components/footer";
+import { BlackFormidableLogo, WhiteFormidableLogo } from "../../../src/assets/logos";
 
 describe("Footer", () => {
 
