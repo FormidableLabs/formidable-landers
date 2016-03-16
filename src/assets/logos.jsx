@@ -70,7 +70,7 @@ const WhiteFormidableLogo = <svg version="1.1" id="Layer_1" xmlns="http://www.w3
   <polygon fill="#FFFFFF" fillOpacity="0.45" points="5.1,26.3 10.7,19.5 10.7,28.6 "/>
 </svg>;
 
-export default {
+export {
   BlackFormidableLogo,
   WhiteFormidableLogo
 };
