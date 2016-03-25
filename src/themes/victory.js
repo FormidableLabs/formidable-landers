@@ -263,6 +263,15 @@ export default {
   ".Overview pre": {
     overflow: "hidden" // Hide horizontal scrollbars for playgrounds.
   },
+  ".Overview pre code": { // Non-ecology code blocks
+    display: "block",
+    padding: "16px",
+    background: settings.whiteSand,
+    fontFamily: settings.monospace,
+    fontSize: "1rem",
+    lineHeight: 1.2,
+    border: `1px solid ${settings.palestSand}`
+  },
   /*
    * Interactive/Component Playground
    */
@@ -288,20 +297,20 @@ export default {
   ".Interactive .playgroundCode": {
     flex: "0 0 100%",
     verticalAlign: "top",
+    marginBottom: "30px",
+    padding: "16px 16px 0 16px",
     background: "#fff",
     fontFamily: settings.monospace,
     fontSize: "1rem",
     lineHeight: 1.2,
-    marginBottom: "30px",
-    padding: "16px 16px 0 16px",
-    border: "1px solid #ebe3db"
+    border: `1px solid ${settings.palestSand}`
   },
   ".Interactive .playgroundPreview": {
     flex: "0 0 100%",
     verticalAlign: "top",
     background: "#fff",
     position: "relative",
-    border: "1px solid #ebe3db"
+    border: `1px solid ${settings.palestSand}`
   },
   ".Interactive .playgroundPreview:before": {
     content: "'Live Preview'",
