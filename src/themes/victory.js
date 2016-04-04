@@ -16,11 +16,12 @@ export default {
     textSizeAdjust: "100%"
   },
   body: {
-    backgroundColor: "#f6f2ee",
-    fontFamily: settings.sansSerif,
-    lineHeight: 1.5,
+    backgroundColor: settings.palerSand,
+    fontFamily: settings.serif,
+    fontSize: "18px",
+    lineHeight: 1.4,
     margin: 0,
-    color: settings.deepNavy,
+    color: settings.mud,
     boxSizing: "border-box"
   },
   "html, body": {
@@ -52,21 +53,21 @@ export default {
     verticalAlign: "middle"
   },
   "th, td": {
-    border: "1px solid " + settings.palestSand,
+    border: "1px solid " + settings.paleSand,
     padding: "0.425em 0.75em",
     verticalAlign: "top"
   },
   "th code, td code": {
     background: "none",
-    color: "#111"
+    color: settings.darkMud
   },
   th: {
     fontWeight: "bold",
     textAlign: "left"
   },
   "h1,h2,h3,h4,h5,h6,hgroup, ul,ol,dd, p,figure, pre,table,fieldset,hr, .highlight": {
-    marginTop: 0,
-    marginBottom: "1.5rem"
+    marginTop: settings.gutter,
+    marginBottom: 0
   },
   img: {
     maxWidth: "100%"
@@ -74,65 +75,67 @@ export default {
   "svg, img": {
     fill: "currentColor"
   },
-  h1: {
-    fontSize: "2.75rem"
-  },
-  h2: {
-    fontSize: "2.5rem"
-  },
-  h3: {
-    fontSize: "2.125rem"
-  },
-  "h4, h5, h6": {
-    fontSize: "1.9rem"
-  },
-  "h1,h2,h3,h4": {
-    fontFamily: settings.serif,
-    fontWeight: "normal",
-    lineHeight: 1.2
-  },
   /*
    * Headlines/Headings
    */
-  ".Headline": {
-    fontFamily: settings.serif,
-    fontSize: "2.5rem",
-    fontWeight: "normal"
-  },
-  ".Headline--minor": {
-    fontSize: "2rem",
-    fontStyle: "italic"
-  },
-  ".Headline--major": {
-    fontSize: "3rem",
+  "h1, h2": {
+    marginTop: `${settings.gutter*2.5}px`,
+    fontSize: "40px",
+    fontFamily: settings.serifHeadline,
+    fontWeight: "normal",
     lineHeight: 1.3,
-    fontStyle: "italic"
+    textAlign: "center",
+    borderBottom: `1px solid ${settings.sand}`
+  },
+  "h1": {
+    color: settings.red,
+    textAlign: "left"
+  },
+  "h3": {
+    marginTop: `${settings.gutter*2}px`,
+    fontSize: "0.75em",
+    fontFamily: settings.serif,
+    fontWeight: "normal",
+    lineHeight: 1.5,
+    letterSpacing: "0.15em",
+    textTransform: "uppercase",
+    textAlign: "center"
+  },
+  "h4, h5, h6": {
+    fontSize: "1em",
+    fontWeight: "bold",
+    textAlign: "left"
   },
   ".Smallcaps": {
     textTransform: "uppercase",
-    fontSize: "0.85em",
-    fontWeight: "bold",
-    color: settings.darkSand
+    fontSize: "0.75em",
+    fontWeight: "normal",
+    letterSpacing: "0.1em",
+    paddingRight: "1em"
   },
   /*
    * Links
    */
   "a": {
-    color: settings.navy,
+    cursor: "pointer",
+    color: settings.darkMud,
     fontWeight: 700,
     textDecoration: "none",
-    boxShadow: "inset 0 -1px 0 " + settings.sand,
-    transition: "color 0.2s ease, box-shadow 0.5s ease"
+    borderBottom: `1px solid ${settings.darkMud}`,
+    transition: "color 0.2s ease, border-bottom 0.5s ease"
   },
   "a:hover, a:focus": {
+    cursor: "pointer",
     color: settings.red,
-    boxShadow: "inset 0 -1px 0 " + settings.palestRed,
+    borderBottom: `1px solid ${settings.red}`,
     transition: "color 0.2s ease, box-shadow 0.5s ease"
   },
   ".Link--unstyled": {
+    border: "none",
     boxShadow: "none"
   },
   ".Link--unstyled:hover, .Link--unstyled:focus": {
+    border: "none",
     boxShadow: "none"
   },
   /*
@@ -179,44 +182,23 @@ export default {
     paddingRight: "1em",
     paddingBottom: "1em"
   },
-  ".Row": {
-    padding: "36px 0"
-  },
-  ".Row .Interactive": {
-    marginTop: "-24px"
-  },
   /*
-   * Copy
+   * Ecology
    */
-  ".Copy": {
-    margin: "0 auto",
-    maxWidth: "640px"
+  ".Ecology p, .Ecology h2, .Ecology h3, .Ecology h4, .Ecology h5, .Ecology h6": {
+   maxWidth: "760px" // Ideal 60–70 characters per line
   },
-  ".Copy .highlight": {
-    marginLeft: "-16px",
-    marginRight: "-16px"
-  },
-  ".Copy .highlight pre": {
-    marginBottom: 0,
-    background: settings.navy,
-    color: "#fff",
-    fontFamily: settings.monospace,
-    fontSize: "16px",
-    lineHeight: 1.2,
-    overflow: "auto",
-    padding: "16px"
-  },
-  ".Copy ul, .Ecology ul": {
+  ".Ecology ul": {
     paddingLeft: "24px",
     listStyle: "none"
   },
-  ".Copy ul > li, .Ecology ul > li": {
+  ".Ecology ul > li": {
     position: "relative"
   },
-  ".Copy ul > li + li, .Ecology ul > li + li": {
+  ".Ecology ul > li + li": {
     marginTop: "0.25em"
   },
-  ".Copy ul > li:before, .Ecology ul > li:before": {
+  ".Ecology ul > li:before": {
     content: "''",
     width: "1em",
     height: "1em",
@@ -228,11 +210,11 @@ export default {
     left: "-24px",
     top: "11px"
   },
-  ".Copy li > ul, .Ecology li > ul": {
+  ".Ecology li > ul": {
     marginTop: "0.25em",
     marginBottom: "0px"
   },
-  ".Copy code, .Ecology code": {
+  ".Ecology code": {
     fontFamily: settings.monospace,
     background: settings.whiteSand,
     color: settings.mud,
@@ -243,23 +225,9 @@ export default {
     background: "transparent",
     padding: 0
   },
-  ".Installer": {
-    display: "inline-block",
-    background: settings.palestSand,
-    border: "1px solid " + settings.paleSand,
-    color: settings.navy,
-    fontFamily: settings.monospace,
-    fontSize: "18px",
-    lineHeight: 1.2,
-    margin: "0 auto",
-    padding: "16px 32px"
-  },
   /*
-   * Ecology text wrangling
+   * Ecology README text wrangling
    */
-  ".Ecology p": {
-    maxWidth: "640px" // Ideal 60–70 characters per line
-  },
   ".Overview pre": {
     overflow: "hidden" // Hide horizontal scrollbars for playgrounds.
   },
@@ -274,52 +242,62 @@ export default {
   },
   /*
    * Interactive/Component Playground
+   * .Interactive
+   * |- .playground
+   *    |- .playgroundCode
+   *    |- .playgroundPreview
    */
   ".Interactive": {
-    minHeight: "333px"  // TODO: Extract for server-side rendering
+    minHeight: "300px"  // TODO: Extract for server-side rendering
   },
   ".Interactive .playground": {
     display: "flex",
-    flexWrap: "wrap",
-    marginBottom: "24px"
+    flexDirection: "row",
+    flexWrap: "nowrap",
+    alignItems: "center",
+    justifyContent: "space-between",
+    padding: `${settings.gutter*3}px 0 ${settings.gutter*3}px ${settings.gutter}px`
   },
-  ".Interactive:before, .Interactive .playgroundPreview:before": {
-    fontFamily: settings.sansSerif,
-    fontWeight: "bold",
-    fontSize: "1rem",
-    lineHeight: 1,
-    letterSpacing: "0.05em",
-    textTransform: "uppercase"
-  },
-  ".Interactive:before": {
-    content: "'Interactive Code'"
+  ".Interactive .playgroundCode, .Interactive .playgroundPreview": {
+    padding: `${settings.gutter}px ${settings.gutter*2}px`
   },
   ".Interactive .playgroundCode": {
-    flex: "0 0 100%",
-    verticalAlign: "top",
-    marginBottom: "30px",
-    padding: "16px 16px 0 16px",
-    background: "#fff",
-    fontFamily: settings.monospace,
-    fontSize: "1rem",
-    lineHeight: 1.2,
-    border: `1px solid ${settings.palestSand}`
+    flex: "1 1 100%",
+    order: "2",
+    backgroundColor: settings.mud,
+    color: settings.whiteSand,
+    borderLeft: `4px solid ${settings.darkerSand}`,
+    borderTop: `4px solid ${settings.darkerSand}`,
+    boxShadow:
+      `0 0 0 1px ${settings.darkerSand},
+       0 0 0 5px ${settings.palerSand},
+       0 0 0 6px ${settings.darkerSand},
+       -1px 11px 0 0 ${settings.darkerSand},
+       11px 11px 0 0 ${settings.darkerSand},
+       11px -1px 0 0 ${settings.darkerSand}`
   },
   ".Interactive .playgroundPreview": {
-    flex: "0 0 100%",
-    verticalAlign: "top",
-    background: "#fff",
+    flex: "1 1 100%",
+    order: "1",
     position: "relative",
-    border: `1px solid ${settings.palestSand}`
+    marginBottom: "32px"
   },
-  ".Interactive .playgroundPreview:before": {
-    content: "'Live Preview'",
+  ".Interactive .playgroundPreview:after": {
+    content: "'Fig. 1.'",
     position: "absolute",
-    top: "-18px"
+    right: 0,
+    bottom: 0,
+    left: 0,
+    color: settings.palerMud,
+    fontFamily: settings.serif,
+    fontWeight: "normal",
+    fontSize: "18px",
+    lineHeight: 1,
+    textAlign: "center"
   },
   ".Interactive pre, .CodeMirror-code": {
     fontFamily: settings.monospace,
-    fontSize: "1rem",
+    fontSize: "18px",
     lineHeight: 1.2
   },
   ".CodeMirror": {
@@ -380,178 +358,128 @@ export default {
   ".u-marginModule > *:last-child": {
     marginBottom: 0
   },
-  mediaQueries: { // TODO: Extract for server-side rendering
-    "only screen and (min-width: 70em)": {
-      h1: {
-        fontSize: "3rem"
+  mediaQueries: {
+    [settings.mediaQueries.medium]: {
+      body: {
+        fontSize: "24px",
+        lineHeight: 1.5
       },
-      h2: {
-        fontSize: "2.75rem"
+      "h1, h2": {
+        marginTop: `${settings.gutter*3}px`,
+        fontSize: "48px"
       },
-      h3: {
-        fontSize: "2.125rem"
-      },
-      "h4, h5, h6": {
-        fontSize: "1.9rem"
-      },
-      ".Headline--major": {
-        fontSize: "3.5rem",
-        lineHeight: 1.2,
-        fontStyle: "italic"
-      },
-      ".Header": {
-        paddingTop: "65px",
-        paddingBottom: "0"
-      },
-      ".Logo img": {
-        width: "230px"
-      },
-      ".Copy, .Ecology p": {
-        fontSize: "1.125rem"
-      },
-      ".Copy .highlight": {
-        margin: "36px -24px"
-      },
-      ".Copy .highlight pre": {
-        padding: "24px"
-      },
-      ".Installer": {
-        padding: "24px 48px",
-        marginTop: "24px",
-        marginBottom: "24px"
+      ".Ecology p": {
+        fontSize: "24px"
       },
       ".Interactive .playground": {
-        display: "flex",
         flexWrap: "wrap"
       },
       ".Interactive .playgroundCode": {
         display: "flex",
-        flex: "1",
-        marginRight: "12px",
-        marginBottom: "0"
+        flex: "1 1 auto",
+        marginTop: `${settings.gutter}px`
       },
       ".Interactive .playgroundPreview": {
         display: "flex",
-        flex: "1",
-        marginLeft: "12px"
+        flex: "0 1 auto"
       }
     }
   },
-  /* Syntax Highlighting */
-  /*
-  Name:       Base16 Ocean Dark
-  Author:     Chris Kempson (http://chriskempson.com)
-  Pygments template by Jan T. Sott (https://github.com/idleberg)
-  Created with Base16 Builder by Chris Kempson (https://github.com/chriskempson/base16-builder)
-  */
-  ".highlight .hll": { "background-color": "#4f5b66" },
-  ".highlight": { "background": settings.navy, "color": "#eff1f5" },
-  ".highlight .c": { "color": "#65737e" }, /* Comment */
-  ".highlight .err": { "color": "#bf616a" }, /* Error */
-  ".highlight .k": { "color": "#b48ead" }, /* Keyword */
-  ".highlight .l": { "color": "#d08770" }, /* Literal */
-  ".highlight .n": { "color": "#eff1f5" }, /* Name */
-  ".highlight .o": { "color": "#96b5b4" }, /* Operator */
-  ".highlight .p": { "color": "#eff1f5" }, /* Punctuation */
-  ".highlight .cm": { "color": "#65737e" }, /* Comment.Multiline */
-  ".highlight .cp": { "color": "#65737e" }, /* Comment.Preproc */
-  ".highlight .c1": { "color": "#65737e" }, /* Comment.Single */
-  ".highlight .cs": { "color": "#65737e" }, /* Comment.Special */
-  ".highlight .gd": { "color": "#bf616a" }, /* Generic.Deleted */
-  ".highlight .ge": { "font-style": "italic" }, /* Generic.Emph */
-  ".highlight .gh": { "color": "#eff1f5", "font-weight": "bold" }, /* Generic.Heading */
-  ".highlight .gi": { "color": "#a3be8c" }, /* Generic.Inserted */
-  ".highlight .gp": { "color": "#65737e", "font-weight": "bold" }, /* Generic.Prompt */
-  ".highlight .gs": { "font-weight": "bold" }, /* Generic.Strong */
-  ".highlight .gu": { "color": "#96b5b4", "font-weight": "bold" }, /* Generic.Subheading */
-  ".highlight .kc": { "color": "#b48ead" }, /* Keyword.Constant */
-  ".highlight .kd": { "color": "#b48ead" }, /* Keyword.Declaration */
-  ".highlight .kn": { "color": "#96b5b4" }, /* Keyword.Namespace */
-  ".highlight .kp": { "color": "#b48ead" }, /* Keyword.Pseudo */
-  ".highlight .kr": { "color": "#b48ead" }, /* Keyword.Reserved */
-  ".highlight .kt": { "color": "#ebcb8b" }, /* Keyword.Type */
-  ".highlight .ld": { "color": "#a3be8c" }, /* Literal.Date */
-  ".highlight .m": { "color": "#d08770" }, /* Literal.Number */
-  ".highlight .s": { "color": "#a3be8c" }, /* Literal.String */
-  ".highlight .na": { "color": "#8fa1b3" }, /* Name.Attribute */
-  ".highlight .nb": { "color": "#eff1f5" }, /* Name.Builtin */
-  ".highlight .nc": { "color": "#ebcb8b" }, /* Name.Class */
-  ".highlight .no": { "color": "#bf616a" }, /* Name.Constant */
-  ".highlight .nd": { "color": "#96b5b4" }, /* Name.Decorator */
-  ".highlight .ni": { "color": "#eff1f5" }, /* Name.Entity */
-  ".highlight .ne": { "color": "#bf616a" }, /* Name.Exception */
-  ".highlight .nf": { "color": "#8fa1b3" }, /* Name.Function */
-  ".highlight .nl": { "color": "#eff1f5" }, /* Name.Label */
-  ".highlight .nn": { "color": "#ebcb8b" }, /* Name.Namespace */
-  ".highlight .nx": { "color": "#fff" }, /* Name.Other */
-  ".highlight .py": { "color": "#eff1f5" }, /* Name.Property */
-  ".highlight .nt": { "color": "#96b5b4" }, /* Name.Tag */
-  ".highlight .nv": { "color": "#bf616a" }, /* Name.Variable */
-  ".highlight .ow": { "color": "#96b5b4" }, /* Operator.Word */
-  ".highlight .w": { "color": "#eff1f5" }, /* Text.Whitespace */
-  ".highlight .mf": { "color": "#d08770" }, /* Literal.Number.Float */
-  ".highlight .mh": { "color": "#d08770" }, /* Literal.Number.Hex */
-  ".highlight .mi": { "color": "#d08770" }, /* Literal.Number.Integer */
-  ".highlight .mo": { "color": "#d08770" }, /* Literal.Number.Oct */
-  ".highlight .sb": { "color": "#a3be8c" }, /* Literal.String.Backtick */
-  ".highlight .sc": { "color": "#eff1f5" }, /* Literal.String.Char */
-  ".highlight .sd": { "color": "#65737e" }, /* Literal.String.Doc */
-  ".highlight .s2": { "color": "#a3be8c" }, /* Literal.String.Double */
-  ".highlight .se": { "color": "#d08770" }, /* Literal.String.Escape */
-  ".highlight .sh": { "color": "#a3be8c" }, /* Literal.String.Heredoc */
-  ".highlight .si": { "color": "#d08770" }, /* Literal.String.Interpol */
-  ".highlight .sx": { "color": "#a3be8c" }, /* Literal.String.Other */
-  ".highlight .sr": { "color": "#a3be8c" }, /* Literal.String.Regex */
-  ".highlight .s1": { "color": "#a3be8c" }, /* Literal.String.Single */
-  ".highlight .ss": { "color": "#a3be8c" }, /* Literal.String.Symbol */
-  ".highlight .bp": { "color": "#eff1f5" }, /* Name.Builtin.Pseudo */
-  ".highlight .vc": { "color": "#bf616a" }, /* Name.Variable.Class */
-  ".highlight .vg": { "color": "#bf616a" }, /* Name.Variable.Global */
-  ".highlight .vi": { "color": "#bf616a" }, /* Name.Variable.Instance */
-  ".highlight .il": { "color": "#d08770" }, /* Literal.Number.Integer.Long */
-
-  /* Elegant CodeMirror theme */
-  /* https://codemirror.net/theme/elegant.css */
-
-  ".cm-s-elegant span.cm-number, .cm-s-elegant span.cm-string, .cm-s-elegant span.cm-atom": {
-    color: "#762"
+  /**
+   * ECOLOGY PLAYGROUND THEME
+   * "
+   *  Using Zenburn color palette from the Emacs Zenburn Theme
+   *  https://github.com/bbatsov/zenburn-emacs/blob/master/zenburn-theme.el
+   *
+   *  Also using parts of https://github.com/xavi/coderay-lighttable-theme
+   * "
+   * From: https://github.com/wisenomad/zenburn-lighttable-theme/blob/master/zenburn.css
+   */
+  ".cm-s-elegant .CodeMirror-gutters": {
+    background: `${settings.mud} !important`
   },
-  ".cm-s-elegant span.cm-comment": {
-    color: "#262",
-    fontStyle: "italic",
-    lineHeight: 1
+  ".cm-s-elegant .CodeMirror-foldgutter-open, .CodeMirror-foldgutter-folded": {
+    color: "#999"
   },
-  ".cm-s-elegant span.cm-meta": {
-    color: "#555",
-    fontStyle: "italic",
-    lineHeight: 1
+  ".cm-s-elegant .CodeMirror-cursor": {
+    borderLeft: "1px solid white"
   },
-  ".cm-s-elegant span.cm-variable": {
-    color: "black"
-  },
-  ".cm-s-elegant span.cm-variable-2": {
-    color: "#b11"
-  },
-  ".cm-s-elegant span.cm-qualifier": {
-    color: "#555"
-  },
-  ".cm-s-elegant span.cm-keyword": {
-    color: "#730"
+  ".cm-s-elegant": {
+    backgroundColor: settings.mud,
+    color: "#dcdccc"
   },
   ".cm-s-elegant span.cm-builtin": {
-    color: "#30a"
+    color: "#dcdccc",
+    fontWeight: "bold"
   },
-  ".cm-s-elegant span.cm-link": {
-    color: "#762"
+  ".cm-s-elegant span.cm-comment": {
+    color: "#7f9f7f"
   },
-  ".cm-s-elegant span.cm-error": {
-    backgroundColor: "#fdd"
+  ".cm-s-elegant span.cm-keyword": {
+    color: "#f0dfaf",
+    fontWeight: "bold"
+  },
+  ".cm-s-elegant span.cm-atom": {
+    color: "#bfebbf"
+  },
+  ".cm-s-elegant span.cm-def": {
+    color: "#dcdccc"
+  },
+  ".cm-s-elegant span.cm-variable": {
+    color: "#dfaf8f"
+  },
+  ".cm-s-elegant span.cm-variable-2": {
+    color: "#dcdccc"
+  },
+  ".cm-s-elegant span.cm-string": {
+    color: "#cc9393"
+  },
+  ".cm-s-elegant span.cm-string-2": {
+    color: "#cc9393"
+  },
+  ".cm-s-elegant span.cm-number": {
+    color: "#dcdccc"
+  },
+  ".cm-s-elegant span.cm-tag": {
+    color: "#93e0e3"
+  },
+  ".cm-s-elegant span.cm-property": {
+    color: "#dfaf8f"
+  },
+  ".cm-s-elegant span.cm-attribute": {
+    color: "#dfaf8f"
+  },
+  ".cm-s-elegant span.cm-qualifier": {
+    color: "#7cb8bb"
+  },
+  ".cm-s-elegant span.cm-meta": {
+    color: "#f0dfaf"
+  },
+  ".cm-s-elegant span.cm-header": {
+    color: "#f0efd0"
+  },
+  ".cm-s-elegant span.cm-operator": {
+    color: "#f0efd0"
+  },
+  ".cm-s-elegant span.CodeMirror-matchingbracket": {
+    boxSizing: "border-box",
+    background: "transparent",
+    borderBottom: "1px solid"
+  },
+  ".cm-s-elegant span.CodeMirror-nonmatchingbracket": {
+    borderBottom: "1px solid",
+    background: "none"
+  },
+  ".cm-s-elegant .CodeMirror-activeline": {
+    background: "#000000"
   },
   ".cm-s-elegant .CodeMirror-activeline-background": {
-    background: "#e8f2ff"
+    background: "#000000"
   },
-  ".cm-s-elegant .CodeMirror-matchingbracket": {
-    outline: "1px solid grey",
-    color: "black !important"
+  ".cm-s-elegant div.CodeMirror-selected": {
+    background: "#545454"
+  },
+  ".cm-s-elegant .CodeMirror-focused div.CodeMirror-selected": {
+    background: "#4f4f4f"
   }
 };

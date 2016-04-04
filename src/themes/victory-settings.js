@@ -20,6 +20,7 @@ export default {
   darkerSand: "#807973",
   darkestSand: "#67615c",
   // Mud
+  palerMud: "#736357",
   paleMud: "#4d4945",
   mud: "#34302e",
   darkMud: "#181615",
