@@ -22,6 +22,7 @@ export default {
     lineHeight: 1.4,
     margin: 0,
     color: settings.mud,
+    counterReset: "interactive",
     boxSizing: "border-box"
   },
   "html, body": {
@@ -216,7 +217,7 @@ export default {
   },
   ".Ecology code": {
     fontFamily: settings.monospace,
-    background: settings.whiteSand,
+    background: settings.palestSand,
     color: settings.mud,
     borderRadius: 3,
     padding: "0 5px"
@@ -283,7 +284,8 @@ export default {
     marginBottom: "32px"
   },
   ".Interactive .playgroundPreview:after": {
-    content: "'Fig. 1.'",
+    counterIncrement: "interactive",
+    content: "'Fig. ' counter(interactive) '.'",
     position: "absolute",
     right: 0,
     bottom: 0,
@@ -319,31 +321,35 @@ export default {
   ".Prop-type": {
     color: settings.darkSand,
     display: "block",
+    fontFamily: settings.sansSerif,
     fontStyle: "italic",
-    lineHeight: "1em"
+    lineHeight: 1.3
   },
   ".Prop-description": {
     display: "block",
-    lineHeight: "1.3em",
-    marginBottom: "0.5em"
+    maxWidth: "760px",
+    lineHeight: 1.45
   },
   ".Prop-examples, .Prop-default": {
+    marginTop: settings.gutter,
     display: "block",
-    lineHeight: "1.3em"
+    lineHeight: 1.45
   },
   ".Prop-examples-title, .Prop-default-title": {
-    textTransform: "uppercase",
+    paddingRight: "1em",
+    fontFamily: settings.sansSerif,
     fontSize: "0.85em",
     fontWeight: "bold",
     color: settings.darkSand,
-    letterSpacing: "0.04em"
+    letterSpacing: "0.04em",
+    textTransform: "uppercase"
   },
   ".Prop-examples-value": {
     fontFamily: settings.monospace
   },
   ".Prop-default-value": {
     fontFamily: settings.monospace,
-    color: "#4d4945"
+    color: settings.paleMud
   },
   /* Utilities */
   ".u-textCenter": {
@@ -355,8 +361,8 @@ export default {
   ".u-textRight": {
     textAlign: "right"
   },
-  ".u-marginModule > *:last-child": {
-    marginBottom: 0
+  ".u-marginModule > *:first-child": {
+    marginTop: 0
   },
   mediaQueries: {
     [settings.mediaQueries.medium]: {
@@ -372,12 +378,13 @@ export default {
         fontSize: "24px"
       },
       ".Interactive .playground": {
-        flexWrap: "wrap"
+        flexWrap: "wrap",
+        alignItems: "flex-start"
       },
       ".Interactive .playgroundCode": {
         display: "flex",
         flex: "1 1 auto",
-        marginTop: `${settings.gutter}px`
+        marginTop: `${settings.gutter*3}px`
       },
       ".Interactive .playgroundPreview": {
         display: "flex",
