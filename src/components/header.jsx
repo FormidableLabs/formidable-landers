@@ -55,4 +55,4 @@ Header.defaultProps = {
   children: "Need React.js consulting? Let’s talk."
 };
 
-export default Radium(Header);
+export default Radium(Header); //eslint-disable-line new-cap

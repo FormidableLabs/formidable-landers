@@ -54,7 +54,7 @@ export default {
     verticalAlign: "middle"
   },
   "th, td": {
-    border: "1px solid " + settings.paleSand,
+    border: `1px solid ${settings.paleSand}`,
     padding: "0.425em 0.75em",
     verticalAlign: "top"
   },
@@ -80,7 +80,7 @@ export default {
    * Headlines/Headings
    */
   "h1, h2": {
-    marginTop: `${settings.gutter*2.5}px`,
+    marginTop: `${settings.gutter * 2.5}px`,
     fontSize: "40px",
     fontFamily: settings.serifHeadline,
     fontWeight: "normal",
@@ -93,7 +93,7 @@ export default {
     textAlign: "left"
   },
   "h3": {
-    marginTop: `${settings.gutter*2}px`,
+    marginTop: `${settings.gutter * 2}px`,
     fontSize: "0.75em",
     fontFamily: settings.serif,
     fontWeight: "normal",
@@ -117,19 +117,22 @@ export default {
   /*
    * Links
    */
-  "a": {
-    cursor: "pointer",
+  "a:link": {
     color: settings.darkMud,
     fontWeight: 700,
     textDecoration: "none",
     borderBottom: `1px solid ${settings.darkMud}`,
-    transition: "color 0.2s ease, border-bottom 0.5s ease"
+    transition: "color 10s cubic-bezier(0.22, 0.61, 0.36, 1), border-bottom 1s ease"
+  },
+  "a:visited": {
+    color: settings.paleMud,
+    borderBottom: `1px dotted ${settings.paleSand}`
   },
   "a:hover, a:focus": {
     cursor: "pointer",
     color: settings.red,
-    borderBottom: `1px solid ${settings.red}`,
-    transition: "color 0.2s ease, box-shadow 0.5s ease"
+    borderBottomColor: settings.red,
+    transition: "color 200ms ease, border-bottom 200ms ease"
   },
   ".Link--unstyled": {
     border: "none",
@@ -144,7 +147,7 @@ export default {
    */
   ".Button": {
     backgroundColor: "transparent",
-    border: "3px solid " + settings.palerSand,
+    border: `3px solid ${settings.palerSand}`,
     boxShadow: "none",
     color: settings.darkestSand,
     fontFamily: settings.sansSerif,
@@ -160,19 +163,6 @@ export default {
     outline: "none",
     transition: "color 0.2s ease, border-color 0.7s ease"
   },
-  ".Button--spotlight": {
-    backgroundColor: settings.mud,
-    borderColor: settings.mud,
-    color: settings.palerSand,
-    fontSize: "1.25rem",
-    transition: "color 0.2s ease, background-color 0.7s ease, border-color 0.7s ease"
-  },
-  ".Button--spotlight:hover, .Button--spotlight:focus": {
-    backgroundColor: settings.red,
-    borderColor: settings.red,
-    color: "#ffffff",
-    transition: "color 0.2s ease, background-color 0.7s ease, border-color 0.7s ease"
-  },
   /*
    * Layout/Grid
    */
@@ -187,7 +177,7 @@ export default {
    * Ecology
    */
   ".Ecology p, .Ecology h2, .Ecology h3, .Ecology h4, .Ecology h5, .Ecology h6": {
-   maxWidth: "760px" // Ideal 60–70 characters per line
+    maxWidth: "760px" // Ideal 60–70 characters per line
   },
   ".Ecology ul": {
     paddingLeft: "24px",
@@ -207,7 +197,7 @@ export default {
     position: "absolute",
     fontSize: "8px",
     borderRadius: "50%",
-    border: "1px solid " + settings.red,
+    border: `1px solid ${settings.red}`,
     left: "-24px",
     top: "11px"
   },
@@ -215,11 +205,12 @@ export default {
     marginTop: "0.25em",
     marginBottom: "0px"
   },
-  ".Ecology code": {
-    fontFamily: settings.monospace,
+  ".Ecology code, .Home code": {
     background: settings.palestSand,
-    color: settings.mud,
     borderRadius: 3,
+    color: settings.mud,
+    fontFamily: settings.monospace,
+    fontSize: "0.85em",
     padding: "0 5px"
   },
   ".highlight code": {
@@ -229,6 +220,10 @@ export default {
   /*
    * Ecology README text wrangling
    */
+  ".Overview h1:first-child": {
+    marginTop: 0,
+    borderBottom: 0
+  },
   ".Overview pre": {
     overflow: "hidden" // Hide horizontal scrollbars for playgrounds.
   },
@@ -257,10 +252,10 @@ export default {
     flexWrap: "nowrap",
     alignItems: "center",
     justifyContent: "space-between",
-    padding: `${settings.gutter*3}px 0 ${settings.gutter*3}px ${settings.gutter}px`
+    padding: `${settings.gutter * 3}px 0 ${settings.gutter * 3}px ${settings.gutter}px`
   },
   ".Interactive .playgroundCode, .Interactive .playgroundPreview": {
-    padding: `${settings.gutter}px ${settings.gutter*2}px`
+    padding: `${settings.gutter}px ${settings.gutter * 2}px`
   },
   ".Interactive .playgroundCode": {
     flex: "1 1 100%",
@@ -296,6 +291,14 @@ export default {
     fontSize: "18px",
     lineHeight: 1,
     textAlign: "center"
+  },
+  ".Interactive .playgroundError": {
+    backgroundColor: settings.paleRed,
+    color: settings.whiteSand,
+    fontFamily: settings.monospace,
+    fontSize: "18px",
+    fontWeight: "normal",
+    padding: `${settings.gutter}px`
   },
   ".Interactive pre, .CodeMirror-code": {
     fontFamily: settings.monospace,
@@ -371,7 +374,7 @@ export default {
         lineHeight: 1.5
       },
       "h1, h2": {
-        marginTop: `${settings.gutter*3}px`,
+        marginTop: `${settings.gutter * 3}px`,
         fontSize: "48px"
       },
       ".Ecology p": {
@@ -384,7 +387,7 @@ export default {
       ".Interactive .playgroundCode": {
         display: "flex",
         flex: "1 1 auto",
-        marginTop: `${settings.gutter*3}px`
+        marginTop: `${settings.gutter}px`
       },
       ".Interactive .playgroundPreview": {
         display: "flex",
@@ -408,8 +411,8 @@ export default {
   ".cm-s-elegant .CodeMirror-foldgutter-open, .CodeMirror-foldgutter-folded": {
     color: "#999"
   },
-  ".cm-s-elegant .CodeMirror-cursor": {
-    borderLeft: "1px solid white"
+  ".cm-s-elegant div.CodeMirror-cursor": {
+    borderLeft: "1px solid white !important"
   },
   ".cm-s-elegant": {
     backgroundColor: settings.mud,
@@ -433,25 +436,25 @@ export default {
     color: "#dcdccc"
   },
   ".cm-s-elegant span.cm-variable": {
-    color: "#dfaf8f"
+    color: settings.palerSand
   },
   ".cm-s-elegant span.cm-variable-2": {
     color: "#dcdccc"
   },
   ".cm-s-elegant span.cm-string": {
-    color: "#cc9393"
+    color: settings.whiteSand
   },
   ".cm-s-elegant span.cm-string-2": {
-    color: "#cc9393"
+    color: settings.darkerSand
   },
   ".cm-s-elegant span.cm-number": {
-    color: "#dcdccc"
+    color: settings.whiteSand
   },
   ".cm-s-elegant span.cm-tag": {
     color: "#93e0e3"
   },
   ".cm-s-elegant span.cm-property": {
-    color: "#dfaf8f"
+    color: settings.sand
   },
   ".cm-s-elegant span.cm-attribute": {
     color: "#dfaf8f"
@@ -465,8 +468,8 @@ export default {
   ".cm-s-elegant span.cm-header": {
     color: "#f0efd0"
   },
-  ".cm-s-elegant span.cm-operator": {
-    color: "#f0efd0"
+  ".cm-s-elegant span.cm-operator, .CodeMirror pre": {
+    color: settings.darkerSand
   },
   ".cm-s-elegant span.CodeMirror-matchingbracket": {
     boxSizing: "border-box",
@@ -484,9 +487,9 @@ export default {
     background: "#000000"
   },
   ".cm-s-elegant div.CodeMirror-selected": {
-    background: "#545454"
+    background: settings.darkMud
   },
   ".cm-s-elegant .CodeMirror-focused div.CodeMirror-selected": {
-    background: "#4f4f4f"
+    background: settings.paleMud
   }
 };

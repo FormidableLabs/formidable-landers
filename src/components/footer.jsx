@@ -81,4 +81,4 @@ Footer.defaultProps = {
   logoColor: "black"
 };
 
-export default Radium(Footer);
+export default Radium(Footer); //eslint-disable-line new-cap
