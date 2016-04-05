@@ -160,19 +160,6 @@ export default {
     outline: "none",
     transition: "color 0.2s ease, border-color 0.7s ease"
   },
-  ".Button--spotlight": {
-    backgroundColor: settings.mud,
-    borderColor: settings.mud,
-    color: settings.palerSand,
-    fontSize: "1.25rem",
-    transition: "color 0.2s ease, background-color 0.7s ease, border-color 0.7s ease"
-  },
-  ".Button--spotlight:hover, .Button--spotlight:focus": {
-    backgroundColor: settings.red,
-    borderColor: settings.red,
-    color: "#ffffff",
-    transition: "color 0.2s ease, background-color 0.7s ease, border-color 0.7s ease"
-  },
   /*
    * Layout/Grid
    */
@@ -297,6 +284,14 @@ export default {
     lineHeight: 1,
     textAlign: "center"
   },
+  ".Interactive .playgroundError": {
+    backgroundColor: settings.paleRed,
+    color: settings.whiteSand,
+    fontFamily: settings.monospace,
+    fontSize: "18px",
+    fontWeight: "normal",
+    padding: `${settings.gutter}px`
+  },
   ".Interactive pre, .CodeMirror-code": {
     fontFamily: settings.monospace,
     fontSize: "18px",
@@ -384,7 +379,7 @@ export default {
       ".Interactive .playgroundCode": {
         display: "flex",
         flex: "1 1 auto",
-        marginTop: `${settings.gutter*3}px`
+        marginTop: `${settings.gutter}px`
       },
       ".Interactive .playgroundPreview": {
         display: "flex",
@@ -408,8 +403,8 @@ export default {
   ".cm-s-elegant .CodeMirror-foldgutter-open, .CodeMirror-foldgutter-folded": {
     color: "#999"
   },
-  ".cm-s-elegant .CodeMirror-cursor": {
-    borderLeft: "1px solid white"
+  ".cm-s-elegant div.CodeMirror-cursor": {
+    borderLeft: "1px solid white !important"
   },
   ".cm-s-elegant": {
     backgroundColor: settings.mud,
@@ -433,25 +428,25 @@ export default {
     color: "#dcdccc"
   },
   ".cm-s-elegant span.cm-variable": {
-    color: "#dfaf8f"
+    color: settings.palerSand
   },
   ".cm-s-elegant span.cm-variable-2": {
     color: "#dcdccc"
   },
   ".cm-s-elegant span.cm-string": {
-    color: "#cc9393"
+    color: settings.whiteSand
   },
   ".cm-s-elegant span.cm-string-2": {
-    color: "#cc9393"
+    color: settings.darkerSand
   },
   ".cm-s-elegant span.cm-number": {
-    color: "#dcdccc"
+    color: settings.whiteSand
   },
   ".cm-s-elegant span.cm-tag": {
     color: "#93e0e3"
   },
   ".cm-s-elegant span.cm-property": {
-    color: "#dfaf8f"
+    color: settings.sand
   },
   ".cm-s-elegant span.cm-attribute": {
     color: "#dfaf8f"
@@ -465,8 +460,8 @@ export default {
   ".cm-s-elegant span.cm-header": {
     color: "#f0efd0"
   },
-  ".cm-s-elegant span.cm-operator": {
-    color: "#f0efd0"
+  ".cm-s-elegant span.cm-operator, .CodeMirror pre": {
+    color: settings.darkerSand
   },
   ".cm-s-elegant span.CodeMirror-matchingbracket": {
     boxSizing: "border-box",
@@ -484,9 +479,9 @@ export default {
     background: "#000000"
   },
   ".cm-s-elegant div.CodeMirror-selected": {
-    background: "#545454"
+    background: settings.darkMud
   },
   ".cm-s-elegant .CodeMirror-focused div.CodeMirror-selected": {
-    background: "#4f4f4f"
+    background: settings.paleMud
   }
 };
