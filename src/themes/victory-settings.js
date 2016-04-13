@@ -35,7 +35,8 @@ export default {
   // Layout
   // ---------------------
   mediaQueries: {
-    medium: "only screen and (min-width: 800px)"
+    medium: "only screen and (min-width: 960px)",
+    large: "only screen and (min-width: 1260px)"
   }
 };
 /* eslint-enable max-len */

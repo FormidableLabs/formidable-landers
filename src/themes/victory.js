@@ -125,7 +125,7 @@ export default {
     transition: "color 10s cubic-bezier(0.22, 0.61, 0.36, 1), border-bottom 1s ease"
   },
   "a:visited": {
-    color: settings.paleMud,
+    color: settings.palerMud,
     borderBottom: `1px dotted ${settings.paleSand}`
   },
   "a:hover, a:focus": {
@@ -229,11 +229,10 @@ export default {
   },
   ".Overview pre code": { // Non-ecology code blocks
     display: "block",
-    padding: "16px",
-    background: settings.whiteSand,
+    padding: `${settings.gutter}px ${settings.gutter}px`,
+    background: settings.mud,
+    color: settings.whiteSand,
     fontFamily: settings.monospace,
-    fontSize: "1rem",
-    lineHeight: 1.2,
     border: `1px solid ${settings.palestSand}`
   },
   /*
@@ -249,17 +248,14 @@ export default {
   ".Interactive .playground": {
     display: "flex",
     flexDirection: "row",
-    flexWrap: "nowrap",
-    alignItems: "center",
-    justifyContent: "space-between",
-    padding: `${settings.gutter * 3}px 0 ${settings.gutter * 3}px ${settings.gutter}px`
-  },
-  ".Interactive .playgroundCode, .Interactive .playgroundPreview": {
-    padding: `${settings.gutter}px ${settings.gutter * 2}px`
+    flexWrap: "wrap",
+    alignItems: "flex-start",
+    padding: `${settings.gutter}px ${settings.gutter * 0.5}px`
   },
   ".Interactive .playgroundCode": {
-    flex: "1 1 100%",
+    flex: "0 0 100%",
     order: "2",
+    padding: `${settings.gutter}px ${settings.gutter}px`,
     backgroundColor: settings.mud,
     color: settings.whiteSand,
     borderLeft: `4px solid ${settings.darkerSand}`,
@@ -273,10 +269,12 @@ export default {
        11px -1px 0 0 ${settings.darkerSand}`
   },
   ".Interactive .playgroundPreview": {
-    flex: "1 1 100%",
+    flex: "0 0 100%",
     order: "1",
+    padding: `0 0 ${settings.gutter * 2}px 0`,
     position: "relative",
-    marginBottom: "32px"
+    marginBottom: "32px",
+    textAlign: "center"
   },
   ".Interactive .playgroundPreview:after": {
     counterIncrement: "interactive",
@@ -311,6 +309,10 @@ export default {
   /*
   * Documentation/Props
   */
+  ".Documentation": {
+    paddingRight: 0,
+    paddingLeft: 0
+  },
   ".Documentation h1, .Documentation h2, .Documentation h3": {
     fontFamily: settings.serif,
     fontWeight: "normal"
@@ -377,12 +379,22 @@ export default {
         marginTop: `${settings.gutter * 3}px`,
         fontSize: "48px"
       },
+      ".Documentation": {
+        paddingRight: `${settings.gutter}px`
+      },
       ".Ecology p": {
         fontSize: "24px"
-      },
+      }
+    },
+    [settings.mediaQueries.large]: {
       ".Interactive .playground": {
-        flexWrap: "wrap",
-        alignItems: "flex-start"
+        flexWrap: "nowrap",
+        justifyContent: "space-between",
+        marginLeft: `${settings.gutter}px`,
+        padding: `${settings.gutter * 3}px 0`
+      },
+      ".Interactive .playgroundCode, .Interactive .playgroundPreview": {
+        padding: `${settings.gutter * 2}px ${settings.gutter}px`
       },
       ".Interactive .playgroundCode": {
         display: "flex",
@@ -396,14 +408,7 @@ export default {
     }
   },
   /**
-   * ECOLOGY PLAYGROUND THEME
-   * "
-   *  Using Zenburn color palette from the Emacs Zenburn Theme
-   *  https://github.com/bbatsov/zenburn-emacs/blob/master/zenburn-theme.el
-   *
-   *  Also using parts of https://github.com/xavi/coderay-lighttable-theme
-   * "
-   * From: https://github.com/wisenomad/zenburn-lighttable-theme/blob/master/zenburn.css
+   * Ecology Playground Theme/Color Palette
    */
   ".cm-s-elegant .CodeMirror-gutters": {
     background: `${settings.mud} !important`
