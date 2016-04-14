@@ -390,7 +390,7 @@ export default {
       ".Interactive .playground": {
         flexWrap: "nowrap",
         justifyContent: "space-between",
-        marginLeft: `${settings.gutter}px`,
+        marginLeft: `${settings.gutter * -1}px`,
         padding: `${settings.gutter * 3}px 0`
       },
       ".Interactive .playgroundCode, .Interactive .playgroundPreview": {
@@ -399,7 +399,8 @@ export default {
       ".Interactive .playgroundCode": {
         display: "flex",
         flex: "1 1 auto",
-        marginTop: `${settings.gutter}px`
+        marginTop: `${settings.gutter}px`,
+        marginRight: `${settings.gutter}px`
       },
       ".Interactive .playgroundPreview": {
         display: "flex",
