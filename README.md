@@ -63,13 +63,13 @@ All the available customizations:
 
 | Project | Source      | Lander |
 | ------- | ----------- | ------ |
-| Builder | [FormidableLabs/builder-docs](https://github.com/FormidableLabs/builder-docs) | http://builder.formidable.com |
+| Builder | [FormidableLabs/builder-docs](https://github.com/FormidableLabs/builder-docs) | http://formidable.com/open-source/builder |
 | Ecology | [FormidableLabs/ecology](https://github.com/FormidableLabs/ecology) | - |
 | ES6 Interactive Guide | [FormidableLabs/es6-interactive-guide](https://github.com/FormidableLabs/es6-interactive-guide) | http://stack.formidable.com/es6-interactive-guide/ |
-| Stack. | [FormidableLabs/formidablelabs.github.io ](https://github.com/FormidableLabs/victory) | http://stack.formidable.com/ |
+| Open Source | [FormidableLabs/formidablelabs.github.io ](https://github.com/FormidableLabs/formidablelabs.github.io) | http://stack.formidable.com/ |
 | Radium | [FormidableLabs/radium](https://github.com/FormidableLabs/radium) | http://stack.formidable.com/radium/ |
-| Spectacle | [FormidableLabs/spectacle](https://github.com/FormidableLabs/spectacle) | http://stack.formidable.com/spectacle/ |
-| Victory | [FormidableLabs/victory](https://github.com/FormidableLabs/victory) | http://victory.formidable.com/ |
+| Spectacle | [FormidableLabs/spectacle](https://github.com/FormidableLabs/spectacle) | http://formidable.com/open-source/spectacle/ |
+| Victory | [FormidableLabs/victory](https://github.com/FormidableLabs/victory) | http://formidable.com/open-source/victory |
 
 #### Notes
 - All projects with landers (except Radium) are built on React
