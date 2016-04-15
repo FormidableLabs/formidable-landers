@@ -243,7 +243,7 @@ export default {
    *    |- .playgroundPreview
    */
   ".Interactive": {
-    minHeight: "300px"  // TODO: Extract for server-side rendering
+    minHeight: "300px"
   },
   ".Interactive .playground": {
     display: "flex",
@@ -275,6 +275,10 @@ export default {
     position: "relative",
     marginBottom: "32px",
     textAlign: "center"
+  },
+  ".Interactive .playgroundPreview svg": {
+    maxHeight: "500px",
+    margin: "0 auto"
   },
   ".Interactive .playgroundPreview:after": {
     counterIncrement: "interactive",
@@ -393,18 +397,23 @@ export default {
         marginLeft: `${settings.gutter * -1}px`,
         padding: `${settings.gutter * 3}px 0`
       },
-      ".Interactive .playgroundCode, .Interactive .playgroundPreview": {
-        padding: `${settings.gutter * 2}px ${settings.gutter}px`
-      },
       ".Interactive .playgroundCode": {
         display: "flex",
-        flex: "1 1 auto",
-        marginTop: `${settings.gutter}px`,
-        marginRight: `${settings.gutter}px`
+        flex: "3 2 55%",
+        marginTop: `${settings.gutter * 2}px`,
+        marginRight: `${settings.gutter}px`,
+        padding: `${settings.gutter}px`
       },
       ".Interactive .playgroundPreview": {
         display: "flex",
-        flex: "0 1 auto"
+        flex: "1 2 45%",
+        padding: `${settings.gutter}px`
+      },
+      ".Interactive .playgroundPreview svg": {
+        maxHeight: "none"
+      },
+      ".Interactive .playgroundPreview div:first-child": {
+        width: "100%" // wrapper divs: the worst
       }
     }
   },
