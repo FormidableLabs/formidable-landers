@@ -122,7 +122,7 @@ export default {
     fontWeight: 700,
     textDecoration: "none",
     borderBottom: `1px solid ${settings.darkMud}`,
-    transition: "color 10s cubic-bezier(0.22, 0.61, 0.36, 1), border-bottom 1s ease"
+    transition: "color 5s cubic-bezier(0.22, 0.61, 0.36, 1), border-bottom 1s ease"
   },
   "a:visited": {
     color: settings.palerMud,
@@ -132,7 +132,7 @@ export default {
     cursor: "pointer",
     color: settings.red,
     borderBottomColor: settings.red,
-    transition: "color 200ms ease, border-bottom 200ms ease"
+    transition: "color 200ms cubic-bezier(0.22, 0.61, 0.36, 1), border-bottom 200ms ease"
   },
   ".Link--unstyled": {
     border: "none",
