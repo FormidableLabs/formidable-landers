@@ -18,21 +18,21 @@ describe("Header", () => {
   });
 
   describe("call to action", () => {
-    it("is a mailto:hello@formidable.com link", () => {
+    it("links to our careers pages", () => {
       const headerLink = shallow(<Header />).find('a');
       expect(headerLink).to.have.length(1);
-      expect(headerLink.props()).to.have.property("href", "mailto:hello@formidable.com");
+      expect(headerLink.props()).to.have.property("href", "http://formidable.com/careers/");
     });
 
     it("has a default message", () => {
       const headerLink = shallow(<Header />).find('a');
-      expect(headerLink.text()).to.equal("Need React.js consulting? Let’s talk.");
+      expect(headerLink.text()).to.equal("We’re hiring!");
     });
 
     it("accepts a custom message", () => {
       const headerLink = shallow(<Header>Need help leveling up? Contact us!</Header>).find('a');
       expect(headerLink.text()).to.equal("Need help leveling up? Contact us!");
-      expect(headerLink.props()).to.have.property("href", "mailto:hello@formidable.com");
+      expect(headerLink.props()).to.have.property("href", "http://formidable.com/careers/");
     });
 
     it("has default styles", () => {

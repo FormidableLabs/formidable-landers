@@ -31,12 +31,12 @@ class Header extends React.Component {
         ]}>
         <span style={{display: "block", margin: "0 auto"}}>
           <a
-            key="fl-email"
-            href="mailto:hello@formidable.com"
-            style={[
-              headerStyles.link,
-              this.props.linkStyles && headerStyles.linkStyles
-            ]}>
+          key="fl-header"
+          href="http://formidable.com/careers/"
+          style={[
+            headerStyles.link,
+            this.props.linkStyles && headerStyles.linkStyles
+          ]}>
             {this.props.children}
           </a>
         </span>
@@ -52,7 +52,7 @@ Header.propTypes = {
 
 Header.defaultProps = {
   backgroundColor: "#ebe3db",
-  children: "Need React.js consulting? Let’s talk."
+  children: "We’re hiring!"
 };
 
 export default Radium(Header); //eslint-disable-line new-cap
