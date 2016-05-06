@@ -52,7 +52,7 @@ describe("Footer", () => {
   describe("hiring call to action", () => {
     it("links to our careers page", () => {
       const hiringLink = shallow(<Footer />).find("a").last();
-      expect(hiringLink.props()).to.have.property("href", "http://formidable.com/team/");
+      expect(hiringLink.props()).to.have.property("href", "http://formidable.com/careers/");
     });
 
     it("has default styles", () => {

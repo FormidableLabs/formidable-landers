@@ -58,7 +58,7 @@ class Footer extends React.Component {
         <span style={[footerStyles.text]}>
           P.S. <a
           key="fl-hiring"
-          href="http://formidable.com/team/"
+          href="http://formidable.com/careers/"
           style={[this.props.linkStyles && footerStyles.linkStyles]}>
             We’re hiring
           </a>.
