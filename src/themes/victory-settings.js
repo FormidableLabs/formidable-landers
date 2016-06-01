@@ -3,7 +3,7 @@ export default {
   // ---------------------
   // Fonts
   // ---------------------
-  sansSerif: "'Karla', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+  sansSerif: "'Karla', 'Helvetica Neue', Helvetica, sans-serif",
   serif: "'Georgia', serif",
   monospace: "'Source Code Pro', 'Inconsolata', 'Courier New', 'Courier', monospace",
   serifHeadline: "'Didot', 'Bodoni MT', 'Cochin', 'Baskerville', 'Goudy Old Style', 'Bitstream Charter', serif",

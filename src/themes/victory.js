@@ -235,29 +235,7 @@ export default {
     fontFamily: settings.monospace,
     border: `1px solid ${settings.palestSand}`
   },
-  /*
-   * Interactive/Component Playground
-   * .Interactive
-   * |- .playground
-   *    |- .playgroundCode
-   *    |- .playgroundPreview
-   */
-  ".Interactive": {
-    minHeight: "300px"
-  },
-  ".Interactive .playground": {
-    display: "flex",
-    flexDirection: "row",
-    flexWrap: "wrap",
-    alignItems: "flex-start",
-    padding: `${settings.gutter}px ${settings.gutter * 0.5}px`
-  },
-  ".Interactive .playgroundCode": {
-    flex: "0 0 100%",
-    order: "2",
-    padding: `${settings.gutter}px ${settings.gutter}px`,
-    backgroundColor: settings.mud,
-    color: settings.whiteSand,
+  ".fancyBorder": {
     borderLeft: `4px solid ${settings.darkerSand}`,
     borderTop: `4px solid ${settings.darkerSand}`,
     boxShadow:
@@ -268,6 +246,30 @@ export default {
        11px 11px 0 0 ${settings.darkerSand},
        11px -1px 0 0 ${settings.darkerSand}`
   },
+  /*
+   * Interactive/Component Playground
+   * .Interactive
+   * |- .playground
+   *    |- .playgroundCode
+   *    |- .playgroundPreview
+   */
+  ".Interactive": {
+    backgroundColor: settings.whiteSand,
+    minHeight: "150px"
+  },
+  ".Interactive .playground": {
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    padding: `${settings.gutter}px ${settings.gutter * 0.5}px`
+  },
+  ".Interactive .playgroundCode": {
+    flex: "0 0 100%",
+    order: "2",
+    padding: `${settings.gutter}px ${settings.gutter}px`,
+    backgroundColor: settings.mud,
+    color: settings.whiteSand
+  },
   ".Interactive .playgroundPreview": {
     flex: "0 0 100%",
     order: "1",
@@ -277,7 +279,7 @@ export default {
     textAlign: "center"
   },
   ".Interactive .playgroundPreview svg": {
-    maxHeight: "500px",
+    maxHeight: "450px",
     margin: "0 auto"
   },
   ".Interactive .playgroundPreview:after": {
@@ -291,6 +293,7 @@ export default {
     fontFamily: settings.serif,
     fontWeight: "normal",
     fontSize: "18px",
+    margin: `${settings.gutter * 2}px`,
     lineHeight: 1,
     textAlign: "center"
   },
@@ -388,32 +391,46 @@ export default {
       },
       ".Ecology p": {
         fontSize: "24px"
+      },
+      ".Home .Interactive .playgroundCode": {
+        maxHeight: "500px",
+        overflowY: "scroll"
+      },
+      ".Home .Interactive .playgroundPreview": {
+        maxHeight: "500px"
+      },
+      ".Home .Interactive .playgroundPreview div:first-child": {
+        // wrapper divs: the worst
+        margin: "0 auto",
+        maxHeight: "400px"
       }
     },
     [settings.mediaQueries.large]: {
       ".Interactive .playground": {
         flexWrap: "nowrap",
+        alignItems: "stretch",
         justifyContent: "space-between",
         marginLeft: `${settings.gutter * -1}px`,
-        padding: `${settings.gutter * 3}px 0`
+        padding: 0
       },
       ".Interactive .playgroundCode": {
         display: "flex",
         flex: "3 2 55%",
-        marginTop: `${settings.gutter * 2}px`,
-        marginRight: `${settings.gutter}px`,
-        padding: `${settings.gutter}px`
+        margin: 0,
+        padding: `${settings.gutter}px ${settings.gutter * 2}px ${settings.gutter}px`
       },
       ".Interactive .playgroundPreview": {
         display: "flex",
         flex: "1 2 45%",
+        margin: 0,
         padding: `${settings.gutter}px`
       },
       ".Interactive .playgroundPreview svg": {
-        maxHeight: "none"
+        maxHeight: "inherit"
       },
       ".Interactive .playgroundPreview div:first-child": {
-        width: "100%" // wrapper divs: the worst
+        // wrapper divs: the worst
+        width: "100%"
       }
     }
   },
