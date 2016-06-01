@@ -93,8 +93,8 @@ export default {
     textAlign: "left"
   },
   "h3": {
-    marginTop: `${settings.gutter * 2}px`,
-    fontSize: "0.75em",
+    marginTop: `${settings.gutter * 2.5}px`,
+    fontSize: "0.9em",
     fontFamily: settings.serif,
     fontWeight: "normal",
     lineHeight: 1.5,
@@ -122,7 +122,7 @@ export default {
     fontWeight: 700,
     textDecoration: "none",
     borderBottom: `1px solid ${settings.darkMud}`,
-    transition: "color 5s cubic-bezier(0.22, 0.61, 0.36, 1), border-bottom 1s ease"
+    transition: "color 195ms ease-in, border-bottom 250ms ease-in"
   },
   "a:visited": {
     color: settings.palerMud,
@@ -132,7 +132,7 @@ export default {
     cursor: "pointer",
     color: settings.red,
     borderBottomColor: settings.red,
-    transition: "color 200ms cubic-bezier(0.22, 0.61, 0.36, 1), border-bottom 200ms ease"
+    transition: "color 250ms ease-out, border-bottom 275ms ease-out"
   },
   ".Link--unstyled": {
     border: "none",
