@@ -3,7 +3,7 @@ export default {
   // ---------------------
   // Fonts
   // ---------------------
-  sansSerif: "'Karla', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+  sansSerif: "'Karla', 'Helvetica Neue', Helvetica, sans-serif",
   serif: "'Georgia', serif",
   monospace: "'Source Code Pro', 'Inconsolata', 'Courier New', 'Courier', monospace",
   serifHeadline: "'Didot', 'Bodoni MT', 'Cochin', 'Baskerville', 'Goudy Old Style', 'Bitstream Charter', serif",
@@ -32,11 +32,34 @@ export default {
   // ---------------------
   gutter: 20,
   // ---------------------
-  // Layout
+  // Media Queries
   // ---------------------
   mediaQueries: {
     medium: "only screen and (min-width: 960px)",
     large: "only screen and (min-width: 1260px)"
+  },
+  // ---------------------
+  // CodeMirror Theme
+  // ---------------------
+  codeMirror: {
+    bg: "#181615",
+    gray: "#707880",
+
+    blue: "#81A2BE",
+    cyan: "#a0cad0",
+    softCyan: "#8ABEB7",
+    green: "#83d38f",
+    lime: "#B5BD68",
+    orange: "#dab288",
+    pink: "#da93b4",
+    purple: "#b9a0ce",
+    red: "#da817c",
+    yellow: "#d3d398",
+    darkYellow: "#cdc38c",
+    sandStone: "#c2bdb2",
+
+    lace: "#f8f8f0",
+    softLace: "#e8e0d8"
   }
 };
 /* eslint-enable max-len */

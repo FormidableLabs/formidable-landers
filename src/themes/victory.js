@@ -93,8 +93,8 @@ export default {
     textAlign: "left"
   },
   "h3": {
-    marginTop: `${settings.gutter * 2}px`,
-    fontSize: "0.75em",
+    marginTop: `${settings.gutter * 2.5}px`,
+    fontSize: "0.9em",
     fontFamily: settings.serif,
     fontWeight: "normal",
     lineHeight: 1.5,
@@ -122,7 +122,7 @@ export default {
     fontWeight: 700,
     textDecoration: "none",
     borderBottom: `1px solid ${settings.darkMud}`,
-    transition: "color 5s cubic-bezier(0.22, 0.61, 0.36, 1), border-bottom 1s ease"
+    transition: "color 195ms ease-in, border-bottom 250ms ease-in"
   },
   "a:visited": {
     color: settings.palerMud,
@@ -132,7 +132,7 @@ export default {
     cursor: "pointer",
     color: settings.red,
     borderBottomColor: settings.red,
-    transition: "color 200ms cubic-bezier(0.22, 0.61, 0.36, 1), border-bottom 200ms ease"
+    transition: "color 250ms ease-out, border-bottom 275ms ease-out"
   },
   ".Link--unstyled": {
     border: "none",
@@ -235,29 +235,7 @@ export default {
     fontFamily: settings.monospace,
     border: `1px solid ${settings.palestSand}`
   },
-  /*
-   * Interactive/Component Playground
-   * .Interactive
-   * |- .playground
-   *    |- .playgroundCode
-   *    |- .playgroundPreview
-   */
-  ".Interactive": {
-    minHeight: "300px"
-  },
-  ".Interactive .playground": {
-    display: "flex",
-    flexDirection: "row",
-    flexWrap: "wrap",
-    alignItems: "flex-start",
-    padding: `${settings.gutter}px ${settings.gutter * 0.5}px`
-  },
-  ".Interactive .playgroundCode": {
-    flex: "0 0 100%",
-    order: "2",
-    padding: `${settings.gutter}px ${settings.gutter}px`,
-    backgroundColor: settings.mud,
-    color: settings.whiteSand,
+  ".fancyBorder": {
     borderLeft: `4px solid ${settings.darkerSand}`,
     borderTop: `4px solid ${settings.darkerSand}`,
     boxShadow:
@@ -268,6 +246,32 @@ export default {
        11px 11px 0 0 ${settings.darkerSand},
        11px -1px 0 0 ${settings.darkerSand}`
   },
+  /*
+   * Interactive/Component Playground
+   * .Interactive
+   * |- .playground
+   *    |- .playgroundCode
+   *    |- .playgroundPreview
+   */
+  ".Interactive": {
+    backgroundColor: settings.whiteSand,
+    margin: `${settings.gutter}px 0 ${settings.gutter * 2}px`,
+    minHeight: "150px",
+    width: "100%"
+  },
+  ".Interactive .playground": {
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    padding: 0
+  },
+  ".Interactive .playgroundCode": {
+    flex: "0 0 100%",
+    order: "2",
+    padding: `${settings.gutter}px ${settings.gutter}px`,
+    backgroundColor: settings.codeMirror.bg,
+    color: settings.whiteSand
+  },
   ".Interactive .playgroundPreview": {
     flex: "0 0 100%",
     order: "1",
@@ -277,7 +281,7 @@ export default {
     textAlign: "center"
   },
   ".Interactive .playgroundPreview svg": {
-    maxHeight: "500px",
+    maxHeight: "450px",
     margin: "0 auto"
   },
   ".Interactive .playgroundPreview:after": {
@@ -291,6 +295,7 @@ export default {
     fontFamily: settings.serif,
     fontWeight: "normal",
     fontSize: "18px",
+    margin: `${settings.gutter * 2}px`,
     lineHeight: 1,
     textAlign: "center"
   },
@@ -298,9 +303,13 @@ export default {
     backgroundColor: settings.paleRed,
     color: settings.whiteSand,
     fontFamily: settings.monospace,
-    fontSize: "18px",
+    fontSize: "1rem",
     fontWeight: "normal",
-    padding: `${settings.gutter}px`
+    lineHeight: 1.2,
+    maxWidth: "400px",
+    overflow: "scroll",
+    padding: `${settings.gutter}px`,
+    textAlign: "left"
   },
   ".Interactive pre, .CodeMirror-code": {
     fontFamily: settings.monospace,
@@ -391,29 +400,46 @@ export default {
       }
     },
     [settings.mediaQueries.large]: {
+      ".Interactive": {
+        margin: `${settings.gutter}px 0 ${settings.gutter * 3}px`,
+      },
       ".Interactive .playground": {
         flexWrap: "nowrap",
+        alignItems: "stretch",
         justifyContent: "space-between",
         marginLeft: `${settings.gutter * -1}px`,
-        padding: `${settings.gutter * 3}px 0`
+        padding: 0
       },
       ".Interactive .playgroundCode": {
         display: "flex",
         flex: "3 2 55%",
-        marginTop: `${settings.gutter * 2}px`,
-        marginRight: `${settings.gutter}px`,
-        padding: `${settings.gutter}px`
+        margin: 0,
+        padding: `${settings.gutter}px ${settings.gutter * 2}px ${settings.gutter}px`
       },
       ".Interactive .playgroundPreview": {
         display: "flex",
         flex: "1 2 45%",
+        margin: 0,
         padding: `${settings.gutter}px`
       },
       ".Interactive .playgroundPreview svg": {
-        maxHeight: "none"
+        maxHeight: "inherit"
       },
       ".Interactive .playgroundPreview div:first-child": {
-        width: "100%" // wrapper divs: the worst
+        // wrapper divs: the worst
+        width: "100%"
+      },
+      ".playgroundsMaxHeight .Interactive .playgroundCode": {
+        maxHeight: "500px",
+        overflowY: "scroll"
+      },
+      ".playgroundsMaxHeight .Interactive .playgroundPreview": {
+        maxHeight: "500px"
+      },
+      ".playgroundsMaxHeight .Interactive .playgroundPreview div:first-child": {
+        // wrapper divs: the worst
+        margin: "0 auto",
+        maxHeight: "400px"
       }
     }
   },
@@ -421,7 +447,7 @@ export default {
    * Ecology Playground Theme/Color Palette
    */
   ".cm-s-elegant .CodeMirror-gutters": {
-    background: `${settings.mud} !important`
+    background: `${settings.darkMud} !important`
   },
   ".cm-s-elegant .CodeMirror-foldgutter-open, .CodeMirror-foldgutter-folded": {
     color: "#999"
@@ -430,61 +456,63 @@ export default {
     borderLeft: "1px solid white !important"
   },
   ".cm-s-elegant": {
-    backgroundColor: settings.mud,
-    color: "#dcdccc"
-  },
-  ".cm-s-elegant span.cm-builtin": {
-    color: "#dcdccc",
-    fontWeight: "bold"
-  },
-  ".cm-s-elegant span.cm-comment": {
-    color: "#7f9f7f"
-  },
-  ".cm-s-elegant span.cm-keyword": {
-    color: "#f0dfaf",
-    fontWeight: "bold"
-  },
-  ".cm-s-elegant span.cm-atom": {
-    color: "#bfebbf"
-  },
-  ".cm-s-elegant span.cm-def": {
-    color: "#dcdccc"
-  },
-  ".cm-s-elegant span.cm-variable": {
-    color: settings.palerSand
-  },
-  ".cm-s-elegant span.cm-variable-2": {
-    color: "#dcdccc"
-  },
-  ".cm-s-elegant span.cm-string": {
-    color: settings.whiteSand
-  },
-  ".cm-s-elegant span.cm-string-2": {
-    color: settings.darkerSand
-  },
-  ".cm-s-elegant span.cm-number": {
-    color: settings.whiteSand
-  },
-  ".cm-s-elegant span.cm-tag": {
-    color: "#93e0e3"
-  },
-  ".cm-s-elegant span.cm-property": {
+    backgroundColor: settings.codeMirror.bg,
     color: settings.sand
   },
+  ".cm-s-elegant span.cm-builtin": {
+    color: settings.paleSand,
+    textDecoration: "underline"
+  },
+  ".cm-s-elegant span.cm-comment": {
+    color: settings.codeMirror.gray
+  },
+  ".cm-s-elegant span.cm-operater": {
+    color: settings.codeMirror.softCyan
+  },
+  ".cm-s-elegant span.cm-keyword": {
+    color: settings.codeMirror.blue
+  },
+  ".cm-s-elegant span.cm-atom": {
+    color: settings.codeMirror.cyan
+  },
+  ".cm-s-elegant span.cm-def": {
+    color: settings.codeMirror.lace
+  },
   ".cm-s-elegant span.cm-attribute": {
-    color: "#dfaf8f"
+    color: settings.codeMirror.softLace
+  },
+  ".cm-s-elegant span.cm-variable": {
+    color: settings.codeMirror.softLace
+  },
+  ".cm-s-elegant span.cm-variable-2": {
+    color: settings.codeMirror.softLace
+  },
+  ".cm-s-elegant span.cm-string": {
+    color: settings.codeMirror.lime
+  },
+  ".cm-s-elegant span.cm-string-2": {
+    color: settings.codeMirror.yellow
+  },
+  ".cm-s-elegant span.cm-number": {
+    color: settings.codeMirror.purple
+  },
+  ".cm-s-elegant span.cm-tag": {
+    color: settings.codeMirror.red
+  },
+  ".cm-s-elegant span.cm-property": {
+    color: settings.codeMirror.sandStone
   },
   ".cm-s-elegant span.cm-qualifier": {
-    color: "#7cb8bb"
+    color: settings.codeMirror.orange
   },
   ".cm-s-elegant span.cm-meta": {
-    color: "#f0dfaf"
+    color: settings.codeMirror.cyan
   },
   ".cm-s-elegant span.cm-header": {
-    color: "#f0efd0"
+    color: settings.codeMirror.red
   },
   ".cm-s-elegant span.cm-operator, .CodeMirror pre": {
-    color: settings.darkerSand
+    color: settings.codeMirror.sandStone
   },
   ".cm-s-elegant span.CodeMirror-matchingbracket": {
     boxSizing: "border-box",
