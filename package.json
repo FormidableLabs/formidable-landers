@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "karma start ./karma.conf.js",
+    "test-travis": "karma start ./karma.conf.js --singleRun=true",
     "babel": "rimraf lib && babel src/ -d lib/",
     "lint": "eslint --ext .js,.jsx src",
     "prepublish": "npm run babel",
