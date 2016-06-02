@@ -218,6 +218,15 @@ export default {
     padding: 0
   },
   /*
+  * Rendered Markdown
+  */
+  ".Main pre": {
+    margin: `${settings.gutter * -1}px`, // break grid
+  },
+  ".Main pre pre": {
+    margin: 0
+  },
+  /*
    * Ecology README text wrangling
    */
   ".Overview h1:first-child": {
@@ -397,9 +406,21 @@ export default {
       },
       ".Ecology p": {
         fontSize: "24px"
+      },
+      ".Main pre": {
+        margin: `0 ${settings.gutter * -2}px` // break grid
+      },
+      ".Main pre pre": {
+        margin: 0
       }
     },
     [settings.mediaQueries.large]: {
+      ".Main pre": {
+        margin: `0 ${settings.gutter * -3}px` // break grid
+      },
+      ".Main pre pre": {
+        margin: 0
+      },
       ".Interactive": {
         margin: `${settings.gutter}px 0 ${settings.gutter * 3}px`,
       },
