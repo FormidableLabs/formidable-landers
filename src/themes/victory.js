@@ -397,18 +397,6 @@ export default {
       },
       ".Ecology p": {
         fontSize: "24px"
-      },
-      ".playgroundsMaxHeight .Interactive .playgroundCode": {
-        maxHeight: "500px",
-        overflowY: "scroll"
-      },
-      ".playgroundsMaxHeight .Interactive .playgroundPreview": {
-        maxHeight: "500px"
-      },
-      ".playgroundsMaxHeight .Interactive .playgroundPreview div:first-child": {
-        // wrapper divs: the worst
-        margin: "0 auto",
-        maxHeight: "400px"
       }
     },
     [settings.mediaQueries.large]: {
@@ -440,6 +428,18 @@ export default {
       ".Interactive .playgroundPreview div:first-child": {
         // wrapper divs: the worst
         width: "100%"
+      },
+      ".playgroundsMaxHeight .Interactive .playgroundCode": {
+        maxHeight: "500px",
+        overflowY: "scroll"
+      },
+      ".playgroundsMaxHeight .Interactive .playgroundPreview": {
+        maxHeight: "500px"
+      },
+      ".playgroundsMaxHeight .Interactive .playgroundPreview div:first-child": {
+        // wrapper divs: the worst
+        margin: "0 auto",
+        maxHeight: "400px"
       }
     }
   },
