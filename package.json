@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "karma start ./karma.conf.js",
+    "test-travis": "karma start ./karma.conf.js --singleRun=true",
     "babel": "rimraf lib && babel src/ -d lib/",
     "lint": "eslint --ext .js,.jsx src",
     "prepublish": "npm run babel",
@@ -28,15 +29,15 @@
     "babel-preset-es2015-webpack": "^6.4.0",
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-1": "^6.5.0",
-    "radium": "^0.15.3",
-    "react": "^0.14.3",
+    "radium": "^0.17.1",
+    "react": "^15.1.0",
     "rimraf": "^2.4.4"
   },
   "devDependencies": {
     "babel-eslint": "^5.0.0",
     "babel-loader": "^6.2.0",
     "chai": "^3.5.0",
-    "enzyme": "^2.0.0",
+    "enzyme": "^2.3.0",
     "eslint": "^1.10.1",
     "eslint-config-defaults": "^7.0.1",
     "eslint-plugin-filenames": "^0.1.2",
@@ -52,8 +53,8 @@
     "karma-webpack": "^1.7.0",
     "mocha": "^2.4.5",
     "phantomjs-prebuilt": "^2.1.4",
-    "react-addons-test-utils": "^0.14.6",
-    "react-dom": "^0.14.7",
+    "react-addons-test-utils": "^15.1.0",
+    "react-dom": "^15.1.0",
     "webpack": "^1.12.14"
   }
 }

@@ -11,6 +11,8 @@ describe("Footer", () => {
       const footer = shallow(<Footer />);
       const defaultStyles = {
         flex: "none",
+        WebkitFlex: "none",
+        msFlex: "none",
         margin: "1rem 0 0 0",
         padding: "3rem 0.5rem",
         backgroundColor: "#ebe3db",
