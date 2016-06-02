@@ -1,0 +1,19 @@
+language: node_js
+
+node_js:
+  - "4.2"
+  - "5.0"
+
+# Use container-based Travis infrastructure.
+sudo: false
+
+branches:
+  only:
+    - master
+
+script:
+  - npm test
+
+  # Prune deps to just production and ensure we can build the site
+  - npm prune --production
+  - npm run babel
