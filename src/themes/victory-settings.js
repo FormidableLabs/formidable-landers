@@ -43,8 +43,9 @@ export default {
   // ---------------------
   codeMirror: {
     bg: "#181615",
-    blue: "#8c8fa3", // Comment
+    gray: "#707880",
 
+    blue: "#81A2BE",
     cyan: "#a0cad0",
     softCyan: "#8ABEB7",
     green: "#83d38f",
@@ -55,7 +56,7 @@ export default {
     red: "#da817c",
     yellow: "#d3d398",
     darkYellow: "#cdc38c",
-    sandstone: "#c2bdb2",
+    sandStone: "#c2bdb2",
 
     lace: "#f8f8f0",
     softLace: "#e8e0d8"

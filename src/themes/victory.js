@@ -303,9 +303,13 @@ export default {
     backgroundColor: settings.paleRed,
     color: settings.whiteSand,
     fontFamily: settings.monospace,
-    fontSize: "18px",
+    fontSize: "1rem",
     fontWeight: "normal",
-    padding: `${settings.gutter}px`
+    lineHeight: 1.2,
+    maxWidth: "400px",
+    overflow: "scroll",
+    padding: `${settings.gutter}px`,
+    textAlign: "left"
   },
   ".Interactive pre, .CodeMirror-code": {
     fontFamily: settings.monospace,
@@ -475,7 +479,7 @@ export default {
     color: settings.codeMirror.lace
   },
   ".cm-s-elegant span.cm-attribute": {
-    color: settings.codeMirror.sandStone
+    color: settings.codeMirror.softLace
   },
   ".cm-s-elegant span.cm-variable": {
     color: settings.codeMirror.softLace
@@ -496,7 +500,7 @@ export default {
     color: settings.codeMirror.red
   },
   ".cm-s-elegant span.cm-property": {
-    color: settings.codeMirror.cyan
+    color: settings.codeMirror.sandStone
   },
   ".cm-s-elegant span.cm-qualifier": {
     color: settings.codeMirror.orange
