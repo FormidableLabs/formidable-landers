@@ -221,7 +221,7 @@ export default {
   * Rendered Markdown
   */
   ".Main pre": {
-    margin: `${settings.gutter * -1}px` // break grid
+    margin: `0 ${settings.gutter * -1}px` // break grid
   },
   ".Main pre pre": {
     margin: 0
@@ -237,12 +237,14 @@ export default {
     overflow: "hidden" // Hide horizontal scrollbars for playgrounds.
   },
   ".Overview pre code": { // Non-ecology code blocks
+    background: settings.palestSand,
+    borderRadius: 0,
+    color: settings.darkMud,
     display: "block",
-    padding: `${settings.gutter}px ${settings.gutter}px`,
-    background: settings.mud,
-    color: settings.whiteSand,
     fontFamily: settings.monospace,
-    border: `1px solid ${settings.palestSand}`
+    lineHeight: 1.2,
+    margin: `${settings.gutter}px 0 !important`,
+    padding: `${settings.gutter}px ${settings.gutter * 3}px`
   },
   ".fancyBorder": {
     borderLeft: `4px solid ${settings.darkerSand}`,
@@ -284,9 +286,9 @@ export default {
   ".Interactive .playgroundPreview": {
     flex: "0 0 100%",
     order: "1",
+    marginBottom: 0,
     padding: `0 0 ${settings.gutter * 2}px 0`,
     position: "relative",
-    marginBottom: "32px",
     textAlign: "center"
   },
   ".Interactive .playgroundPreview svg": {
@@ -300,11 +302,11 @@ export default {
     right: 0,
     bottom: 0,
     left: 0,
-    color: settings.palerMud,
+    color: settings.darkMud,
     fontFamily: settings.serif,
     fontWeight: "normal",
     fontSize: "18px",
-    margin: `${settings.gutter * 2}px`,
+    margin: `${settings.gutter * 2}px ${settings.gutter}px ${settings.gutter}px`,
     lineHeight: 1,
     textAlign: "center"
   },
@@ -412,6 +414,18 @@ export default {
       },
       ".Main pre pre": {
         margin: 0
+      },
+      ".Interactive .playgroundPreview svg": {
+        maxHeight: "inherit"
+      },
+      ".Interactive .playgroundPreview div:first-child": {
+        // wrapper divs: the worst
+        width: "100%",
+        margin: "0 auto",
+        maxHeight: "450px"
+      },
+      ".Interactive .playgroundPreview": {
+        maxHeight: "500px"
       }
     },
     [settings.mediaQueries.large]: {
@@ -422,7 +436,7 @@ export default {
         margin: 0
       },
       ".Interactive": {
-        margin: `${settings.gutter}px 0 ${settings.gutter * 3}px`
+        margin: `${settings.gutter * 2}px 0 ${settings.gutter * 4}px`
       },
       ".Interactive .playground": {
         flexWrap: "nowrap",
@@ -441,7 +455,7 @@ export default {
         display: "flex",
         flex: "1 2 45%",
         margin: 0,
-        padding: `${settings.gutter}px`
+        padding: `${settings.gutter}px ${settings.gutter * 4}px ${settings.gutter}px`
       },
       ".Interactive .playgroundPreview svg": {
         maxHeight: "inherit"
@@ -476,7 +490,7 @@ export default {
   ".cm-s-elegant div.CodeMirror-cursor": {
     borderLeft: "1px solid white !important"
   },
-  ".cm-s-elegant": {
+  ".cm-s-elegant, .CodeMirror": {
     backgroundColor: settings.codeMirror.bg,
     color: settings.sand
   },
