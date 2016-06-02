@@ -43,20 +43,22 @@ export default {
   // ---------------------
   codeMirror: {
     bg: "#181615",
-    blue: "#6272a4", // Comment
+    blue: "#8c8fa3", // Comment
 
-    cyan: "#8be9fd",
-    softCyan: "#66d9ef",
-    green: "#50fa7b",
-    orange: "#ffb86c",
-    pink: "#ff79c6",
-    purple: "#bd93f9",
-    red: "#ff5555",
-    yellow: "#f1fa8c",
-    darkYellow: "#E6DB74",
-    sandstone: "#cfcfc2",
+    cyan: "#a0cad0",
+    softCyan: "#8ABEB7",
+    green: "#83d38f",
+    lime: "#B5BD68",
+    orange: "#dab288",
+    pink: "#da93b4",
+    purple: "#b9a0ce",
+    red: "#da817c",
+    yellow: "#d3d398",
+    darkYellow: "#cdc38c",
+    sandstone: "#c2bdb2",
 
-    lace: "#f8f8f0"
+    lace: "#f8f8f0",
+    softLace: "#e8e0d8"
   }
 };
 /* eslint-enable max-len */

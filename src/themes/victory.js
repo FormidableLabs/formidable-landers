@@ -255,19 +255,21 @@ export default {
    */
   ".Interactive": {
     backgroundColor: settings.whiteSand,
-    minHeight: "150px"
+    margin: `${settings.gutter}px 0 ${settings.gutter * 2}px`,
+    minHeight: "150px",
+    width: "100%"
   },
   ".Interactive .playground": {
     display: "flex",
     flexDirection: "row",
     flexWrap: "wrap",
-    padding: `${settings.gutter}px ${settings.gutter * 0.5}px`
+    padding: 0
   },
   ".Interactive .playgroundCode": {
     flex: "0 0 100%",
     order: "2",
     padding: `${settings.gutter}px ${settings.gutter}px`,
-    backgroundColor: settings.mud,
+    backgroundColor: settings.codeMirror.bg,
     color: settings.whiteSand
   },
   ".Interactive .playgroundPreview": {
@@ -392,20 +394,23 @@ export default {
       ".Ecology p": {
         fontSize: "24px"
       },
-      ".Home .Interactive .playgroundCode": {
+      ".playgroundsMaxHeight .Interactive .playgroundCode": {
         maxHeight: "500px",
         overflowY: "scroll"
       },
-      ".Home .Interactive .playgroundPreview": {
+      ".playgroundsMaxHeight .Interactive .playgroundPreview": {
         maxHeight: "500px"
       },
-      ".Home .Interactive .playgroundPreview div:first-child": {
+      ".playgroundsMaxHeight .Interactive .playgroundPreview div:first-child": {
         // wrapper divs: the worst
         margin: "0 auto",
         maxHeight: "400px"
       }
     },
     [settings.mediaQueries.large]: {
+      ".Interactive": {
+        margin: `${settings.gutter}px 0 ${settings.gutter * 3}px`,
+      },
       ".Interactive .playground": {
         flexWrap: "nowrap",
         alignItems: "stretch",
@@ -438,7 +443,7 @@ export default {
    * Ecology Playground Theme/Color Palette
    */
   ".cm-s-elegant .CodeMirror-gutters": {
-    background: `${settings.mud} !important`
+    background: `${settings.darkMud} !important`
   },
   ".cm-s-elegant .CodeMirror-foldgutter-open, .CodeMirror-foldgutter-folded": {
     color: "#999"
@@ -447,61 +452,63 @@ export default {
     borderLeft: "1px solid white !important"
   },
   ".cm-s-elegant": {
-    backgroundColor: settings.mud,
-    color: "#dcdccc"
-  },
-  ".cm-s-elegant span.cm-builtin": {
-    color: "#dcdccc",
-    fontWeight: "bold"
-  },
-  ".cm-s-elegant span.cm-comment": {
-    color: "#7f9f7f"
-  },
-  ".cm-s-elegant span.cm-keyword": {
-    color: "#f0dfaf",
-    fontWeight: "bold"
-  },
-  ".cm-s-elegant span.cm-atom": {
-    color: "#bfebbf"
-  },
-  ".cm-s-elegant span.cm-def": {
-    color: "#dcdccc"
-  },
-  ".cm-s-elegant span.cm-variable": {
-    color: settings.palerSand
-  },
-  ".cm-s-elegant span.cm-variable-2": {
-    color: "#dcdccc"
-  },
-  ".cm-s-elegant span.cm-string": {
-    color: settings.whiteSand
-  },
-  ".cm-s-elegant span.cm-string-2": {
-    color: settings.darkerSand
-  },
-  ".cm-s-elegant span.cm-number": {
-    color: settings.whiteSand
-  },
-  ".cm-s-elegant span.cm-tag": {
-    color: "#93e0e3"
-  },
-  ".cm-s-elegant span.cm-property": {
+    backgroundColor: settings.codeMirror.bg,
     color: settings.sand
   },
+  ".cm-s-elegant span.cm-builtin": {
+    color: settings.paleSand,
+    textDecoration: "underline"
+  },
+  ".cm-s-elegant span.cm-comment": {
+    color: settings.codeMirror.gray
+  },
+  ".cm-s-elegant span.cm-operater": {
+    color: settings.codeMirror.softCyan
+  },
+  ".cm-s-elegant span.cm-keyword": {
+    color: settings.codeMirror.blue
+  },
+  ".cm-s-elegant span.cm-atom": {
+    color: settings.codeMirror.cyan
+  },
+  ".cm-s-elegant span.cm-def": {
+    color: settings.codeMirror.lace
+  },
   ".cm-s-elegant span.cm-attribute": {
-    color: "#dfaf8f"
+    color: settings.codeMirror.sandStone
+  },
+  ".cm-s-elegant span.cm-variable": {
+    color: settings.codeMirror.softLace
+  },
+  ".cm-s-elegant span.cm-variable-2": {
+    color: settings.codeMirror.softLace
+  },
+  ".cm-s-elegant span.cm-string": {
+    color: settings.codeMirror.lime
+  },
+  ".cm-s-elegant span.cm-string-2": {
+    color: settings.codeMirror.yellow
+  },
+  ".cm-s-elegant span.cm-number": {
+    color: settings.codeMirror.purple
+  },
+  ".cm-s-elegant span.cm-tag": {
+    color: settings.codeMirror.red
+  },
+  ".cm-s-elegant span.cm-property": {
+    color: settings.codeMirror.cyan
   },
   ".cm-s-elegant span.cm-qualifier": {
-    color: "#7cb8bb"
+    color: settings.codeMirror.orange
   },
   ".cm-s-elegant span.cm-meta": {
-    color: "#f0dfaf"
+    color: settings.codeMirror.cyan
   },
   ".cm-s-elegant span.cm-header": {
-    color: "#f0efd0"
+    color: settings.codeMirror.red
   },
   ".cm-s-elegant span.cm-operator, .CodeMirror pre": {
-    color: settings.darkerSand
+    color: settings.codeMirror.sandStone
   },
   ".cm-s-elegant span.CodeMirror-matchingbracket": {
     boxSizing: "border-box",
