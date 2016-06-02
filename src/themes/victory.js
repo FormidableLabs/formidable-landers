@@ -221,7 +221,7 @@ export default {
   * Rendered Markdown
   */
   ".Main pre": {
-    margin: `${settings.gutter * -1}px`, // break grid
+    margin: `${settings.gutter * -1}px` // break grid
   },
   ".Main pre pre": {
     margin: 0
@@ -422,7 +422,7 @@ export default {
         margin: 0
       },
       ".Interactive": {
-        margin: `${settings.gutter}px 0 ${settings.gutter * 3}px`,
+        margin: `${settings.gutter}px 0 ${settings.gutter * 3}px`
       },
       ".Interactive .playground": {
         flexWrap: "nowrap",
