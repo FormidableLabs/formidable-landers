@@ -134,14 +134,6 @@ export default {
     borderBottomColor: settings.red,
     transition: "color 250ms ease-out, border-bottom 275ms ease-out"
   },
-  ".Link--unstyled": {
-    border: "none",
-    boxShadow: "none"
-  },
-  ".Link--unstyled:hover, .Link--unstyled:focus": {
-    border: "none",
-    boxShadow: "none"
-  },
   /*
    * Buttons!
    */
@@ -164,17 +156,20 @@ export default {
     transition: "color 0.2s ease, border-color 0.7s ease"
   },
   /*
-   * Layout/Grid
+   * Layout/Grid for running docs locally
    */
   ".Container": {
     margin: "0 auto",
-    maxWidth: "960px",
+    maxWidth: "1440px",
     paddingLeft: "1em",
     paddingRight: "1em",
     paddingBottom: "1em"
   },
   /*
-   * Ecology
+   * .Ecology
+   * |- .Overview
+   * |- .Documentation
+   *    |- table.Props
    */
   ".Ecology p, .Ecology h2, .Ecology h3, .Ecology h4, .Ecology h5, .Ecology h6": {
     maxWidth: "760px" // Ideal 60–70 characters per line
@@ -262,7 +257,10 @@ export default {
    * .Interactive
    * |- .playground
    *    |- .playgroundCode
+   *    |  |- .playgroundStage
    *    |- .playgroundPreview
+   *       |- .playgroundError
+   *       |- .previewArea
    */
   ".Interactive": {
     backgroundColor: settings.whiteSand,
@@ -380,19 +378,9 @@ export default {
     fontFamily: settings.monospace,
     color: settings.paleMud
   },
-  /* Utilities */
-  ".u-textCenter": {
-    textAlign: "center"
-  },
-  ".u-textLeft": {
-    textAlign: "left"
-  },
-  ".u-textRight": {
-    textAlign: "right"
-  },
-  ".u-marginModule > *:first-child": {
-    marginTop: 0
-  },
+  /*
+   * Media Queries
+  **/
   mediaQueries: {
     [settings.mediaQueries.medium]: {
       body: {
@@ -441,6 +429,11 @@ export default {
       },
       ".Interactive": {
         margin: `${settings.gutter * 2}px 0 ${settings.gutter * 4}px`
+      },
+      ".Interactive pre, .CodeMirror-code": {
+        fontFamily: settings.monospace,
+        fontSize: "18px",
+        lineHeight: 1.2
       },
       ".Interactive .playground": {
         flexWrap: "nowrap",
@@ -568,10 +561,7 @@ export default {
   ".cm-s-elegant .CodeMirror-activeline-background": {
     background: "#000000"
   },
-  ".cm-s-elegant div.CodeMirror-selected": {
-    background: settings.darkMud
-  },
-  ".cm-s-elegant .CodeMirror-focused div.CodeMirror-selected": {
-    background: settings.paleMud
+  ".cm-s-elegant div.CodeMirror-selected, .ReactCodeMirror--focused .cm-s-elegant": {
+    background: settings.codeMirror.bgFocused
   }
 };

@@ -42,7 +42,8 @@ export default {
   // CodeMirror Theme
   // ---------------------
   codeMirror: {
-    bg: "#181615",
+    bg: "#34302e",
+    bgFocused: "#181615",
     gray: "#707880",
 
     blue: "#81A2BE",
