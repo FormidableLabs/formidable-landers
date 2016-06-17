@@ -324,7 +324,7 @@ export default {
   },
   ".Interactive pre, .CodeMirror-code": {
     fontFamily: settings.monospace,
-    fontSize: "18px",
+    fontSize: "16px",
     lineHeight: 1.2
   },
   ".CodeMirror": {
@@ -396,8 +396,8 @@ export default {
   mediaQueries: {
     [settings.mediaQueries.medium]: {
       body: {
-        fontSize: "24px",
-        lineHeight: 1.5
+        fontSize: "20px",
+        lineHeight: 1.45
       },
       "h1, h2": {
         marginTop: `${settings.gutter * 3}px`,
@@ -429,6 +429,10 @@ export default {
       }
     },
     [settings.mediaQueries.large]: {
+      body: {
+        fontSize: "24px",
+        lineHeight: 1.5
+      },
       ".Main pre": {
         margin: `0 ${settings.gutter * -3}px` // break grid
       },
