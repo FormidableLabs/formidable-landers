@@ -259,8 +259,9 @@ export default {
    *    |- .playgroundCode
    *    |  |- .playgroundStage
    *    |- .playgroundPreview
-   *       |- .playgroundError
-   *       |- .previewArea
+   *       |- div
+   *          |- .playgroundError
+   *          |- .previewArea
    */
   ".Interactive": {
     backgroundColor: settings.whiteSand,
@@ -277,9 +278,12 @@ export default {
   ".Interactive .playgroundCode": {
     flex: "0 0 100%",
     order: "2",
+    margin: 0,
+    padding: 0
+  },
+  ".Interactive .playgroundStage": {
     padding: `${settings.gutter}px ${settings.gutter}px`,
-    backgroundColor: settings.codeMirror.bg,
-    color: settings.whiteSand
+    width: "100%"
   },
   ".Interactive .playgroundPreview": {
     flex: "0 0 100%",
@@ -315,10 +319,11 @@ export default {
     fontSize: "1rem",
     fontWeight: "normal",
     lineHeight: 1.2,
-    maxWidth: "400px",
     overflow: "scroll",
     padding: `${settings.gutter}px`,
-    textAlign: "left"
+    textAlign: "left",
+    whiteSpace: "pre",
+    width: "100%"
   },
   ".Interactive pre, .CodeMirror-code": {
     fontFamily: settings.monospace,
@@ -326,6 +331,7 @@ export default {
     lineHeight: 1.2
   },
   ".CodeMirror": {
+    background: "none !important",
     height: "auto"
   },
   /*
@@ -406,7 +412,13 @@ export default {
       ".Interactive .playgroundPreview svg": {
         maxHeight: "inherit"
       },
-      ".Interactive .playgroundPreview div:first-child": {
+      ".Interactive .playgroundPreview > div:first-child": {
+        // wrapper divs: the worst
+        width: "100%",
+        margin: "0 auto",
+        maxHeight: "450px"
+      },
+      ".Interactive .previewArea, .Interactive .previewArea > div:first-child": {
         // wrapper divs: the worst
         width: "100%",
         margin: "0 auto",
@@ -446,7 +458,7 @@ export default {
         display: "flex",
         flex: "3 2 55%",
         margin: 0,
-        padding: `${settings.gutter}px ${settings.gutter * 2}px ${settings.gutter}px`
+        padding: 0
       },
       ".Interactive .playgroundPreview": {
         display: "flex",
@@ -457,18 +469,32 @@ export default {
       ".Interactive .playgroundPreview svg": {
         maxHeight: "inherit"
       },
-      ".Interactive .playgroundPreview div:first-child": {
+      ".Interactive .playgroundPreview > div:first-child": {
         // wrapper divs: the worst
         width: "100%"
       },
-      ".playgroundsMaxHeight .Interactive .playgroundCode": {
+      ".Interactive .playgroundError": {
+        margin: 0,
+        padding: `${settings.gutter}px ${settings.gutter * 2}px`,
+        position: "absolute",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0
+      },
+      ".playgroundsMaxHeight .Interactive .playgroundStage": {
         maxHeight: "500px",
         overflowY: "scroll"
       },
       ".playgroundsMaxHeight .Interactive .playgroundPreview": {
         maxHeight: "500px"
       },
-      ".playgroundsMaxHeight .Interactive .playgroundPreview div:first-child": {
+      ".playgroundsMaxHeight .Interactive .playgroundPreview > div:first-child": {
+        // wrapper divs: the worst
+        margin: "0 auto",
+        maxHeight: "400px"
+      },
+      ".playgroundsMaxHeight .Interactive .previewArea, .playgroundsMaxHeight .Interactive .previewArea > div:first-child": {
         // wrapper divs: the worst
         margin: "0 auto",
         maxHeight: "400px"
@@ -478,6 +504,27 @@ export default {
   /**
    * Ecology Playground Theme/Color Palette
    */
+  ".playgroundStage": {
+    // Default state
+    backgroundColor: settings.codeMirror.bg,
+    color: settings.whiteSand,
+    transition: "background-color 195ms ease-in"
+  },
+  ".playgroundStage.ReactCodeMirror--focused": {
+    // Focused state
+    backgroundColor: settings.codeMirror.bgFocused,
+    transition: "background-color 250ms ease-out"
+  },
+  ".cm-s-elegant .CodeMirror-selected": {
+    // text selection
+    backgroundColor: settings.mud
+  },
+  ".cm-s-elegant .CodeMirror-activeline": {
+    backgroundColor: "#000000"
+  },
+  ".cm-s-elegant .CodeMirror-activeline-background": {
+    backgroundColor: "#000000"
+  },
   ".cm-s-elegant .CodeMirror-gutters": {
     background: `${settings.darkMud} !important`
   },
@@ -486,10 +533,6 @@ export default {
   },
   ".cm-s-elegant div.CodeMirror-cursor": {
     borderLeft: "1px solid white !important"
-  },
-  ".cm-s-elegant, .CodeMirror": {
-    backgroundColor: settings.codeMirror.bg,
-    color: settings.sand
   },
   ".cm-s-elegant span.cm-builtin": {
     color: settings.paleSand,
@@ -554,14 +597,5 @@ export default {
   ".cm-s-elegant span.CodeMirror-nonmatchingbracket": {
     borderBottom: "1px solid",
     background: "none"
-  },
-  ".cm-s-elegant .CodeMirror-activeline": {
-    background: "#000000"
-  },
-  ".cm-s-elegant .CodeMirror-activeline-background": {
-    background: "#000000"
-  },
-  ".cm-s-elegant div.CodeMirror-selected, .ReactCodeMirror--focused .cm-s-elegant": {
-    background: settings.codeMirror.bgFocused
   }
 };
