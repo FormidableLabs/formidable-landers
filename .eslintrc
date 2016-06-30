@@ -1,8 +1,8 @@
----
-"extends":
-  - "defaults/configurations/walmart/es6-browser"
-
-"parser": "babel-eslint"
-
-"rules":
-  "no-extra-parens": [0]
+{
+  "extends": "defaults/configurations/walmart/es6-browser",
+  "parser": "babel-eslint",
+  "plugins": [ "react" ],
+  "rules": {
+    "no-extra-parens": 0
+  }
+}
