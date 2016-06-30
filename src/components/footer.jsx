@@ -10,7 +10,7 @@ class Footer extends React.Component {
         flex: "none", // Sticky footer setup
         margin: "1rem 0 0 0",
         padding: "3rem 0.5rem",
-        backgroundColor: this.props.backgroundColor,
+        background: this.props.background,
         textAlign: "center",
         borderTop: "1px solid rgba(35, 31, 32, 0.02)"
       },
@@ -23,7 +23,7 @@ class Footer extends React.Component {
         border: "none",
         textDecoration: "none",
         ":hover": {
-          backgroundColor: "transparent",
+          background: "transparent",
           boxShadow: "none",
           border: "none",
           textDecoration: "none"
@@ -72,12 +72,12 @@ class Footer extends React.Component {
 }
 
 Footer.propTypes = {
-  backgroundColor: React.PropTypes.string,
+  background: React.PropTypes.string,
   logoColor: React.PropTypes.oneOf(["black", "white"])
 };
 
 Footer.defaultProps = {
-  backgroundColor: "#ebe3db",
+  background: "#ebe3db",
   logoColor: "black"
 };
 
