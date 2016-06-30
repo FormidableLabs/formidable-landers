@@ -2,41 +2,14 @@ import React from "react";
 import Radium from "radium";
 
 class Header extends React.Component {
-  getHeaderStyles() {
-    return {
-      base: {
-        flex: "none",  // Sticky footer setup
-        margin: 0,
-        padding: "1rem 0.5rem",
-        background: this.props.background,
-        textAlign: "center",
-        borderBottom: "1px solid rgba(35, 31, 32, 0.02)"
-      },
-      link: {
-        margin: "0 auto",
-        lineHeight: 1
-      },
-      linkStyles: this.props.linkStyles,
-      styleOverrides: this.props.styleOverrides
-    };
-  }
-
   render() {
-    const headerStyles = this.getHeaderStyles();
     return (
-      <header
-        style={[
-          headerStyles.base,
-          this.props.styleOverrides && headerStyles.styleOverrides
-        ]}>
-        <span style={{display: "block", margin: "0 auto"}}>
+      <header style={this.props.headerStyles}>
+        <span style={this.props.headerLinkWrapperStyles}>
           <a
           key="fl-header"
           href="http://formidable.com/careers/"
-          style={[
-            headerStyles.link,
-            this.props.linkStyles && headerStyles.linkStyles
-          ]}>
+          style={this.props.headerLinkStyles}>
             {this.props.children}
           </a>
         </span>
@@ -46,12 +19,27 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-  background: React.PropTypes.string,
+  styles: React.PropTypes.object,
   children: React.PropTypes.node
 };
 
 Header.defaultProps = {
-  background: "#ebe3db",
+  headerStyles: {
+    flex: "none",  // Sticky footer setup
+    margin: 0,
+    padding: "1rem 0.5rem",
+    background: "#ebe3db",
+    textAlign: "center",
+    borderBottom: "1px solid rgba(35, 31, 32, 0.02)"
+  },
+  headerLinkStyles: {
+    margin: "0 auto",
+    lineHeight: 1
+  },
+  headerLinkWrapperStyles: {
+    display: "block",
+    margin: "0 auto"
+  },
   children: "We’re hiring!"
 };
 
