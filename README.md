@@ -29,15 +29,10 @@ All the available customizations:
 ```jsx
 <Header
   background={VictorySettings.palestSand}
-  styleOverrides={{
-    display: "block"
-  }}
-  linkStyles={{
-    color: "#c43a31",
-    ":hover": {
-      color: "#e58c7d"
-    }
-  }}>
+  baseStyles={{ display: "block" }}
+  linkStyles={{ color: #c43a31 }}
+  linkWrapperStyles={{textAlign: "center", margin: "0 auto"}}
+>
   Looking to level up your team?
 </Header>
 ```
@@ -45,16 +40,16 @@ All the available customizations:
 ```jsx
 <Footer
   background={VictorySettings.palestSand}
-  styleOverrides={{
-    display: "block"
-  }}
+  baseStyles={{display: "block"}}
+  textStyles={{color: VictorySettings.red}}
   linkStyles={{
     color: "#c43a31",
-    ":hover": {
-      color: "#e58c7d"
-    }
+    ":hover": { color: "#e58c7d" }
   }}
-  footerLogo="img/logo.svg">
+  unstyledLinkStyles={{textDecoration: "none"}}
+  logoWrapperStyles={{textAlign: "center", margin: "0 auto"}}
+  logoColor="black"
+>
   Please press [ space ] to continue.
 </Footer>
 ```
