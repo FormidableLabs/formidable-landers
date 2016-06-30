@@ -19,7 +19,9 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-  styles: React.PropTypes.object,
+  headerStyles: React.PropTypes.object,
+  headerLinkStyles: React.PropTypes.object,
+  headerLinkWrapperStyles: React.PropTypes.object,
   children: React.PropTypes.node
 };
 
