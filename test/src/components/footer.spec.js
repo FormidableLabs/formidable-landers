@@ -1,5 +1,6 @@
+/* eslint-disable max-len, no-unused-expressions */
 import React from "react";
-import { shallow, render } from "enzyme";
+import { shallow } from "enzyme";
 
 import Footer from "../../../src/components/footer";
 import { BlackFormidableLogo, WhiteFormidableLogo } from "../../../src/assets/logos";
