@@ -10,7 +10,6 @@ class Footer extends React.Component {
         flex: "none", // Sticky footer setup
         margin: "1rem 0 0 0",
         padding: "3rem 0.5rem",
-        background: this.props.background,
         textAlign: "center",
         borderTop: "1px solid rgba(35, 31, 32, 0.02)"
       },
@@ -40,6 +39,7 @@ class Footer extends React.Component {
       <footer
         style={[
           footerStyles.base,
+          { background: this.props.background },
           this.props.styleOverrides && footerStyles.styleOverrides
         ]}>
         <span style={[footerStyles.text]}>
