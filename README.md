@@ -19,42 +19,37 @@ import { Header, Footer } from "formidable-landers";
 import { VictorySettings, VictoryTheme, Header, Footer } from "formidable-landers";
 ```
 
-Both the `<Header />` and `<Footer />` components can be dropped in as is or be customized. The default background colors are sandy, so I recommend adding a `backgroundColor` prop at minimum.
+Both the `<Header />` and `<Footer />` components can be dropped in as is or be customized. The default background colors are sandy, so I recommend adding a `background` prop at minimum.
 ```jsx
-<Header backgroundColor="#242121" />
-<Footer backgroundColor="#242121" />
+<Header background="#242121" />
+<Footer background="#242121" />
 ```
 
 All the available customizations:
 ```jsx
 <Header
-  backgroundColor={VictorySettings.palestSand}
-  styleOverrides={{
-    display: "block"
-  }}
-  linkStyles={{
-    color: "#c43a31",
-    ":hover": {
-      color: "#e58c7d"
-    }
-  }}>
+  background={VictorySettings.palestSand}
+  baseStyles={{ display: "block" }}
+  linkStyles={{ color: #c43a31 }}
+  linkWrapperStyles={{textAlign: "center", margin: "0 auto"}}
+>
   Looking to level up your team?
 </Header>
 ```
 
 ```jsx
 <Footer
-  backgroundColor={VictorySettings.palestSand}
-  styleOverrides={{
-    display: "block"
-  }}
+  background={VictorySettings.palestSand}
+  baseStyles={{display: "block"}}
+  textStyles={{color: VictorySettings.red}}
   linkStyles={{
     color: "#c43a31",
-    ":hover": {
-      color: "#e58c7d"
-    }
+    ":hover": { color: "#e58c7d" }
   }}
-  footerLogo="img/logo.svg">
+  unstyledLinkStyles={{textDecoration: "none"}}
+  logoWrapperStyles={{textAlign: "center", margin: "0 auto"}}
+  logoColor="black"
+>
   Please press [ space ] to continue.
 </Footer>
 ```
