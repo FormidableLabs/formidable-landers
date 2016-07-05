@@ -15,7 +15,7 @@ describe("Footer", () => {
         msFlex: "none",
         margin: "1rem 0 0 0",
         padding: "3rem 0.5rem",
-        backgroundColor: "#ebe3db",
+        background: "#ebe3db",
         textAlign: "center",
         borderTop: "1px solid rgba(35, 31, 32, 0.02)"
       };

@@ -8,7 +8,7 @@ class Header extends React.Component {
         flex: "none",  // Sticky footer setup
         margin: 0,
         padding: "1rem 0.5rem",
-        backgroundColor: this.props.backgroundColor,
+        background: this.props.background,
         textAlign: "center",
         borderBottom: "1px solid rgba(35, 31, 32, 0.02)"
       },
@@ -46,12 +46,12 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-  backgroundColor: React.PropTypes.string,
+  background: React.PropTypes.string,
   children: React.PropTypes.node
 };
 
 Header.defaultProps = {
-  backgroundColor: "#ebe3db",
+  background: "#ebe3db",
   children: "We’re hiring!"
 };
 
