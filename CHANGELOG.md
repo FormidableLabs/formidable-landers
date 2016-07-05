@@ -1,6 +1,10 @@
 # Formidable-Landers Changelog
 
 
+## 3.0.0 (2016-07-05)
+
+  * Rename prop: backgroundColor to background (add support for linear-gradient)
+
 ## 2.1.0 (2016-07-04)
 
   * Add appendLinkIcon shared function
