@@ -1,5 +1,6 @@
+/* eslint-disable max-len, no-unused-expressions */
 import React from "react";
-import { shallow, render } from "enzyme";
+import { shallow } from "enzyme";
 
 import Footer from "../../../src/components/footer";
 import { BlackFormidableLogo, WhiteFormidableLogo } from "../../../src/assets/logos";
@@ -15,7 +16,7 @@ describe("Footer", () => {
         msFlex: "none",
         margin: "1rem 0 0 0",
         padding: "3rem 0.5rem",
-        backgroundColor: "#ebe3db",
+        background: "#ebe3db",
         textAlign: "center",
         borderTop: "1px solid rgba(35, 31, 32, 0.02)"
       };

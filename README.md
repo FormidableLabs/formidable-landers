@@ -19,16 +19,16 @@ import { Header, Footer } from "formidable-landers";
 import { VictorySettings, VictoryTheme, Header, Footer } from "formidable-landers";
 ```
 
-Both the `<Header />` and `<Footer />` components can be dropped in as is or be customized. The default background colors are sandy, so I recommend adding a `backgroundColor` prop at minimum.
+Both the `<Header />` and `<Footer />` components can be dropped in as is or be customized. The default background colors are sandy, so I recommend adding a `background` prop at minimum.
 ```jsx
-<Header backgroundColor="#242121" />
-<Footer backgroundColor="#242121" />
+<Header background="#242121" />
+<Footer background="#242121" />
 ```
 
 All the available customizations:
 ```jsx
 <Header
-  backgroundColor={VictorySettings.palestSand}
+  background={VictorySettings.palestSand}
   styleOverrides={{
     display: "block"
   }}
@@ -44,7 +44,7 @@ All the available customizations:
 
 ```jsx
 <Footer
-  backgroundColor={VictorySettings.palestSand}
+  background={VictorySettings.palestSand}
   styleOverrides={{
     display: "block"
   }}

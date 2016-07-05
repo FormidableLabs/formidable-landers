@@ -16,7 +16,7 @@ export default {
     textSizeAdjust: "100%"
   },
   body: {
-    backgroundColor: settings.palerSand,
+    background: settings.palerSand,
     fontFamily: settings.serif,
     fontSize: "18px",
     lineHeight: 1.4,
@@ -138,7 +138,7 @@ export default {
    * Buttons!
    */
   ".Button": {
-    backgroundColor: "transparent",
+    background: "transparent",
     border: `3px solid ${settings.palerSand}`,
     boxShadow: "none",
     color: settings.darkestSand,
@@ -264,7 +264,7 @@ export default {
    *          |- .previewArea
    */
   ".Interactive": {
-    backgroundColor: settings.whiteSand,
+    background: settings.whiteSand,
     margin: `${settings.gutter}px 0 ${settings.gutter * 2}px`,
     minHeight: "150px",
     width: "100%"
@@ -313,7 +313,7 @@ export default {
     textAlign: "center"
   },
   ".Interactive .playgroundError": {
-    backgroundColor: settings.paleRed,
+    background: settings.paleRed,
     color: settings.whiteSand,
     fontFamily: settings.monospace,
     fontSize: "1rem",
@@ -506,24 +506,24 @@ export default {
    */
   ".playgroundStage": {
     // Default state
-    backgroundColor: settings.codeMirror.bg,
+    background: settings.codeMirror.bg,
     color: settings.whiteSand,
     transition: "background-color 195ms ease-in"
   },
   ".playgroundStage.ReactCodeMirror--focused": {
     // Focused state
-    backgroundColor: settings.codeMirror.bgFocused,
+    background: settings.codeMirror.bgFocused,
     transition: "background-color 250ms ease-out"
   },
   ".cm-s-elegant .CodeMirror-selected": {
     // text selection
-    backgroundColor: settings.mud
+    background: settings.mud
   },
   ".cm-s-elegant .CodeMirror-activeline": {
-    backgroundColor: "#000000"
+    background: "#000000"
   },
   ".cm-s-elegant .CodeMirror-activeline-background": {
-    backgroundColor: "#000000"
+    background: "#000000"
   },
   ".cm-s-elegant .CodeMirror-gutters": {
     background: `${settings.darkMud} !important`
