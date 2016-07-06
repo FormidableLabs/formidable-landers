@@ -1,5 +1,10 @@
 # Formidable-Landers Changelog
 
+## 3.1.0 (2016-07-06)
+
+  * Add `ecologyPlaygroundLoading` shared function
+  * Fix `appendLink-icon` title
+  * Remove `xmlns` prop on SVG logos, silencing React v15.2 warnings
 
 ## 3.0.0 (2016-07-05)
 
