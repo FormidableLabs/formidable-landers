@@ -1,7 +1,7 @@
 /*eslint-disable max-len, no-unused-vars*/
 import React from "react";
 
-const BlackFormidableLogo = <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 132 33"
+const BlackFormidableLogo = <svg version="1.1" x="0px" y="0px" viewBox="0 0 132 33"
   style={{enableBackground: "new 0 0 132 33", maxWidth: "100%", width: "inherit", height: "auto"}} xmlSpace="preserve" role="img" aria-labelledby="title">
      <title>Formidable</title>
   <g>
@@ -36,7 +36,7 @@ const BlackFormidableLogo = <svg version="1.1" xmlns="http://www.w3.org/2000/svg
   <polygon fill="#242121" fillOpacity="0.75" points="5.1,26.3 10.7,19.5 10.7,28.6 "/>
 </svg>;
 
-const WhiteFormidableLogo = <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 132 33"
+const WhiteFormidableLogo = <svg version="1.1" x="0px" y="0px" viewBox="0 0 132 33"
   style={{enableBackground: "new 0 0 132 33", maxWidth: "100%", width: "inherit", height: "auto"}} xmlSpace="preserve" role="img" aria-labelledby="title">
      <title>Formidable</title>
   <g>
