@@ -300,7 +300,7 @@ export default {
   },
   ".Interactive .playgroundPreview:after": {
     counterIncrement: "interactive",
-    content: "'Fig. ' counter(interactive) '.'",
+    content: `Fig. " counter(interactive) ".`,
     position: "absolute",
     right: 0,
     bottom: 0,
