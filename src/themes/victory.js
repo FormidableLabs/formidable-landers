@@ -254,6 +254,24 @@ export default {
        11px -1px 0 0 ${settings.darkerSand}`
   },
   /*
+   * Vertically stacked playground for Recipes
+   * .Recipe
+   * |- pre
+   *    |- .Interactive
+   *       |- .playground
+   *          |- .playgroundCode
+   *          |- .playgroundPreview
+   */
+  ".Recipe .Interactive .playground": {
+    "flexDirection": "column"
+  },
+  ".Recipe .Interactive .playgroundCode": {
+    "flex": "none"
+  },
+  ".Recipe .Interactive .playgroundPreview": {
+    "flex": "none"
+  },
+  /*
    * Interactive/Component Playground
    * .Interactive
    * |- .playground
@@ -482,6 +500,9 @@ export default {
         left: 0,
         right: 0,
         bottom: 0
+      },
+      ".Recipe .Interactive .playground": {
+        marginLeft: 0
       },
       ".playgroundsMaxHeight .Interactive .playgroundStage": {
         maxHeight: "500px",
