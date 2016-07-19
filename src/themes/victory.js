@@ -438,9 +438,13 @@ export default {
         maxHeight: "450px"
       },
       ".Interactive .previewArea, .Interactive .previewArea > div:first-child": {
-        // wrapper divs: the worst
+        // wrapper divs: the _actual_ worst
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
         width: "100%",
         margin: "0 auto",
+        minHeight: "100px",
         maxHeight: "450px"
       },
       ".Interactive .playgroundPreview": {
