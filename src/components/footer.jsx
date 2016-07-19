@@ -73,12 +73,16 @@ class Footer extends React.Component {
 
 Footer.propTypes = {
   background: React.PropTypes.string,
-  logoColor: React.PropTypes.oneOf(["black", "white"])
+  logoColor: React.PropTypes.oneOf(["black", "white"]),
+  linkStyles: React.PropTypes.object,
+  styleOverrides: React.PropTypes.object
 };
 
 Footer.defaultProps = {
   background: "#ebe3db",
-  logoColor: "black"
+  logoColor: "black",
+  linkStyles: null,
+  styleOverrides: null
 };
 
 export default Radium(Footer); //eslint-disable-line new-cap

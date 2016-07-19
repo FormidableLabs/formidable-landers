@@ -47,12 +47,16 @@ class Header extends React.Component {
 
 Header.propTypes = {
   background: React.PropTypes.string,
-  children: React.PropTypes.node
+  children: React.PropTypes.node,
+  linkStyles: React.PropTypes.object,
+  styleOverrides: React.PropTypes.object
 };
 
 Header.defaultProps = {
   background: "#ebe3db",
-  children: "We’re hiring!"
+  children: "We’re hiring!",
+  linkStyles: null,
+  styleOverrides: null
 };
 
 export default Radium(Header); //eslint-disable-line new-cap
