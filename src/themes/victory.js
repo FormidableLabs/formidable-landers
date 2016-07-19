@@ -268,9 +268,6 @@ export default {
   ".Recipe .Interactive .playgroundCode": {
     "flex": "none"
   },
-  ".Recipe .Interactive .playgroundPreview": {
-    "flex": "none"
-  },
   /*
    * Interactive/Component Playground
    * .Interactive
@@ -448,7 +445,7 @@ export default {
         maxHeight: "450px"
       },
       ".Interactive .playgroundPreview": {
-        maxHeight: "500px"
+        flex: "0 1 500px"
       }
     },
     [settings.mediaQueries.large]: {
