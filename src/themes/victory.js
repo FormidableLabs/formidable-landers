@@ -263,10 +263,20 @@ export default {
    *          |- .playgroundPreview
    */
   ".Recipe .Interactive .playground": {
-    "flexDirection": "column"
+    flexDirection: "column"
+  },
+  ".Recipe .Interactive .playgroundPreview": {
+    flexBasis: "500px"
+  },
+  ".Recipe .Interactive .playgroundPreview > div:first-child, .Recipe .Interactive .previewArea, .Recipe .Interactive .previewArea > div:first-child": {
+    maxHeight: "initial !important"
+  },
+  ".Recipe .Interactive .playgroundStage": {
+    maxHeight: "initial",
+    minHeight: "200px"
   },
   ".Recipe .Interactive .playgroundCode": {
-    "flex": "none"
+    flex: "none"
   },
   /*
    * Interactive/Component Playground
