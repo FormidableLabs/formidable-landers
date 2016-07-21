@@ -265,8 +265,11 @@ export default {
   ".Recipe .Interactive .playground": {
     flexDirection: "column"
   },
-  ".Recipe .Interactive .playgroundPreview > div:first-child, .Recipe .Interactive .previewArea": {
+  ".Recipe .Interactive .playgroundPreview > div:first-child": {
     maxHeight: "initial !important"
+  },
+  ".Recipe .Interactive .previewArea": {
+    maxHeight: "500px"
   },
   ".Recipe .Interactive .playgroundPreview": {
     flexBasis: "500px"
@@ -295,7 +298,6 @@ export default {
   ".Interactive": {
     background: settings.whiteSand,
     margin: `${settings.gutter}px 0 ${settings.gutter * 2}px`,
-    minHeight: "150px",
     width: "100%"
   },
   ".Interactive .playground": {
@@ -308,7 +310,8 @@ export default {
     flex: "0 0 45%",
     order: "2",
     margin: 0,
-    padding: 0
+    padding: 0,
+    backgroundColor: settings.codeMirror.bg
   },
   ".Interactive .playgroundStage": {
     padding: `${settings.gutter}px ${settings.gutter}px`,
@@ -330,7 +333,7 @@ export default {
     maxHeight: "320px",
     margin: "0 auto"
   },
-  ".Interactive .previewArea, .Interactive .previewArea > div:first-child": {
+  ".Interactive .previewArea": {
     // wrapper divs: the _actual_ worst
     display: "flex",
     alignItems: "center",
@@ -455,8 +458,11 @@ export default {
       ".Interactive .playground": {
         flexDirection: "column"
       },
+      ".Interactive .playgroundPreview": {
+        flexBasis: "300px"
+      },
       ".Interactive .previewArea, .Interactive .previewArea > div:first-child": {
-        flexBasis: "350px"
+        flexBasis: "250px"
       },
       ".Interactive .playgroundCode": {
         flex: "auto"
@@ -466,9 +472,6 @@ export default {
       },
       ".Recipe .Interactive .playgroundPreview": {
         flexBasis: "400px"
-      },
-      ".Recipe .Interactive .previewArea > div:first-child": {
-        maxHeight: "350px"
       }
     },
     [settings.mediaQueries.medium]: {
