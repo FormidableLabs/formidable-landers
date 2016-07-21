@@ -299,6 +299,7 @@ export default {
   },
   ".Interactive .playgroundStage": {
     padding: `${settings.gutter}px ${settings.gutter}px`,
+    width: "100%",
     height: "100%",
     maxHeight: "400px",
     overflow: "scroll"
@@ -443,6 +444,9 @@ export default {
       },
       ".Interactive .previewArea, .Interactive .previewArea > div:first-child": {
         flexBasis: "350px"
+      },
+      ".Interactive .playgroundStage": {
+        maxHeight: "280px"
       }
     },
     [settings.mediaQueries.medium]: {
