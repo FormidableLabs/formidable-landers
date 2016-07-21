@@ -25,7 +25,7 @@ export default {
                     <div style="display: flex;flex-direction: column;flex-wrap: nowrap;margin-left: -20px;padding: 0;">
                         <div style="display: flex;flex: 0 0 150px;margin: 0;">
                         </div>
-                        <div style="display: flex;flex: 0 0 150px;margin: 0;padding: 0;">
+                        <div style="display: flex;flex: 0 0 150px;margin: 0;padding: 0;background-color: #222;">
                             <div class="ReactCodeMirror playgroundStage"></div>
                         </div>
                     </div>
