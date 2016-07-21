@@ -263,13 +263,26 @@ export default {
    *          |- .playgroundPreview
    */
   ".Recipe .Interactive .playground": {
-    "flexDirection": "column"
+    flexDirection: "column"
   },
-  ".Recipe .Interactive .playgroundCode": {
-    "flex": "none"
+  ".Recipe .Interactive .playgroundPreview > div:first-child": {
+    maxHeight: "initial !important"
+  },
+  ".Recipe .Interactive .previewArea": {
+    maxHeight: "500px"
   },
   ".Recipe .Interactive .playgroundPreview": {
-    "flex": "none"
+    flexBasis: "500px"
+  },
+  ".Recipe .Interactive .previewArea > div:first-child": {
+    maxHeight: "450px"
+  },
+  ".Recipe .Interactive .playgroundStage": {
+    maxHeight: "initial",
+    minHeight: "200px"
+  },
+  ".Recipe .Interactive .playgroundCode": {
+    flex: "none"
   },
   /*
    * Interactive/Component Playground
@@ -285,7 +298,6 @@ export default {
   ".Interactive": {
     background: settings.whiteSand,
     margin: `${settings.gutter}px 0 ${settings.gutter * 2}px`,
-    minHeight: "150px",
     width: "100%"
   },
   ".Interactive .playground": {
@@ -295,25 +307,44 @@ export default {
     padding: 0
   },
   ".Interactive .playgroundCode": {
-    flex: "0 0 100%",
+    flex: "0 0 45%",
     order: "2",
     margin: 0,
-    padding: 0
+    padding: 0,
+    backgroundColor: settings.codeMirror.bg
   },
   ".Interactive .playgroundStage": {
     padding: `${settings.gutter}px ${settings.gutter}px`,
-    width: "100%"
+    width: "100%",
+    height: "100%",
+    maxHeight: "400px",
+    overflow: "scroll"
   },
   ".Interactive .playgroundPreview": {
-    flex: "0 0 100%",
+    flex: "0 1 55%",
     order: "1",
-    marginBottom: 0,
     padding: `0 0 ${settings.gutter * 2}px 0`,
     position: "relative",
     textAlign: "center"
   },
+  ".Interactive .playgroundPreview > div:first-child": {
+    // wrapper divs: the worst
+    width: "100%",
+    maxHeight: "320px",
+    margin: "0 auto"
+  },
+  ".Interactive .previewArea": {
+    // wrapper divs: the _actual_ worst
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    minHeight: "100px",
+    maxHeight: "320px",
+    width: "100%",
+    margin: "0 auto"
+  },
   ".Interactive .playgroundPreview svg": {
-    maxHeight: "450px",
+    maxHeight: "inherit",
     margin: "0 auto"
   },
   ".Interactive .playgroundPreview:after": {
@@ -403,10 +434,46 @@ export default {
     fontFamily: settings.monospace,
     color: settings.paleMud
   },
+  ".Interactive .previewArea .playgroundDatasetSelectWrapper": {
+    display: "flex",
+    alignItems: "center",
+    position: "absolute",
+    right: "10px",
+    top: "10px"
+  },
+  ".Interactive .previewArea .playgroundDatasetSelect": {
+    border: `1px solid ${settings.paleSand}`,
+    fontSize: "14px"
+  },
+  ".Interactive .previewArea .playgroundDatasetSelectLabel": {
+    fontSize: "14px",
+    marginRight: "5px",
+    lineHeight: 1.4
+  },
   /*
    * Media Queries
   **/
   mediaQueries: {
+    [settings.mediaQueries.small]: {
+      ".Interactive .playground": {
+        flexDirection: "column"
+      },
+      ".Interactive .playgroundPreview": {
+        flexBasis: "300px"
+      },
+      ".Interactive .previewArea, .Interactive .previewArea > div:first-child": {
+        flexBasis: "250px"
+      },
+      ".Interactive .playgroundCode": {
+        flex: "auto"
+      },
+      ".Interactive .playgroundStage": {
+        maxHeight: "280px"
+      },
+      ".Recipe .Interactive .playgroundPreview": {
+        flexBasis: "400px"
+      }
+    },
     [settings.mediaQueries.medium]: {
       body: {
         fontSize: "20px",
@@ -427,24 +494,6 @@ export default {
       },
       ".Main pre pre": {
         margin: 0
-      },
-      ".Interactive .playgroundPreview svg": {
-        maxHeight: "inherit"
-      },
-      ".Interactive .playgroundPreview > div:first-child": {
-        // wrapper divs: the worst
-        width: "100%",
-        margin: "0 auto",
-        maxHeight: "450px"
-      },
-      ".Interactive .previewArea, .Interactive .previewArea > div:first-child": {
-        // wrapper divs: the worst
-        width: "100%",
-        margin: "0 auto",
-        maxHeight: "450px"
-      },
-      ".Interactive .playgroundPreview": {
-        maxHeight: "500px"
       }
     },
     [settings.mediaQueries.large]: {
@@ -479,19 +528,6 @@ export default {
         margin: 0,
         padding: 0
       },
-      ".Interactive .playgroundPreview": {
-        display: "flex",
-        flex: "1 2 45%",
-        margin: 0,
-        padding: `${settings.gutter}px ${settings.gutter * 4}px ${settings.gutter}px`
-      },
-      ".Interactive .playgroundPreview svg": {
-        maxHeight: "inherit"
-      },
-      ".Interactive .playgroundPreview > div:first-child": {
-        // wrapper divs: the worst
-        width: "100%"
-      },
       ".Interactive .playgroundError": {
         margin: 0,
         padding: `${settings.gutter}px ${settings.gutter * 2}px`,
@@ -503,23 +539,6 @@ export default {
       },
       ".Recipe .Interactive .playground": {
         marginLeft: 0
-      },
-      ".playgroundsMaxHeight .Interactive .playgroundStage": {
-        maxHeight: "500px",
-        overflowY: "scroll"
-      },
-      ".playgroundsMaxHeight .Interactive .playgroundPreview": {
-        maxHeight: "500px"
-      },
-      ".playgroundsMaxHeight .Interactive .playgroundPreview > div:first-child": {
-        // wrapper divs: the worst
-        margin: "0 auto",
-        maxHeight: "400px"
-      },
-      ".playgroundsMaxHeight .Interactive .previewArea, .playgroundsMaxHeight .Interactive .previewArea > div:first-child": {
-        // wrapper divs: the worst
-        margin: "0 auto",
-        maxHeight: "400px"
       }
     }
   },
