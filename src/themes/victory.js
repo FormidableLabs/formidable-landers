@@ -268,8 +268,11 @@ export default {
   ".Recipe .Interactive .playgroundPreview": {
     flexBasis: "500px"
   },
-  ".Recipe .Interactive .playgroundPreview > div:first-child, .Recipe .Interactive .previewArea, .Recipe .Interactive .previewArea > div:first-child": {
+  ".Recipe .Interactive .playgroundPreview > div:first-child, .Recipe .Interactive .previewArea": {
     maxHeight: "initial !important"
+  },
+  ".Recipe .Interactive .previewArea > div:first-child": {
+    maxHeight: "450px"
   },
   ".Recipe .Interactive .playgroundStage": {
     maxHeight: "initial",
