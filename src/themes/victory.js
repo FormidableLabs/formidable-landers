@@ -287,22 +287,24 @@ export default {
   },
   ".Interactive .playground": {
     display: "flex",
-    flexDirection: "column",
+    flexDirection: "row",
     flexWrap: "wrap",
     padding: 0
   },
   ".Interactive .playgroundCode": {
-    flex: "0 0 100%",
+    flex: "0 0 45%",
     order: "2",
     margin: 0,
     padding: 0
   },
   ".Interactive .playgroundStage": {
     padding: `${settings.gutter}px ${settings.gutter}px`,
-    width: "100%"
+    height: "100%",
+    maxHeight: "400px",
+    overflow: "scroll"
   },
   ".Interactive .playgroundPreview": {
-    flex: "0 1 420px",
+    flex: "0 1 55%",
     order: "1",
     padding: `0 0 ${settings.gutter * 2}px 0`,
     position: "relative",
@@ -311,7 +313,7 @@ export default {
   ".Interactive .playgroundPreview > div:first-child": {
     // wrapper divs: the worst
     width: "100%",
-    maxHeight: "390px",
+    maxHeight: "320px",
     margin: "0 auto"
   },
   ".Interactive .previewArea, .Interactive .previewArea > div:first-child": {
@@ -320,12 +322,12 @@ export default {
     alignItems: "center",
     justifyContent: "center",
     minHeight: "100px",
-    maxHeight: "390px",
+    maxHeight: "320px",
     width: "100%",
     margin: "0 auto"
   },
   ".Interactive .playgroundPreview svg": {
-    maxHeight: "420px",
+    maxHeight: "inherit",
     margin: "0 auto"
   },
   ".Interactive .playgroundPreview:after": {
@@ -436,8 +438,11 @@ export default {
   **/
   mediaQueries: {
     [settings.mediaQueries.small]: {
-      ".Interactive .playgroundPreview": {
-        flex: "0 1 300px"
+      ".Interactive .playground": {
+        flexDirection: "column"
+      },
+      ".Interactive .previewArea, .Interactive .previewArea > div:first-child": {
+        flexBasis: "350px"
       }
     },
     [settings.mediaQueries.medium]: {
@@ -460,9 +465,6 @@ export default {
       },
       ".Main pre pre": {
         margin: 0
-      },
-      ".Interactive .playgroundPreview svg": {
-        maxHeight: "inherit"
       }
     },
     [settings.mediaQueries.large]: {

@@ -35,6 +35,7 @@ export default {
   // Media Queries
   // ---------------------
   mediaQueries: {
+    small: "only screen and (max-width: 650px)",
     medium: "only screen and (min-width: 960px)",
     large: "only screen and (min-width: 1260px)"
   },
