@@ -445,6 +445,9 @@ export default {
       ".Interactive .previewArea, .Interactive .previewArea > div:first-child": {
         flexBasis: "350px"
       },
+      ".Interactive .playgroundCode": {
+        flex: "auto"
+      },
       ".Interactive .playgroundStage": {
         maxHeight: "280px"
       }
