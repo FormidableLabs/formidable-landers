@@ -265,11 +265,11 @@ export default {
   ".Recipe .Interactive .playground": {
     flexDirection: "column"
   },
-  ".Recipe .Interactive .playgroundPreview": {
-    flexBasis: "500px"
-  },
   ".Recipe .Interactive .playgroundPreview > div:first-child, .Recipe .Interactive .previewArea": {
     maxHeight: "initial !important"
+  },
+  ".Recipe .Interactive .playgroundPreview": {
+    flexBasis: "500px"
   },
   ".Recipe .Interactive .previewArea > div:first-child": {
     maxHeight: "450px"
@@ -463,6 +463,12 @@ export default {
       },
       ".Interactive .playgroundStage": {
         maxHeight: "280px"
+      },
+      ".Recipe .Interactive .playgroundPreview": {
+        flexBasis: "400px"
+      },
+      ".Recipe .Interactive .previewArea > div:first-child": {
+        maxHeight: "350px"
       }
     },
     [settings.mediaQueries.medium]: {
