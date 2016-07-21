@@ -287,7 +287,7 @@ export default {
   },
   ".Interactive .playground": {
     display: "flex",
-    flexDirection: "row",
+    flexDirection: "column",
     flexWrap: "wrap",
     padding: 0
   },
@@ -302,15 +302,30 @@ export default {
     width: "100%"
   },
   ".Interactive .playgroundPreview": {
-    flex: "0 0 100%",
+    flex: "0 1 420px",
     order: "1",
-    marginBottom: 0,
     padding: `0 0 ${settings.gutter * 2}px 0`,
     position: "relative",
     textAlign: "center"
   },
+  ".Interactive .playgroundPreview > div:first-child": {
+    // wrapper divs: the worst
+    width: "100%",
+    maxHeight: "390px",
+    margin: "0 auto"
+  },
+  ".Interactive .previewArea, .Interactive .previewArea > div:first-child": {
+    // wrapper divs: the _actual_ worst
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    minHeight: "100px",
+    maxHeight: "390px",
+    width: "100%",
+    margin: "0 auto"
+  },
   ".Interactive .playgroundPreview svg": {
-    maxHeight: "450px",
+    maxHeight: "420px",
     margin: "0 auto"
   },
   ".Interactive .playgroundPreview:after": {
@@ -400,10 +415,31 @@ export default {
     fontFamily: settings.monospace,
     color: settings.paleMud
   },
+  ".Interactive .previewArea .playgroundDatasetSelectWrapper": {
+    display: "flex",
+    alignItems: "center",
+    position: "absolute",
+    right: "10px",
+    top: "10px"
+  },
+  ".Interactive .previewArea .playgroundDatasetSelect": {
+    border: `1px solid ${settings.paleSand}`,
+    fontSize: "14px"
+  },
+  ".Interactive .previewArea .playgroundDatasetSelectLabel": {
+    fontSize: "14px",
+    marginRight: "5px",
+    lineHeight: 1.4
+  },
   /*
    * Media Queries
   **/
   mediaQueries: {
+    [settings.mediaQueries.small]: {
+      ".Interactive .playgroundPreview": {
+        flex: "0 1 300px"
+      }
+    },
     [settings.mediaQueries.medium]: {
       body: {
         fontSize: "20px",
@@ -427,25 +463,6 @@ export default {
       },
       ".Interactive .playgroundPreview svg": {
         maxHeight: "inherit"
-      },
-      ".Interactive .playgroundPreview > div:first-child": {
-        // wrapper divs: the worst
-        width: "100%",
-        margin: "0 auto",
-        maxHeight: "450px"
-      },
-      ".Interactive .previewArea, .Interactive .previewArea > div:first-child": {
-        // wrapper divs: the _actual_ worst
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        width: "100%",
-        margin: "0 auto",
-        minHeight: "100px",
-        maxHeight: "450px"
-      },
-      ".Interactive .playgroundPreview": {
-        flex: "0 1 500px"
       }
     },
     [settings.mediaQueries.large]: {
@@ -480,19 +497,6 @@ export default {
         margin: 0,
         padding: 0
       },
-      ".Interactive .playgroundPreview": {
-        display: "flex",
-        flex: "1 2 45%",
-        margin: 0,
-        padding: `${settings.gutter}px ${settings.gutter * 4}px ${settings.gutter}px`
-      },
-      ".Interactive .playgroundPreview svg": {
-        maxHeight: "inherit"
-      },
-      ".Interactive .playgroundPreview > div:first-child": {
-        // wrapper divs: the worst
-        width: "100%"
-      },
       ".Interactive .playgroundError": {
         margin: 0,
         padding: `${settings.gutter}px ${settings.gutter * 2}px`,
@@ -504,23 +508,6 @@ export default {
       },
       ".Recipe .Interactive .playground": {
         marginLeft: 0
-      },
-      ".playgroundsMaxHeight .Interactive .playgroundStage": {
-        maxHeight: "500px",
-        overflowY: "scroll"
-      },
-      ".playgroundsMaxHeight .Interactive .playgroundPreview": {
-        maxHeight: "500px"
-      },
-      ".playgroundsMaxHeight .Interactive .playgroundPreview > div:first-child": {
-        // wrapper divs: the worst
-        margin: "0 auto",
-        maxHeight: "400px"
-      },
-      ".playgroundsMaxHeight .Interactive .previewArea, .playgroundsMaxHeight .Interactive .previewArea > div:first-child": {
-        // wrapper divs: the worst
-        margin: "0 auto",
-        maxHeight: "400px"
       }
     }
   },
