@@ -5,6 +5,11 @@
 // Settings
 import settings from "./victory-settings";
 
+const playgroundSettings = {
+  recipePlaygroundHeight: "400px",
+  playgroundHeight: "360px"
+};
+
 // Stylesheet
 export default {
   /*
@@ -186,7 +191,7 @@ export default {
     marginTop: "0.25em"
   },
   ".Ecology ul > li:before": {
-    content: "''",
+    content: "",
     width: "1em",
     height: "1em",
     display: "block",
@@ -320,7 +325,7 @@ export default {
     padding: `${settings.gutter}px ${settings.gutter}px`,
     width: "100%",
     height: "100%",
-    maxHeight: "400px",
+    maxHeight: playgroundSettings.playgroundHeight,
     overflow: "scroll"
   },
   ".Interactive .playgroundPreview": {
@@ -462,10 +467,12 @@ export default {
    */
   ".Interactive .Toolbar": {
     position: "absolute",
+    display: "flex",
     zIndex: 2,
     right: "0px",
     top: "0px",
-    padding: "10px 5px"
+    padding: "0px 5px",
+    margin: "7.5px 0px"
   },
   ".Interactive .Toolbar button": {
     margin: "0px 2.5px",
@@ -481,6 +488,10 @@ export default {
     backgroundColor: settings.darkerSand,
     color: settings.codeMirror.bg
   },
+  // Add padding when toolbar buttons are visible
+  ".Interactive .Toolbar ~ .playground .playgroundStage": {
+    paddingTop: "30px"
+  },
   /*
    * Media Queries
   **/
@@ -490,7 +501,7 @@ export default {
         flexDirection: "column"
       },
       ".Interactive .playgroundPreview": {
-        flexBasis: "300px"
+        flexBasis: playgroundSettings.playgroundHeight
       },
       ".Interactive .previewArea, .Interactive .previewArea > div:first-child": {
         flexBasis: "250px"
@@ -499,13 +510,16 @@ export default {
         flex: "auto"
       },
       ".Interactive .playgroundStage": {
-        maxHeight: "280px"
+        maxHeight: "340px"
       },
       ".Recipe .Interactive .playgroundPreview": {
-        flexBasis: "400px"
+        flexBasis: playgroundSettings.recipePlaygroundHeight
       },
       ".Interactive .Toolbar": {
-        position: "relative"
+        top: playgroundSettings.playgroundHeight
+      },
+      ".Recipe .Interactive .Toolbar": {
+        top: playgroundSettings.recipePlaygroundHeight
       },
       ".Interactive .Toolbar button": {
         border: `1px solid ${settings.sand}`,
