@@ -191,7 +191,7 @@ export default {
     marginTop: "0.25em"
   },
   ".Ecology ul > li:before": {
-    content: "",
+    content: " ",
     width: "1em",
     height: "1em",
     display: "block",
