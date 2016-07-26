@@ -5,6 +5,11 @@
 // Settings
 import settings from "./victory-settings";
 
+const playgroundSettings = {
+  recipePlaygroundHeight: "400px",
+  playgroundHeight: "360px"
+};
+
 // Stylesheet
 export default {
   /*
@@ -296,11 +301,14 @@ export default {
    *          |- .previewArea
    */
   ".Interactive": {
+    position: "relative",
     background: settings.whiteSand,
     margin: `${settings.gutter}px 0 ${settings.gutter * 2}px`,
     width: "100%"
   },
   ".Interactive .playground": {
+    position: "relative",
+    zIndex: 1,
     display: "flex",
     flexDirection: "row",
     flexWrap: "wrap",
@@ -317,7 +325,7 @@ export default {
     padding: `${settings.gutter}px ${settings.gutter}px`,
     width: "100%",
     height: "100%",
-    maxHeight: "400px",
+    maxHeight: playgroundSettings.playgroundHeight,
     overflow: "scroll"
   },
   ".Interactive .playgroundPreview": {
@@ -451,6 +459,40 @@ export default {
     lineHeight: 1.4
   },
   /*
+   * Component Playground Export/Copy Buttons
+   * .Interactive
+   * |- .Toolbar
+   *    |- button.Button-GistExport
+   *    |- button.Button-Clipboard
+   */
+  ".Interactive .Toolbar": {
+    position: "absolute",
+    display: "flex",
+    zIndex: 2,
+    right: "0px",
+    top: "0px",
+    padding: "0px 5px",
+    margin: "7.5px 0px"
+  },
+  ".Interactive .Toolbar button": {
+    margin: "0px 2.5px",
+    border: `1px solid ${settings.darkerSand}`,
+    borderRadius: "1px",
+    backgroundColor: "transparent",
+    fontFamily: settings.monospace,
+    fontSize: "9px",
+    color: settings.darkerSand,
+    cursor: "Pointer"
+  },
+  ".Interactive .Toolbar button:hover": {
+    backgroundColor: settings.darkerSand,
+    color: settings.codeMirror.bg
+  },
+  // Add padding when toolbar buttons are visible
+  ".Interactive .Toolbar ~ .playground .playgroundStage": {
+    paddingTop: "30px"
+  },
+  /*
    * Media Queries
   **/
   mediaQueries: {
@@ -459,7 +501,7 @@ export default {
         flexDirection: "column"
       },
       ".Interactive .playgroundPreview": {
-        flexBasis: "300px"
+        flexBasis: playgroundSettings.playgroundHeight
       },
       ".Interactive .previewArea, .Interactive .previewArea > div:first-child": {
         flexBasis: "250px"
@@ -468,10 +510,25 @@ export default {
         flex: "auto"
       },
       ".Interactive .playgroundStage": {
-        maxHeight: "280px"
+        maxHeight: "340px"
       },
       ".Recipe .Interactive .playgroundPreview": {
-        flexBasis: "400px"
+        flexBasis: playgroundSettings.recipePlaygroundHeight
+      },
+      ".Interactive .Toolbar": {
+        top: playgroundSettings.playgroundHeight
+      },
+      ".Recipe .Interactive .Toolbar": {
+        top: playgroundSettings.recipePlaygroundHeight
+      },
+      ".Interactive .Toolbar button": {
+        border: `1px solid ${settings.sand}`,
+        fontSize: "11px",
+        color: settings.sand
+      },
+      ".Interactive .Toolbar button:hover": {
+        backgroundColor: settings.sand,
+        color: settings.whiteSand
       }
     },
     [settings.mediaQueries.medium]: {
