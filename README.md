@@ -67,7 +67,8 @@ All the available customizations:
 | Ecology | [FormidableLabs/ecology](https://github.com/FormidableLabs/ecology) | - |
 | ES6 Interactive Guide | [FormidableLabs/es6-interactive-guide](https://github.com/FormidableLabs/es6-interactive-guide) | http://stack.formidable.com/es6-interactive-guide/ |
 | Open Source | [FormidableLabs/formidablelabs.github.io ](https://github.com/FormidableLabs/formidablelabs.github.io) | http://stack.formidable.com/ |
-| Radium | [FormidableLabs/radium](https://github.com/FormidableLabs/radium) | http://stack.formidable.com/radium/ |
+| Playbook | [FormidableLabs/formidable-playbook](https://github.com/FormidableLabs/formidable-playbook) | http://formidable.com/open-source/playbook |
+| Radium | [FormidableLabs/radium](https://github.com/FormidableLabs/radium) | http://formidable.com/open-source/radium/ |
 | Spectacle | [FormidableLabs/spectacle](https://github.com/FormidableLabs/spectacle) | http://formidable.com/open-source/spectacle/ |
 | Victory | [FormidableLabs/victory](https://github.com/FormidableLabs/victory) | http://formidable.com/open-source/victory |
 
