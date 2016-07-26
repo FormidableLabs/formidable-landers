@@ -73,8 +73,8 @@ All the available customizations:
 | Victory | [FormidableLabs/victory](https://github.com/FormidableLabs/victory) | http://formidable.com/open-source/victory |
 
 #### Notes
-- All projects with landers (except Radium) are built on React
-- Radium is built on jekyll
+- All projects with landers are built with React
+- Project landers use [Builder](https://github.com/FormidableLabs/builder) with the [builder-docs-archetype](https://github.com/FormidableLabs/builder-docs-archetype)
 
 ## Publish
 
