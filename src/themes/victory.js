@@ -449,6 +449,9 @@ export default {
     right: "10px",
     top: "10px"
   },
+  ".Interactive .previewArea .playgroundDatasetSelectWrapper ~ *": {
+    marginTop: "40px"
+  },
   ".Interactive .previewArea .playgroundDatasetSelect": {
     border: `1px solid ${settings.paleSand}`,
     fontSize: "14px"
