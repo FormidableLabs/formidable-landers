@@ -554,6 +554,9 @@ export default {
       },
       ".Main pre pre": {
         margin: 0
+      },
+      ".Interactive .playground": {
+        flexWrap: "nowrap"
       }
     },
     [settings.mediaQueries.large]: {
