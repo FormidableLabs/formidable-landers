@@ -267,7 +267,7 @@ export default {
    *          |- .playgroundCode
    *          |- .playgroundPreview
    */
-  ".Recipe .Interactive .playground": {
+".Recipe .Interactive .playground": {
     flexDirection: "column"
   },
   ".Recipe .Interactive .playgroundPreview > div:first-child": {
@@ -311,7 +311,7 @@ export default {
     zIndex: 1,
     display: "flex",
     flexDirection: "row",
-    flexWrap: "wrap",
+    flexWrap: "nowrap",
     padding: 0
   },
   ".Interactive .playgroundCode": {
@@ -449,6 +449,9 @@ export default {
     right: "10px",
     top: "10px"
   },
+  ".Interactive .previewArea .playgroundDatasetSelectWrapper ~ *": {
+    marginTop: "40px"
+  },
   ".Interactive .previewArea .playgroundDatasetSelect": {
     border: `1px solid ${settings.paleSand}`,
     fontSize: "14px"
@@ -573,7 +576,6 @@ export default {
         lineHeight: 1.2
       },
       ".Interactive .playground": {
-        flexWrap: "nowrap",
         alignItems: "stretch",
         justifyContent: "space-between",
         marginLeft: `${settings.gutter * -1}px`,
