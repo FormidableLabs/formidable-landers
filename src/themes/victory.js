@@ -267,7 +267,7 @@ export default {
    *          |- .playgroundCode
    *          |- .playgroundPreview
    */
-  ".Recipe .Interactive .playground": {
+".Recipe .Interactive .playground": {
     flexDirection: "column"
   },
   ".Recipe .Interactive .playgroundPreview > div:first-child": {
@@ -311,7 +311,7 @@ export default {
     zIndex: 1,
     display: "flex",
     flexDirection: "row",
-    flexWrap: "wrap",
+    flexWrap: "nowrap",
     padding: 0
   },
   ".Interactive .playgroundCode": {
@@ -554,9 +554,6 @@ export default {
       },
       ".Main pre pre": {
         margin: 0
-      },
-      ".Interactive .playground": {
-        flexWrap: "nowrap"
       }
     },
     [settings.mediaQueries.large]: {
@@ -579,7 +576,6 @@ export default {
         lineHeight: 1.2
       },
       ".Interactive .playground": {
-        flexWrap: "nowrap",
         alignItems: "stretch",
         justifyContent: "space-between",
         marginLeft: `${settings.gutter * -1}px`,
