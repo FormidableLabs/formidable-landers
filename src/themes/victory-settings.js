@@ -3,8 +3,8 @@ export default {
   // ---------------------
   // Fonts
   // ---------------------
-  sansSerif: "'Karla', 'Helvetica Neue', Helvetica, sans-serif",
-  serif: "'Georgia', serif",
+  sansSerif: "'Gill Sans', 'Trebuchet MS', Helvetica, sans-serif",
+  serif: "'Cardo', 'Georgia', 'Cambria', serif",
   monospace: "'Source Code Pro', 'Inconsolata', 'Courier New', 'Courier', monospace",
   serifHeadline: "'Didot', 'Bodoni MT', 'Cochin', 'Baskerville', 'Goudy Old Style', 'Bitstream Charter', serif",
   // ---------------------
@@ -35,7 +35,8 @@ export default {
   // Media Queries
   // ---------------------
   mediaQueries: {
-    small: "only screen and (max-width: 650px)",
+    killme: "only screen and (max-width: 650px)",
+    small: "only screen and (min-width: 650px)",
     medium: "only screen and (min-width: 960px)",
     large: "only screen and (min-width: 1260px)"
   },
