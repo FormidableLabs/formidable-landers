@@ -390,6 +390,9 @@ export default {
     right: "10px",
     top: "10px"
   },
+  ".Interactive .previewArea .playgroundDatasetSelectWrapper ~ *": {
+    marginTop: "40px"
+  },
   ".Interactive .previewArea .playgroundDatasetSelect": {
     border: `1px solid ${settings.paleSand}`,
     fontSize: "14px"
@@ -417,17 +420,17 @@ export default {
   },
   ".Interactive .Toolbar button": {
     margin: "0px 2.5px",
-    border: `1px solid ${settings.darkerSand}`,
+    border: `1px solid ${settings.sand}`,
     borderRadius: "1px",
     backgroundColor: "transparent",
     fontFamily: settings.monospace,
-    fontSize: "9px",
-    color: settings.darkerSand,
+    fontSize: "11px",
+    color: settings.sand,
     cursor: "Pointer"
   },
   ".Interactive .Toolbar button:hover": {
-    backgroundColor: settings.darkerSand,
-    color: settings.codeMirror.bg
+    backgroundColor: settings.sand,
+    color: settings.whiteSand
   },
   // Add padding when toolbar buttons are visible
   ".Interactive .Toolbar ~ .playground .playgroundStage": {
@@ -487,17 +490,6 @@ export default {
    * Media Queries
   **/
   mediaQueries: {
-    [settings.mediaQueries.killme]: {
-      ".Interactive .Toolbar button": {
-        border: `1px solid ${settings.sand}`,
-        fontSize: "11px",
-        color: settings.sand
-      },
-      ".Interactive .Toolbar button:hover": {
-        backgroundColor: settings.sand,
-        color: settings.whiteSand
-      }
-    },
     [settings.mediaQueries.small]: {
       ".Interactive .playground": {
         flexDirection: "row",
@@ -517,6 +509,15 @@ export default {
       },
       ".Interactive .Toolbar": {
         top: "0px"
+      },
+      ".Interactive .Toolbar button": {
+        border: `1px solid ${settings.darkerSand}`,
+        fontSize: "9px",
+        color: settings.sand
+      },
+      ".Interactive .Toolbar button:hover": {
+        backgroundColor: settings.darkerSand,
+        color: settings.codeMirror.bg
       }
     },
     [settings.mediaQueries.medium]: {
@@ -563,10 +564,8 @@ export default {
         lineHeight: 1.2
       },
       ".Interactive .playground": {
-        flexWrap: "nowrap",
         alignItems: "stretch",
         justifyContent: "space-between",
-        // marginLeft: `${settings.gutter * -1}px`,
         padding: 0
       },
       ".Interactive .playgroundCode": {
