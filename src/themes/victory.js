@@ -273,6 +273,9 @@ export default {
   ".Recipe .Interactive .playgroundPreview": {
     flex: "1 0 auto"
   },
+  ".Recipe .Interactive .playgroundPreview svg": {
+    maxHeight: "400px" // make recipes bigger
+  },
   /*
    * Interactive/Component Playground
    * .Interactive
