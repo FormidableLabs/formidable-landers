@@ -4,6 +4,7 @@
   "description": "Reusable components for Formidable's marketing sites",
   "main": "lib/index.js",
   "scripts": {
+    "demo": "webpack-dashboard -- webpack-dev-server --port 3000 --config demo/webpack.config.dev.js --colors --content-base demo",
     "test": "karma start ./karma.conf.js",
     "test-travis": "karma start ./karma.conf.js --singleRun=true",
     "babel": "rimraf lib && babel src/ -d lib/",
@@ -55,6 +56,8 @@
     "phantomjs-prebuilt": "^2.1.4",
     "react-addons-test-utils": "^15.1.0",
     "react-dom": "^15.1.0",
-    "webpack": "^1.12.14"
+    "webpack": "^1.12.14",
+    "webpack-dashboard": "^0.1.1",
+    "webpack-dev-server": "^1.14.1"
   }
 }
