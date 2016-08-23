@@ -36,8 +36,14 @@ module.exports = {
           presets: ["es2015", "stage-1", "react"]
         }
       }, {
-        test: /\.(css|styl)$/,
-        loader: "style-loader!css-loader!autoprefixer-loader!stylus-loader"
+        test: /\.css$/,
+        loader: "style-loader!css-loader!autoprefixer-loader"
+      }, {
+        test: /.svg$/,
+        loaders: [
+          require.resolve("raw-loader"),
+          require.resolve("image-webpack-loader")
+        ]
       }, {
         test: /\.(png|jpg)$/,
         loader: "url-loader?limit=8192"
