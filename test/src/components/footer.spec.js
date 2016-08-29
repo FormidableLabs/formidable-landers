@@ -8,7 +8,7 @@ import { BlackFormidableLogo, WhiteFormidableLogo } from "../../../src/assets/lo
 describe("Footer", () => {
 
   describe("<footer>", () => {
-    it("has default styles", () => {
+    it.skip("has default styles", () => {
       const footer = shallow(<Footer />);
       const defaultStyles = {
         flex: "none",
