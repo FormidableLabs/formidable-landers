@@ -28,7 +28,7 @@ class Header extends React.Component {
       },
       light: {
         // Light Theme
-        background: `#d1cecd linear-gradient(to bottom, rgba(197,195,194,0) 85%, rgba(197,195,194,0.75) 100%)` //eslint-disable-line max-len
+        background: "#ffffff"
       },
       style: this.props.style
     };
@@ -67,7 +67,7 @@ class Header extends React.Component {
       },
       "a:hover, a:focus": {
         color: "#e58c7d",
-        fill: "#d1cecd"
+        fill: "#c43a31"
       }
     };
     const light = {
@@ -81,7 +81,7 @@ class Header extends React.Component {
       },
       "a:hover, a:focus": {
         color: "#c43a31",
-        fill: "#4a4746"
+        fill: "#c43a31"
       }
     };
 
@@ -96,14 +96,14 @@ class Header extends React.Component {
     const classStyles = this.getClassStyles(this.props.theme);
     return (
       <header
-        className="formidable-landers"
+        className="formidable-header"
         style={[
           styles.base,
           this.props.style && styles.style,
           this.props.theme && styles[this.props.theme]
         ]}>
         <Style
-          scopeSelector=".formidable-landers"
+          scopeSelector=".formidable-header"
           rules={classStyles}
         />
         <div

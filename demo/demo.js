@@ -15,7 +15,8 @@ class Demo extends React.Component {
         minHeight: "100vh",
         flexDirection: "column",
         // Lipstick Styles for Demo
-        backgroundColor: "OldLace"
+        // backgroundColor: "OldLace"
+        backgroundColor: "#ccc"
       }
     };
   }
@@ -37,9 +38,7 @@ class Demo extends React.Component {
           <h1>Project X</h1>
           <p>Content</p>
         </main>
-        <Footer>
-          <p>Formidable-Landers is not a trademark of Formidable Labs, Inc.</p>
-        </Footer>
+        <Footer theme="light" />
       </div>
     );
   }

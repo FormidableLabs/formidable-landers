@@ -1,89 +1,153 @@
 import React from "react";
-import Radium from "radium";
+import Radium, { Style } from "radium";
+import { merge } from "lodash";
 
 // Assets
-import LOGOLIGHT from "../assets/logo-light.svg";
-// import LOGODARK from "../assets/logo-dark.svg";
-// import LOGOOSSLIGHT from "../assets/logo-oss-light.svg";
-// import LOGOOSSDARK from "../assets/logo-oss.svg";
+import LOGO from "../assets/logo.svg";
 
 class Footer extends React.Component {
-  getFooterStyles() {
+  getStyles() {
     return {
       base: {
+        // Lipstick
+        fontFamily: "inherit",
+        fontSize: "inherit",
+        // Structure
+        alignItems: "center",
+        display: "flex",
         flex: "none", // Sticky footer setup
-        margin: "1rem 0 0 0",
-        padding: "3rem 0.5rem",
-        textAlign: "center",
-        borderTop: "1px solid rgba(35, 31, 32, 0.02)"
+        flexDirection: "row",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        margin: "2rem 0 0 0",
+        padding: this.props.padding
       },
-      text: {
-        display: "block"
+      dark: {
+        // Dark Theme
+        background: `#242121 linear-gradient(to top, rgba(10,9,9,0) 85%, rgba(10,9,9,0.75) 100%)`, //eslint-disable-line
+        color: "#d1cecd"
       },
-      unstyledLink: {
-        display: "block",
-        boxShadow: "none",
-        border: "none",
-        textDecoration: "none",
-        ":hover": {
-          background: "transparent",
-          boxShadow: "none",
-          border: "none",
-          textDecoration: "none"
-        }
+      light: {
+        // Light Theme
+        background: "#ffffff",
+        color: "#242121"
       },
-      linkStyles: this.props.linkStyles,
-      styleOverrides: this.props.styleOverrides
+      style: this.props.style
     };
   }
 
+  getClassStyles(theme) {
+    const base = {
+      "a:link": {
+        textDecoration: "none",
+        transition: "color 250ms ease-in, fill 300ms ease-in"
+      },
+      "a:visited": {
+      },
+      "a:hover, a:focus": {
+        transition: "color 400ms ease-out, fill 500ms ease-out"
+      },
+      ".default": {
+        marginTop: "16px", /* Align baseline of logo with baseline of link text */
+        fontFamily: `"akkurta", "Inconsolata", monospace`,
+        fontSize: "13px",
+        letterSpacing: "0.15em",
+        textTransform: "uppercase"
+      },
+      ".default *": {
+        marginRight: "2em"
+      }
+    };
+    const dark = {
+      "a:link": {
+        color: "#fff",
+        fill: "#fff"
+      },
+      "a:visited": {
+        color: "#e7e5e3",
+        fill: "#e7e5e3"
+      },
+      "a:hover, a:focus": {
+        color: "#e58c7d",
+        fill: "#c43a31"
+      }
+    };
+    const light = {
+      "a:link": {
+        color: "#242121",
+        fill: "#242121"
+      },
+      "a:visited": {
+        color: "#242121",
+        fill: "#242121"
+      },
+      "a:hover, a:focus": {
+        color: "#c43a31",
+        fill: "#c43a31"
+      }
+    };
+
+    if (theme === "light") {
+      return merge(base, light);
+    }
+    return merge(base, dark);
+  }
+
   render() {
-    const footerStyles = this.getFooterStyles();
+    const styles = this.getStyles();
+    const classStyles = this.getClassStyles(this.props.theme);
     return (
       <footer
+        className="formidable-footer"
         style={[
-          footerStyles.base,
-          { background: this.props.background },
-          this.props.styleOverrides && footerStyles.styleOverrides
+          styles.base,
+          this.props.style && styles.style,
+          this.props.theme && styles[this.props.theme]
         ]}>
-        <span style={[footerStyles.text]}>
-          Made with love by
-        </span>
-        <span style={[footerStyles.text]}>
+        <Style
+          scopeSelector=".formidable-footer"
+          rules={classStyles}
+        />
+        {this.props.children}
+
+        <div
+          style={{
+            height: "50px",
+            margin: "0 0 0 auto"
+          }}
+        >
           <a
-            key="fl-logo"
             href="http://formidable.com/"
-            style={footerStyles.unstyledLink}>
-            <div
-              style={{fill: "#fff", width: "300px", height: "50px", margin: "0 auto"}}
-              dangerouslySetInnerHTML={{ __html: LOGOLIGHT }}
-            />
-          </a>
-        </span>
-        <span style={[footerStyles.text]}>
-          P.S. <a
-          key="fl-hiring"
-          href="http://formidable.com/careers/"
-          style={[this.props.linkStyles && footerStyles.linkStyles]}>
-            We’re hiring
-          </a>.
-        </span>
-        <span style={[footerStyles.text]}>
-          {this.props.children}
-        </span>
+            style={{ display: "flex" }}
+            target="_blank"
+            dangerouslySetInnerHTML={{ __html: LOGO }}
+          />
+        </div>
       </footer>
     );
   }
 }
 
 Footer.propTypes = {
-  background: React.PropTypes.string,
-  logoColor: React.PropTypes.oneOf(["black", "white"])
+  children: React.PropTypes.node,
+  padding: React.PropTypes.string,
+  style: React.PropTypes.object,
+  theme: React.PropTypes.oneOf(["light", "dark"])
 };
 
+const defaultFooterChildren =
+  <div className="default">
+    <a href="http://formidable.com/careers/">Hire</a>
+    <a href="http://formidable.com/careers/">Careers</a>
+    <a href="https://twitter.com/FormidableLabs">Twitter</a>
+    <a href="https://github.com/FormidableLabs/">Github</a>
+  </div>;
+
 Footer.defaultProps = {
-  background: "#242121",
-  logoColor: "black"
+  children: defaultFooterChildren,
+  padding: "5rem 0",
+  style: null,
+  theme: "dark"
 };
 
 export default Radium(Footer); //eslint-disable-line new-cap
