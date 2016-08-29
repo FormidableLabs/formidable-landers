@@ -57,7 +57,7 @@ describe("Header", () => {
         color: "#242121",
         fill: "#242121"
       };
-      expect(headerStyle.props().rules).to.have.property("a:visited", lightVisitedLinkStyles);
+      expect(headerStyle.props().rules).to.have.property("a:visited").that.deep.equals(lightVisitedLinkStyles);
     });
   });
 });
