@@ -1,58 +1,146 @@
 import React from "react";
-import Radium from "radium";
+import Radium, { Style } from "radium";
+import { merge } from "lodash";
+
+// Asset
+import LOGO_OSS from "../assets/logo-oss.svg";
 
 class Header extends React.Component {
-  getHeaderStyles() {
+  getStyles() {
     return {
       base: {
+        // Lipstick
+        fontFamily: "inherit",
+        fontSize: "inherit",
+        // Structure
+        alignItems: "center",
+        display: "flex",
         flex: "none",  // Sticky footer setup
+        flexDirection: "row",
+        flexWrap: "wrap",
+        justifyContent: "center",
         margin: 0,
-        padding: "1rem 0.5rem",
-        textAlign: "center",
-        borderBottom: "1px solid rgba(35, 31, 32, 0.02)"
+        padding: this.props.padding
       },
-      link: {
-        margin: "0 auto",
-        lineHeight: 1
+      dark: {
+        // Dark Theme
+        background: `#242121 linear-gradient(to bottom, rgba(10,9,9,0) 85%, rgba(10,9,9,0.75) 100%)` //eslint-disable-line
       },
-      linkStyles: this.props.linkStyles,
-      styleOverrides: this.props.styleOverrides
+      light: {
+        // Light Theme
+        background: `#d1cecd linear-gradient(to bottom, rgba(197,195,194,0) 85%, rgba(197,195,194,0.75) 100%)` //eslint-disable-line max-len
+      },
+      style: this.props.style
     };
   }
 
+  getClassStyles(theme) {
+    const base = {
+      "a:link": {
+        textDecoration: "none",
+        transition: "color 250ms ease-in, fill 300ms ease-in"
+      },
+      "a:visited": {
+      },
+      "a:hover, a:focus": {
+        transition: "color 400ms ease-out, fill 500ms ease-out"
+      },
+      ".default": {
+        marginTop: "16px", /* Align baseline of logo with baseline of link text */
+        fontFamily: `"akkurta", "Inconsolata", monospace`,
+        fontSize: "13px",
+        letterSpacing: "0.15em",
+        textTransform: "uppercase"
+      },
+      ".default *": {
+        marginLeft: "2em"
+      }
+    };
+    const dark = {
+      "a:link": {
+        color: "#fff",
+        fill: "#fff"
+      },
+      "a:visited": {
+        color: "#e7e5e3",
+        fill: "#e7e5e3"
+      },
+      "a:hover, a:focus": {
+        color: "#e58c7d",
+        fill: "#d1cecd"
+      }
+    };
+    const light = {
+      "a:link": {
+        color: "#242121",
+        fill: "#242121"
+      },
+      "a:visited": {
+        color: "#242121",
+        fill: "#242121"
+      },
+      "a:hover, a:focus": {
+        color: "#c43a31",
+        fill: "#4a4746"
+      }
+    };
+
+    if (theme === "light") {
+      return merge(base, light);
+    }
+    return merge(base, dark);
+  }
+
   render() {
-    const headerStyles = this.getHeaderStyles();
+    const styles = this.getStyles();
+    const classStyles = this.getClassStyles(this.props.theme);
     return (
       <header
+        className="formidable-landers"
         style={[
-          headerStyles.base,
-          { background: this.props.background },
-          this.props.styleOverrides && headerStyles.styleOverrides
+          styles.base,
+          this.props.style && styles.style,
+          this.props.theme && styles[this.props.theme]
         ]}>
-        <span style={{display: "block", margin: "0 auto"}}>
+        <Style
+          scopeSelector=".formidable-landers"
+          rules={classStyles}
+        />
+        <div
+          style={{
+            height: "50px",
+            marginRight: "auto"
+          }}
+        >
           <a
-          key="fl-header"
-          href="http://formidable.com/careers/"
-          style={[
-            headerStyles.link,
-            this.props.linkStyles && headerStyles.linkStyles
-          ]}>
-            {this.props.children}
-          </a>
-        </span>
+            href="https://formidable.com/open-source/"
+            target="_blank"
+            style={{ display: "flex" }}
+            dangerouslySetInnerHTML={{ __html: LOGO_OSS }}
+          />
+        </div>
+        {this.props.children}
       </header>
     );
   }
 }
 
 Header.propTypes = {
-  background: React.PropTypes.string,
-  children: React.PropTypes.node
+  children: React.PropTypes.node,
+  theme: React.PropTypes.oneOf(["light", "dark"]),
+  padding: React.PropTypes.string
 };
 
+const defaultHeaderChildren =
+  <div className="default">
+    <a href="https://twitter.com/FormidableLabs">Twitter</a>
+    <a href="https://github.com/FormidableLabs/">Github</a>
+  </div>;
+
 Header.defaultProps = {
-  background: "#ebe3db",
-  children: "We’re hiring!"
+  children: defaultHeaderChildren,
+  theme: "dark",
+  padding: "1.5rem 0"
 };
 
 export default Radium(Header); //eslint-disable-line new-cap

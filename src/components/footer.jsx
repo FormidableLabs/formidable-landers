@@ -1,7 +1,11 @@
 import React from "react";
 import Radium from "radium";
 
-import { BlackFormidableLogo, WhiteFormidableLogo } from "../assets/logos";
+// Assets
+import LOGOLIGHT from "../assets/logo-light.svg";
+// import LOGODARK from "../assets/logo-dark.svg";
+// import LOGOOSSLIGHT from "../assets/logo-oss-light.svg";
+// import LOGOOSSDARK from "../assets/logo-oss.svg";
 
 class Footer extends React.Component {
   getFooterStyles() {
@@ -50,9 +54,10 @@ class Footer extends React.Component {
             key="fl-logo"
             href="http://formidable.com/"
             style={footerStyles.unstyledLink}>
-            <span style={{width: "300px", height: "100px"}}>
-              {this.props.logoColor === "white" ? WhiteFormidableLogo : BlackFormidableLogo}
-            </span>
+            <div
+              style={{fill: "#fff", width: "300px", height: "50px", margin: "0 auto"}}
+              dangerouslySetInnerHTML={{ __html: LOGOLIGHT }}
+            />
           </a>
         </span>
         <span style={[footerStyles.text]}>
@@ -77,7 +82,7 @@ Footer.propTypes = {
 };
 
 Footer.defaultProps = {
-  background: "#ebe3db",
+  background: "#242121",
   logoColor: "black"
 };
 
