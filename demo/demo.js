@@ -22,11 +22,14 @@ class Demo extends React.Component {
   }
   render() {
     const styles = this.getStyles();
+    // The `.default` class will match the Formidable branding.
+    const trademark = <div className="default">Formidable Labs, Inc. has several trademarks.</div>;
     return (
       <div style={styles.demo}>
+        <Header />
         <Header theme="dark">
           <div
-            className="default" /* This default class will match the Formidable brand */
+            className="default" /* This default class will match the Formidable branding. */
           >
             <a href="/">Project X</a>
             <a href="//formidable.com/about">About</a>
@@ -39,6 +42,7 @@ class Demo extends React.Component {
           <p>Content</p>
         </main>
         <Footer theme="light" />
+        <Footer theme="light" trademark={trademark} />
       </div>
     );
   }

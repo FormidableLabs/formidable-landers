@@ -18,7 +18,7 @@ class Footer extends React.Component {
         flex: "none", // Sticky footer setup
         flexDirection: "row",
         flexWrap: "wrap",
-        justifyContent: "center",
+        justifyContent: "flex-end",
         margin: "2rem 0 0 0",
         padding: this.props.padding
       },
@@ -50,12 +50,21 @@ class Footer extends React.Component {
       ".default": {
         marginTop: "16px", /* Align baseline of logo with baseline of link text */
         fontFamily: `"akkurta", "Inconsolata", monospace`,
-        fontSize: "13px",
+        fontSize: "13px"
+      },
+      ".default a": {
+        display: "inline-block",
         letterSpacing: "0.15em",
+        marginLeft: "2em",
         textTransform: "uppercase"
       },
-      ".default *": {
-        marginRight: "2em"
+      ".default a:first-child": {
+        marginLeft: 0
+      },
+      ".default:last-child": { /* Target the trademark */
+        flex: "0 0 100%",
+        marginTop: "8px",
+        textAlign: "right"
       }
     };
     const dark = {
@@ -109,20 +118,21 @@ class Footer extends React.Component {
           rules={classStyles}
         />
         {this.props.children}
-
         <div
           style={{
             height: "50px",
-            margin: "0 0 0 auto"
+            margin: "0 0 0 auto",
+            overflow: "hidden"
           }}
         >
           <a
-            href="http://formidable.com/"
-            style={{ display: "flex" }}
+            href="https://formidable.com/"
+            style={{ display: "flex", height: "inherit" }}
             target="_blank"
             dangerouslySetInnerHTML={{ __html: LOGO }}
           />
         </div>
+        {this.props.trademark}
       </footer>
     );
   }
@@ -132,22 +142,24 @@ Footer.propTypes = {
   children: React.PropTypes.node,
   padding: React.PropTypes.string,
   style: React.PropTypes.object,
+  trademark: React.PropTypes.node,
   theme: React.PropTypes.oneOf(["light", "dark"])
 };
 
 const defaultFooterChildren =
   <div className="default">
-    <a href="http://formidable.com/careers/">Hire</a>
-    <a href="http://formidable.com/careers/">Careers</a>
+    <a href="https://formidable.com/contact/">Contact us</a>
+    <a href="https://formidable.com/careers/">Careers</a>
     <a href="https://twitter.com/FormidableLabs">Twitter</a>
     <a href="https://github.com/FormidableLabs/">Github</a>
   </div>;
 
 Footer.defaultProps = {
   children: defaultFooterChildren,
-  padding: "5rem 0",
+  padding: "5rem 0 6rem",
   style: null,
-  theme: "dark"
+  theme: "dark",
+  trademark: null
 };
 
 export default Radium(Footer); //eslint-disable-line new-cap

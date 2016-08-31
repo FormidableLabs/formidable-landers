@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
   resolve: {
-    extensions: ["", ".js", ".jsx"]
+    extensions: ["", ".js", ".jsx", ".json"]
   },
   // devtool: "inline-source-map", //just do inline source maps instead of the default
   module: {
@@ -29,7 +29,6 @@ module.exports = {
   },
   externals: {
     "jsdom": "window",
-    "cheerio": "window",
     "react/lib/ExecutionEnvironment": true,
     "react/lib/ReactContext": true,
     "react/addons": true

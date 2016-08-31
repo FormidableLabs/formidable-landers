@@ -53,6 +53,7 @@ class Header extends React.Component {
         textTransform: "uppercase"
       },
       ".default *": {
+        display: "inline-block",
         marginLeft: "2em"
       }
     };
@@ -115,7 +116,7 @@ class Header extends React.Component {
           <a
             href="https://formidable.com/open-source/"
             target="_blank"
-            style={{ display: "flex" }}
+            style={{ display: "flex", height: "inherit" }}
             dangerouslySetInnerHTML={{ __html: LOGO_OSS }}
           />
         </div>
@@ -127,6 +128,7 @@ class Header extends React.Component {
 
 Header.propTypes = {
   children: React.PropTypes.node,
+  style: React.PropTypes.object,
   theme: React.PropTypes.oneOf(["light", "dark"]),
   padding: React.PropTypes.string
 };
@@ -139,6 +141,7 @@ const defaultHeaderChildren =
 
 Header.defaultProps = {
   children: defaultHeaderChildren,
+  style: null,
   theme: "dark",
   padding: "1.5rem 0"
 };
