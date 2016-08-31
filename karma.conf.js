@@ -1,6 +1,6 @@
-var webpackConfig = require("./webpack.config.test");
+const webpackConfig = require("./webpack.config.test");
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
     basePath: "",
     frameworks: ["mocha"],
@@ -47,5 +47,5 @@ module.exports = function(config) {
       "karma-spec-reporter",
       "karma-webpack"
     ]
-  })
+  });
 };

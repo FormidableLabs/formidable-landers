@@ -15,7 +15,6 @@ class Demo extends React.Component {
         minHeight: "100vh",
         flexDirection: "column",
         // Lipstick Styles for Demo
-        // backgroundColor: "OldLace"
         backgroundColor: "#ccc"
       }
     };
