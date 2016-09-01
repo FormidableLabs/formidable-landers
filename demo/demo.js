@@ -15,17 +15,20 @@ class Demo extends React.Component {
         minHeight: "100vh",
         flexDirection: "column",
         // Lipstick Styles for Demo
-        backgroundColor: "OldLace"
+        backgroundColor: "#ccc"
       }
     };
   }
   render() {
     const styles = this.getStyles();
+    // The `.default` class will match the Formidable branding.
+    const trademark = <div className="default">Formidable Labs, Inc. has several trademarks.</div>;
     return (
       <div style={styles.demo}>
+        <Header />
         <Header theme="dark">
           <div
-            className="default" /* This default class will match the Formidable brand */
+            className="default" /* This default class will match the Formidable branding. */
           >
             <a href="/">Project X</a>
             <a href="//formidable.com/about">About</a>
@@ -37,9 +40,8 @@ class Demo extends React.Component {
           <h1>Project X</h1>
           <p>Content</p>
         </main>
-        <Footer>
-          <p>Formidable-Landers is not a trademark of Formidable Labs, Inc.</p>
-        </Footer>
+        <Footer theme="light" />
+        <Footer theme="light" trademark={trademark} />
       </div>
     );
   }

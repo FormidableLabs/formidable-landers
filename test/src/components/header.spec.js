@@ -1,8 +1,8 @@
 /* eslint-disable max-len, no-unused-expressions */
 import React from "react";
-import { shallow } from "enzyme";
+import { mount, shallow, render } from "enzyme";
 
-import Header from "../../../src/components/header";
+import Header from "../../../lib/components/header";
 
 describe("Header", () => {
 
@@ -16,17 +16,38 @@ describe("Header", () => {
       const header = shallow(<Header style={{textAlign: "left"}} />);
       expect(header.props().style).to.have.property("textAlign", "left");
     });
+
+    it("has default theme prop of dark", () => {
+      const header = mount(<Header />);
+      expect(header.props().theme).to.equal("dark");
+    });
+
+    it("has default styles for dark theme", () => {
+      const headerStyle = shallow(<Header />).find("Style");
+      const darkThemeLinkStyles = {
+        textDecoration: "none",
+        transition: "color 250ms ease-in, fill 300ms ease-in",
+        color: "#fff",
+        fill: "#fff"
+      };
+      expect(headerStyle.props().rules).to.have.property("a:link").that.deep.equals(darkThemeLinkStyles);
+    });
   });
 
-  describe("logo", () => {
-    it("links to our open source page", () => {
-      const firstLink = shallow(<Header />).find("a").at(0);
-      expect(firstLink.props()).to.have.property("href", "https://formidable.com/open-source/");
+  describe("company logo", () => {
+    it("exists", () => {
+      const headerSvg = render(<Header />).find("svg");
+      expect(headerSvg).to.exist;
+    });
+
+    it("is a link", () => {
+      const headerSvg = render(<Header />).find("svg");
+      expect(headerSvg.parent().is("a")).to.equal(true);
     });
 
     it("has default styles", () => {
-      const firstLink = shallow(<Header />).find("a").at(0);
-      expect(firstLink.props()).to.have.property("style");
+      const headerSvg = render(<Header />).find("svg");
+      expect(headerSvg.find("[style]")).to.exist;
     });
   });
 

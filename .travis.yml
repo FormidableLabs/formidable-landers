@@ -12,8 +12,9 @@ branches:
     - master
 
 script:
+  - npm run build
   - npm run test-travis
 
   # Prune deps to just production and ensure we can build the site
   - npm prune --production
-  - npm run babel
+  - npm run build
