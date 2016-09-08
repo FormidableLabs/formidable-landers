@@ -25,7 +25,7 @@ class Demo extends React.Component {
     const trademark = <div className="default">Formidable Labs, Inc. has several trademarks.</div>;
     return (
       <div style={styles.demo}>
-        <Header />
+        <Header containerStyle={{margin: "0 auto", maxWidth: "640px"}} padding="2px" />
         <Header theme="dark">
           <div
             className="default" /* This default class will match the Formidable branding. */

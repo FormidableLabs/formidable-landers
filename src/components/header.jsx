@@ -9,6 +9,9 @@ class Header extends React.Component {
   getStyles() {
     return {
       base: {
+        margin: 0
+      },
+      container: {
         // Lipstick
         fontFamily: "inherit",
         fontSize: "inherit",
@@ -19,7 +22,6 @@ class Header extends React.Component {
         flexDirection: "row",
         flexWrap: "wrap",
         justifyContent: "center",
-        margin: 0,
         padding: this.props.padding
       },
       dark: {
@@ -30,7 +32,8 @@ class Header extends React.Component {
         // Light Theme
         background: "#ffffff"
       },
-      style: this.props.style
+      style: this.props.style,
+      containerStyle: this.props.containerStyle
     };
   }
 
@@ -101,28 +104,36 @@ class Header extends React.Component {
         className="formidable-header"
         style={[
           styles.base,
-          this.props.style && styles.style,
-          this.props.theme && styles[this.props.theme]
+          this.props.theme && styles[this.props.theme],
+          this.props.style && styles.style
         ]}>
         <Style
           scopeSelector=".formidable-header"
           rules={classStyles}
         />
         <div
-          style={{
-            height: "50px",
-            marginRight: "auto",
-            overflow: "hidden"
-          }}
+          className="container"
+          style={[
+            styles.container,
+            this.props.containerStyle && styles.containerStyle
+          ]}
         >
-          <a
-            href="https://formidable.com/open-source/"
-            target="_blank"
-            style={{ display: "flex", height: "inherit" }}
-            dangerouslySetInnerHTML={{ __html: LOGO_OSS }}
-          />
+          <div
+            style={{
+              height: "50px",
+              marginRight: "auto",
+              overflow: "hidden"
+            }}
+          >
+            <a
+              href="https://formidable.com/open-source/"
+              target="_blank"
+              style={{ display: "flex", height: "inherit" }}
+              dangerouslySetInnerHTML={{ __html: LOGO_OSS }}
+            />
+          </div>
+          {this.props.children}
         </div>
-        {this.props.children}
       </header>
     );
   }
@@ -130,9 +141,10 @@ class Header extends React.Component {
 
 Header.propTypes = {
   children: React.PropTypes.node,
+  containerStyle: React.PropTypes.object,
+  padding: React.PropTypes.string,
   style: React.PropTypes.object,
-  theme: React.PropTypes.oneOf(["light", "dark"]),
-  padding: React.PropTypes.string
+  theme: React.PropTypes.oneOf(["light", "dark"])
 };
 
 const defaultHeaderChildren =
@@ -143,9 +155,10 @@ const defaultHeaderChildren =
 
 Header.defaultProps = {
   children: defaultHeaderChildren,
+  containerStyle: null,
+  padding: "1.5rem 0",
   style: null,
-  theme: "dark",
-  padding: "1.5rem 0"
+  theme: "dark"
 };
 
 export default Radium(Header); //eslint-disable-line new-cap
