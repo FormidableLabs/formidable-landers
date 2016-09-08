@@ -49,7 +49,7 @@ class Footer extends React.Component {
       },
       ".default": {
         marginTop: "16px", /* Align baseline of logo with baseline of link text */
-        fontFamily: `"akkurta", "Inconsolata", monospace`,
+        fontFamily: `"akkurat", "Inconsolata", monospace`,
         fontSize: "13px"
       },
       ".default a": {
