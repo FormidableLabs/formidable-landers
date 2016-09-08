@@ -59,7 +59,7 @@ describe("Footer", () => {
     });
 
     it("accepts a custom message", () => {
-      const footer = shallow(<Footer>Formidable means “wonderful” in French. Do we look French to you?</Footer>);
+      const footer = shallow(<Footer>Formidable means “wonderful” in French. Do we look French to you?</Footer>).find(".container");
       expect(footer.props().children).to.contain("Formidable means “wonderful” in French. Do we look French to you?");
     });
   });

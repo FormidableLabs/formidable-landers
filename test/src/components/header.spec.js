@@ -68,8 +68,8 @@ describe("Header", () => {
 
   describe("props", () => {
     it("accepts custom padding", () => {
-      const headerLink = shallow(<Header padding="20px 20px" />);
-      expect(headerLink.props().style).to.have.property("padding", "20px 20px");
+      const headerContainer = shallow(<Header padding="20px 20px" />).find(".container");
+      expect(headerContainer.props().style).to.have.property("padding", "20px 20px");
     });
 
     it("can change to light theme", () => {
