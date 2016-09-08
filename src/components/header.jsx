@@ -40,7 +40,7 @@ class Header extends React.Component {
         textDecoration: "none",
         transition: "color 250ms ease-in, fill 300ms ease-in"
       },
-      "a:visited": {
+      "a:visited": { /* Necessary to retain link order in <Style /> */
       },
       "a:hover, a:focus": {
         transition: "color 400ms ease-out, fill 500ms ease-out"
@@ -50,6 +50,7 @@ class Header extends React.Component {
         fontFamily: `"akkurat", "Inconsolata", monospace`,
         fontSize: "13px",
         letterSpacing: "0.15em",
+        lineHeight: 2,
         textTransform: "uppercase"
       },
       ".default *": {
@@ -110,7 +111,8 @@ class Header extends React.Component {
         <div
           style={{
             height: "50px",
-            marginRight: "auto"
+            marginRight: "auto",
+            overflow: "hidden"
           }}
         >
           <a

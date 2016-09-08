@@ -42,7 +42,7 @@ class Footer extends React.Component {
         textDecoration: "none",
         transition: "color 250ms ease-in, fill 300ms ease-in"
       },
-      "a:visited": {
+      "a:visited": { /* Necessary to retain link order in <Style /> */
       },
       "a:hover, a:focus": {
         transition: "color 400ms ease-out, fill 500ms ease-out"
@@ -55,11 +55,12 @@ class Footer extends React.Component {
       ".default a": {
         display: "inline-block",
         letterSpacing: "0.15em",
-        marginLeft: "2em",
+        lineHeight: 2,
+        marginRight: "2em",
         textTransform: "uppercase"
       },
-      ".default a:first-child": {
-        marginLeft: 0
+      ".default a:last-child": {
+        marginRight: 0
       },
       ".default:last-child": { /* Target the trademark */
         flex: "0 0 100%",
@@ -148,7 +149,7 @@ Footer.propTypes = {
 
 const defaultFooterChildren =
   <div className="default">
-    <a href="https://formidable.com/contact/">Contact us</a>
+    <a href="https://formidable.com/contact/">Contact</a>
     <a href="https://formidable.com/careers/">Careers</a>
     <a href="https://twitter.com/FormidableLabs">Twitter</a>
     <a href="https://github.com/FormidableLabs/">Github</a>
