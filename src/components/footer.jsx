@@ -127,6 +127,7 @@ class Footer extends React.Component {
         >
           {this.props.children}
           <div
+            className="formidableFooter-logo"
             style={{
               height: "50px",
               margin: "0 0 0 auto",
