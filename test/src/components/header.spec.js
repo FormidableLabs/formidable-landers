@@ -27,8 +27,7 @@ describe("Header", () => {
       const darkThemeLinkStyles = {
         textDecoration: "none",
         transition: "color 250ms ease-in, fill 300ms ease-in",
-        color: "#fff",
-        fill: "#fff"
+        color: "#fff"
       };
       expect(headerStyle.props().rules).to.have.property("a:link").that.deep.equals(darkThemeLinkStyles);
     });
@@ -68,15 +67,14 @@ describe("Header", () => {
 
   describe("props", () => {
     it("accepts custom padding", () => {
-      const headerLink = shallow(<Header padding="20px 20px" />);
-      expect(headerLink.props().style).to.have.property("padding", "20px 20px");
+      const headerContainer = shallow(<Header padding="20px 20px" />).find(".formidableHeader-container");
+      expect(headerContainer.props().style).to.have.property("padding", "20px 20px");
     });
 
     it("can change to light theme", () => {
       const headerStyle = shallow(<Header theme="light" />).find("Style");
       const lightVisitedLinkStyles = {
-        color: "#242121",
-        fill: "#242121"
+        color: "#242121"
       };
       expect(headerStyle.props().rules).to.have.property("a:visited").that.deep.equals(lightVisitedLinkStyles);
     });

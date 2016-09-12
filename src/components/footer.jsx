@@ -9,6 +9,9 @@ class Footer extends React.Component {
   getStyles() {
     return {
       base: {
+        margin: "2rem 0 0 0"
+      },
+      container: {
         // Lipstick
         fontFamily: "inherit",
         fontSize: "inherit",
@@ -19,7 +22,6 @@ class Footer extends React.Component {
         flexDirection: "row",
         flexWrap: "wrap",
         justifyContent: "flex-end",
-        margin: "2rem 0 0 0",
         padding: this.props.padding
       },
       dark: {
@@ -32,12 +34,16 @@ class Footer extends React.Component {
         background: "#ffffff",
         color: "#242121"
       },
-      style: this.props.style
+      style: this.props.style,
+      containerStyle: this.props.containerStyle
     };
   }
 
   getClassStyles(theme) {
     const base = {
+      "svg": {
+        fill: "currentColor"
+      },
       "a:link": {
         textDecoration: "none",
         transition: "color 250ms ease-in, fill 300ms ease-in"
@@ -70,30 +76,24 @@ class Footer extends React.Component {
     };
     const dark = {
       "a:link": {
-        color: "#fff",
-        fill: "#fff"
+        color: "#fff"
       },
       "a:visited": {
-        color: "#e7e5e3",
-        fill: "#e7e5e3"
+        color: "#e7e5e3"
       },
       "a:hover, a:focus": {
-        color: "#e58c7d",
-        fill: "#c43a31"
+        color: "#dc7a6b"
       }
     };
     const light = {
       "a:link": {
-        color: "#242121",
-        fill: "#242121"
+        color: "#242121"
       },
       "a:visited": {
-        color: "#242121",
-        fill: "#242121"
+        color: "#242121"
       },
       "a:hover, a:focus": {
-        color: "#c43a31",
-        fill: "#c43a31"
+        color: "#c43a31"
       }
     };
 
@@ -108,32 +108,40 @@ class Footer extends React.Component {
     const classStyles = this.getClassStyles(this.props.theme);
     return (
       <footer
-        className="formidable-footer"
+        className="formidableFooter"
         style={[
           styles.base,
-          this.props.style && styles.style,
-          this.props.theme && styles[this.props.theme]
+          this.props.theme && styles[this.props.theme],
+          this.props.style && styles.style
         ]}>
         <Style
-          scopeSelector=".formidable-footer"
+          scopeSelector=".formidableFooter"
           rules={classStyles}
         />
-        {this.props.children}
         <div
-          style={{
-            height: "50px",
-            margin: "0 0 0 auto",
-            overflow: "hidden"
-          }}
+          className="formidableFooter-container"
+          style={[
+            styles.container,
+            this.props.containerStyle && styles.containerStyle
+          ]}
         >
-          <a
-            href="https://formidable.com/"
-            style={{ display: "flex", height: "inherit" }}
-            target="_blank"
-            dangerouslySetInnerHTML={{ __html: LOGO }}
-          />
+          {this.props.children}
+          <div
+            style={{
+              height: "50px",
+              margin: "0 0 0 auto",
+              overflow: "hidden"
+            }}
+          >
+            <a
+              href="https://formidable.com/"
+              style={{ display: "flex", height: "inherit" }}
+              target="_blank"
+              dangerouslySetInnerHTML={{ __html: LOGO }}
+            />
+          </div>
+          {this.props.trademark}
         </div>
-        {this.props.trademark}
       </footer>
     );
   }
@@ -141,6 +149,7 @@ class Footer extends React.Component {
 
 Footer.propTypes = {
   children: React.PropTypes.node,
+  containerStyle: React.PropTypes.object,
   padding: React.PropTypes.string,
   style: React.PropTypes.object,
   trademark: React.PropTypes.node,
@@ -157,6 +166,7 @@ const defaultFooterChildren =
 
 Footer.defaultProps = {
   children: defaultFooterChildren,
+  containerStyle: null,
   padding: "5rem 0 6rem",
   style: null,
   theme: "dark",

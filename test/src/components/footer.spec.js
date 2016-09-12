@@ -27,8 +27,7 @@ describe("Footer", () => {
       const darkThemeLinkStyles = {
         textDecoration: "none",
         transition: "color 250ms ease-in, fill 300ms ease-in",
-        color: "#fff",
-        fill: "#fff"
+        color: "#fff"
       };
       expect(footerStyle.props().rules).to.have.property("a:link").that.deep.equals(darkThemeLinkStyles);
     });
@@ -59,7 +58,7 @@ describe("Footer", () => {
     });
 
     it("accepts a custom message", () => {
-      const footer = shallow(<Footer>Formidable means “wonderful” in French. Do we look French to you?</Footer>);
+      const footer = shallow(<Footer>Formidable means “wonderful” in French. Do we look French to you?</Footer>).find(".formidableFooter-container");
       expect(footer.props().children).to.contain("Formidable means “wonderful” in French. Do we look French to you?");
     });
   });

@@ -9,6 +9,9 @@ class Header extends React.Component {
   getStyles() {
     return {
       base: {
+        margin: 0
+      },
+      container: {
         // Lipstick
         fontFamily: "inherit",
         fontSize: "inherit",
@@ -19,7 +22,6 @@ class Header extends React.Component {
         flexDirection: "row",
         flexWrap: "wrap",
         justifyContent: "center",
-        margin: 0,
         padding: this.props.padding
       },
       dark: {
@@ -30,12 +32,16 @@ class Header extends React.Component {
         // Light Theme
         background: "#ffffff"
       },
-      style: this.props.style
+      style: this.props.style,
+      containerStyle: this.props.containerStyle
     };
   }
 
   getClassStyles(theme) {
     const base = {
+      "svg": {
+        fill: "currentColor"
+      },
       "a:link": {
         textDecoration: "none",
         transition: "color 250ms ease-in, fill 300ms ease-in"
@@ -60,30 +66,24 @@ class Header extends React.Component {
     };
     const dark = {
       "a:link": {
-        color: "#fff",
-        fill: "#fff"
+        color: "#fff"
       },
       "a:visited": {
-        color: "#e7e5e3",
-        fill: "#e7e5e3"
+        color: "#e7e5e3"
       },
       "a:hover, a:focus": {
-        color: "#e58c7d",
-        fill: "#c43a31"
+        color: "#dc7a6b"
       }
     };
     const light = {
       "a:link": {
-        color: "#242121",
-        fill: "#242121"
+        color: "#242121"
       },
       "a:visited": {
-        color: "#242121",
-        fill: "#242121"
+        color: "#242121"
       },
       "a:hover, a:focus": {
-        color: "#c43a31",
-        fill: "#c43a31"
+        color: "#c43a31"
       }
     };
 
@@ -98,31 +98,39 @@ class Header extends React.Component {
     const classStyles = this.getClassStyles(this.props.theme);
     return (
       <header
-        className="formidable-header"
+        className="formidableHeader"
         style={[
           styles.base,
-          this.props.style && styles.style,
-          this.props.theme && styles[this.props.theme]
+          this.props.theme && styles[this.props.theme],
+          this.props.style && styles.style
         ]}>
         <Style
-          scopeSelector=".formidable-header"
+          scopeSelector=".formidableHeader"
           rules={classStyles}
         />
         <div
-          style={{
-            height: "50px",
-            marginRight: "auto",
-            overflow: "hidden"
-          }}
+          className="formidableHeader-container"
+          style={[
+            styles.container,
+            this.props.containerStyle && styles.containerStyle
+          ]}
         >
-          <a
-            href="https://formidable.com/open-source/"
-            target="_blank"
-            style={{ display: "flex", height: "inherit" }}
-            dangerouslySetInnerHTML={{ __html: LOGO_OSS }}
-          />
+          <div
+            style={{
+              height: "50px",
+              marginRight: "auto",
+              overflow: "hidden"
+            }}
+          >
+            <a
+              href="https://formidable.com/open-source/"
+              target="_blank"
+              style={{ display: "flex", height: "inherit" }}
+              dangerouslySetInnerHTML={{ __html: LOGO_OSS }}
+            />
+          </div>
+          {this.props.children}
         </div>
-        {this.props.children}
       </header>
     );
   }
@@ -130,9 +138,10 @@ class Header extends React.Component {
 
 Header.propTypes = {
   children: React.PropTypes.node,
+  containerStyle: React.PropTypes.object,
+  padding: React.PropTypes.string,
   style: React.PropTypes.object,
-  theme: React.PropTypes.oneOf(["light", "dark"]),
-  padding: React.PropTypes.string
+  theme: React.PropTypes.oneOf(["light", "dark"])
 };
 
 const defaultHeaderChildren =
@@ -143,9 +152,10 @@ const defaultHeaderChildren =
 
 Header.defaultProps = {
   children: defaultHeaderChildren,
+  containerStyle: null,
+  padding: "1.5rem 0",
   style: null,
-  theme: "dark",
-  padding: "1.5rem 0"
+  theme: "dark"
 };
 
 export default Radium(Header); //eslint-disable-line new-cap
