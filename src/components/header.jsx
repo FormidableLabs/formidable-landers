@@ -116,9 +116,10 @@ class Header extends React.Component {
           ]}
         >
           <div
+            className="formidableHeader-logo"
             style={{
               height: "50px",
-              marginRight: "auto",
+              margin: "0 auto 0 0",
               overflow: "hidden"
             }}
           >
