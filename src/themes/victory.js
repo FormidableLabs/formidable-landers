@@ -314,7 +314,7 @@ export default {
     width: "100%",
     height: "100%",
     maxHeight: "340px",
-    overflow: "scroll"
+    overflow: "auto"
   },
   ".Interactive .playgroundPreview": {
     alignItems: "center",
