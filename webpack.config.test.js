@@ -19,6 +19,9 @@ module.exports = {
         test: /\.json$/,
         loader: "json"
       }, {
+        test: /\.(png|jpg)$/,
+        loader: "url-loader?limit=8192"
+      }, {
         test: /.svg$/,
         loaders: [
           require.resolve("raw-loader"),

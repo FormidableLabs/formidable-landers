@@ -4,6 +4,7 @@ import { merge } from "lodash";
 
 // Asset
 import LOGO_OSS from "../assets/logo-oss.svg";
+import BG from "../assets/bg.jpg";
 
 class Header extends React.Component {
   getStyles() {
@@ -26,14 +27,18 @@ class Header extends React.Component {
       },
       dark: {
         // Dark Theme
-        background: `#242121 linear-gradient(to bottom, rgba(10,9,9,0) 85%, rgba(10,9,9,0.75) 100%)` //eslint-disable-line
+        background: `linear-gradient(to bottom, rgba(10,9,9,0) 85%, rgba(10,9,9,0.75) 100%), #242121 url(${BG}) center right repeat`, //eslint-disable-line
+        color: "#898685"
       },
       light: {
         // Light Theme
-        background: "#ffffff"
+        background: "#ffffff",
+        color: "#242121"
       },
       style: this.props.style,
-      containerStyle: this.props.containerStyle
+      styleContainer: this.props.styleContainer,
+      styleLogos: this.props.styleLogos,
+      styleBy: this.props.styleBy
     };
   }
 
@@ -52,7 +57,7 @@ class Header extends React.Component {
         transition: "color 400ms ease-out, fill 500ms ease-out"
       },
       ".default": {
-        marginTop: "16px", /* Align baseline of logo with baseline of link text */
+        marginBottom: "20px", /* Align baseline of Project with baseline of links */
         fontFamily: `"akkurat", "Inconsolata", monospace`,
         fontSize: "13px",
         letterSpacing: "0.15em",
@@ -62,6 +67,25 @@ class Header extends React.Component {
       ".default *": {
         display: "inline-block",
         marginLeft: "2em"
+      },
+      ".formidableHeader-logos": {
+        margin: "0 auto 0 0"
+      },
+      ".formidableHeader-logos-oss": {
+        alignItems: "center",
+        display: "flex",
+        flexDirection: "row",
+        flexWrap: "nowrap",
+        height: "30px",
+        overflow: "hidden"
+      },
+      ".formidableHeader-logos-oss-by": {
+        marginTop: "3px",
+        marginRight: "0.5em",
+        fontFamily: `"akkurat", "Inconsolata", monospace`,
+        fontSize: "14px",
+        fontWeight: "normal",
+        lineHeight: 1
       }
     };
     const dark = {
@@ -96,6 +120,7 @@ class Header extends React.Component {
   render() {
     const styles = this.getStyles();
     const classStyles = this.getClassStyles(this.props.theme);
+
     return (
       <header
         className="formidableHeader"
@@ -112,23 +137,28 @@ class Header extends React.Component {
           className="formidableHeader-container"
           style={[
             styles.container,
-            this.props.containerStyle && styles.containerStyle
+            this.props.styleContainer && styles.styleContainer
           ]}
         >
           <div
-            className="formidableHeader-logo"
-            style={{
-              height: "50px",
-              margin: "0 auto 0 0",
-              overflow: "hidden"
-            }}
+            className="formidableHeader-logos"
+            style={this.props.styleLogos && styles.styleLogos}
           >
-            <a
-              href="https://formidable.com/open-source/"
-              target="_blank"
-              style={{ display: "flex", height: "inherit" }}
-              dangerouslySetInnerHTML={{ __html: LOGO_OSS }}
-            />
+            {this.props.logoProject}
+            <div className="formidableHeader-logos-oss">
+              <span
+                className="formidableHeader-logos-oss-by"
+                style={this.props.styleBy && styles.styleBy}
+              >
+                by
+              </span>
+              <a
+                href="https://formidable.com/open-source/"
+                target="_blank"
+                style={{ display: "flex", height: "inherit" }}
+                dangerouslySetInnerHTML={{ __html: LOGO_OSS }}
+              />
+            </div>
           </div>
           {this.props.children}
         </div>
@@ -139,9 +169,12 @@ class Header extends React.Component {
 
 Header.propTypes = {
   children: React.PropTypes.node,
-  containerStyle: React.PropTypes.object,
   padding: React.PropTypes.string,
+  logoProject: React.PropTypes.node,
   style: React.PropTypes.object,
+  styleBy: React.PropTypes.object,
+  styleContainer: React.PropTypes.object,
+  styleLogos: React.PropTypes.object,
   theme: React.PropTypes.oneOf(["light", "dark"])
 };
 
@@ -153,9 +186,12 @@ const defaultHeaderChildren =
 
 Header.defaultProps = {
   children: defaultHeaderChildren,
-  containerStyle: null,
-  padding: "1.5rem 0",
+  padding: "60px 0",
+  logoProject: "",
   style: null,
+  styleBy: null,
+  styleContainer: null,
+  styleLogos: null,
   theme: "dark"
 };
 
