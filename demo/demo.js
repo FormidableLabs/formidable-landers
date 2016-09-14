@@ -1,7 +1,7 @@
 /*global document:false*/
 import React from "react";
 import ReactDOM from "react-dom";
-import Radium from "radium";
+import Radium, { StyleRoot } from "radium";
 require("normalize.css");
 
 import { Header, Footer } from "../src/index";
@@ -46,34 +46,41 @@ class Demo extends React.Component {
       />;
 
     return (
-      <div style={styles.demo}>
-        <Header
-          theme="dark"
-          logoProject={projectTextLogo}
-          padding="60px"
-          styleBy={{ textIndent: "2px" }}
-          styleContainer={{ margin: "0 auto", maxWidth: "640px" }}
-        />
-        <Header
-          theme="dark"
-          logoProject={projectSVGLogo}
-          style={{ background: "#c43a31" }}
-          styleBy={{ textIndent: "12px", color: "#fff" }}
-        >
-          <div className="default"> {/* This default class will match the Formidable branding */}
-            <a href="#about">About</a>
-            <a href="#">Docs</a>
-            <a href="#">Issues</a>
-            <a href="#">Github</a>
-          </div>
-        </Header>
-        <main style={{flex: 1}}>
-          <h1>Project X</h1>
-          <p>Content</p>
-        </main>
-        <Footer theme="light" />
-        <Footer theme="light" trademark={trademark} />
-      </div>
+      <StyleRoot>
+        <div style={styles.demo}>
+          <Header
+            theme="dark"
+            logoProject={projectTextLogo}
+            padding="60px"
+            styleBy={{ textIndent: "2px" }}
+            styleContainer={{ margin: "0 auto", maxWidth: "640px" }}
+          />
+          <Header
+            theme="dark"
+            logoProject={projectSVGLogo}
+            style={{
+              background: "#c43a31",
+              "@media only screen and (min-width: 800px)": {
+                background: "#cd5244"
+              }
+            }}
+            styleBy={{ textIndent: "12px", color: "#fff" }}
+          >
+            <div className="default"> {/* This default class will match the Formidable branding */}
+              <a href="#about">About</a>
+              <a href="#">Docs</a>
+              <a href="#">Issues</a>
+              <a href="#">Github</a>
+            </div>
+          </Header>
+          <main style={{flex: 1}}>
+            <h1>Project X</h1>
+            <p>Content</p>
+          </main>
+          <Footer theme="light" />
+          <Footer theme="light" trademark={trademark} />
+        </div>
+      </StyleRoot>
     );
   }
 }
