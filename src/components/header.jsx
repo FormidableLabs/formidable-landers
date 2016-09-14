@@ -5,9 +5,13 @@ import { merge } from "lodash";
 // Asset
 import LOGO_OSS from "../assets/logo-oss.svg";
 import BG from "../assets/bg.jpg";
+import BG_SM from "../assets/bg_sm.jpg";
 
 class Header extends React.Component {
   getStyles() {
+    const styleBg = this.props.style && this.props.style.background ?
+      this.props.style.background :
+      `linear-gradient(to bottom, rgba(10,9,9,0) 85%, rgba(10,9,9,0.75) 100%), #242121 url(${BG}) center right repeat`; //eslint-disable-line max-len
     return {
       base: {
         margin: 0
@@ -27,8 +31,12 @@ class Header extends React.Component {
       },
       dark: {
         // Dark Theme
-        background: `linear-gradient(to bottom, rgba(10,9,9,0) 85%, rgba(10,9,9,0.75) 100%), #242121 url(${BG}) center right repeat`, //eslint-disable-line
-        color: "#898685"
+        background: `linear-gradient(to bottom, rgba(10,9,9,0) 85%, rgba(10,9,9,0.75) 100%),
+          #242121 url(${BG_SM}) center right repeat`,
+        color: "#898685",
+        "@media only screen and (min-width: 800px)": {
+          background: styleBg
+        }
       },
       light: {
         // Light Theme
