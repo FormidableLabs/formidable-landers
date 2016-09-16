@@ -27,7 +27,7 @@ class Header extends React.Component {
       },
       dark: {
         // Dark Theme
-        background: `linear-gradient(to bottom, rgba(10,9,9,0) 85%, rgba(10,9,9,0.75) 100%), #242121 url(${BG}) center right repeat`, //eslint-disable-line
+        background: `#242121 url(${BG}) bottom right`, //eslint-disable-line
         color: "#898685"
       },
       light: {
