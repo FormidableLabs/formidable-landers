@@ -2,9 +2,11 @@ import React from "react";
 import Radium, { Style } from "radium";
 import { merge } from "lodash";
 
-// Asset
+// Assets
 import LOGO_OSS from "../assets/logo-oss.svg";
 import BG from "../assets/bg.jpg";
+import LOGO_GITHUB from "../assets/logo-github.svg";
+import LOGO_TWITTER from "../assets/logo-twitter.svg";
 
 class Header extends React.Component {
   getStyles() {
@@ -180,8 +182,12 @@ Header.propTypes = {
 
 const defaultHeaderChildren =
   <div className="default">
-    <a href="https://twitter.com/FormidableLabs">Twitter</a>
-    <a href="https://github.com/FormidableLabs/">Github</a>
+    <a href="https://twitter.com/FormidableLabs"
+      dangerouslySetInnerHTML={{ __html: LOGO_TWITTER }}
+    />
+    <a href="https://github.com/FormidableLabs/"
+      dangerouslySetInnerHTML={{ __html: LOGO_GITHUB }}
+    />
   </div>;
 
 Header.defaultProps = {

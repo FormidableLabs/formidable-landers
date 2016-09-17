@@ -4,6 +4,8 @@ import { merge } from "lodash";
 
 // Assets
 import LOGO from "../assets/logo.svg";
+import LOGO_GITHUB from "../assets/logo-github.svg";
+import LOGO_TWITTER from "../assets/logo-twitter.svg";
 
 class Footer extends React.Component {
   getStyles() {
@@ -35,7 +37,7 @@ class Footer extends React.Component {
         color: "#242121"
       },
       style: this.props.style,
-      containerStyle: this.props.containerStyle
+      styleContainer: this.props.styleContainer
     };
   }
 
@@ -122,7 +124,7 @@ class Footer extends React.Component {
           className="formidableFooter-container"
           style={[
             styles.container,
-            this.props.containerStyle && styles.containerStyle
+            this.props.styleContainer && styles.styleContainer
           ]}
         >
           {this.props.children}
@@ -150,9 +152,9 @@ class Footer extends React.Component {
 
 Footer.propTypes = {
   children: React.PropTypes.node,
-  containerStyle: React.PropTypes.object,
   padding: React.PropTypes.string,
   style: React.PropTypes.object,
+  styleContainer: React.PropTypes.object,
   trademark: React.PropTypes.node,
   theme: React.PropTypes.oneOf(["light", "dark"])
 };
@@ -161,15 +163,19 @@ const defaultFooterChildren =
   <div className="default">
     <a href="https://formidable.com/contact/">Contact</a>
     <a href="https://formidable.com/careers/">Careers</a>
-    <a href="https://twitter.com/FormidableLabs">Twitter</a>
-    <a href="https://github.com/FormidableLabs/">Github</a>
+    <a href="https://twitter.com/FormidableLabs"
+      dangerouslySetInnerHTML={{ __html: LOGO_TWITTER }}
+    />
+    <a href="https://github.com/FormidableLabs/"
+      dangerouslySetInnerHTML={{ __html: LOGO_GITHUB }}
+    />
   </div>;
 
 Footer.defaultProps = {
   children: defaultFooterChildren,
-  containerStyle: null,
   padding: "5rem 0 6rem",
   style: null,
+  styleContainer: null,
   theme: "dark",
   trademark: null
 };
