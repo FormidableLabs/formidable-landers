@@ -54,8 +54,8 @@ describe("Header", () => {
     it("links to Twitter and Github by default", () => {
       const headerLink = shallow(<Header />).find("a");
       expect(headerLink).to.have.length(3);
-      expect(headerLink.at(1).text()).to.equal("Twitter");
-      expect(headerLink.at(2).text()).to.equal("Github");
+      expect(headerLink.at(1).prop("href")).to.equal("https://twitter.com/FormidableLabs");
+      expect(headerLink.at(2).prop("href")).to.equal("https://github.com/FormidableLabs/");
     });
 
     it("accepts custom children", () => {
