@@ -19,6 +19,7 @@ export default {
     boxSizing: "inherit"
   },
   html: {
+    background: "#000",
     textSizeAdjust: "100%"
   },
   body: {
@@ -86,7 +87,7 @@ export default {
    * Headlines/Headings
    */
   "h1": {
-    borderBottom: `1px solid ${settings.sand}`,
+    borderBottom: `1px solid ${settings.paleSand}`,
     color: settings.red,
     fontSize: "40px",
     fontFamily: settings.serifHeadline,
@@ -127,6 +128,15 @@ export default {
     fontWeight: "bold",
     textAlign: "left"
   },
+  "pre, code": {
+    fontVariantLigatures: "none",
+    hyphens: "none",
+    whiteSpace: "pre",
+    wordBreak: "normal",
+    wordSpacing: "normal",
+    wordWrap: "normal",
+    tabSize: "2"
+  },
   /*
    * Links
    */
@@ -134,7 +144,7 @@ export default {
     color: settings.red,
     fontWeight: "normal",
     textDecoration: "none",
-    transition: "color 250ms ease-in"
+    transition: "color 220ms ease-in"
   },
   "a:visited": {
     color: settings.palerMud
@@ -142,7 +152,7 @@ export default {
   "a:hover, a:focus": {
     cursor: "pointer",
     color: settings.darkMud,
-    transition: "color 300ms ease-out"
+    transition: "color 193ms ease-out"
   },
   /*
    * Buttons!
@@ -208,12 +218,12 @@ export default {
     marginBottom: "0px"
   },
   ".Ecology code": {
-    background: settings.palestSand,
+    background: settings.whiteSand,
     borderRadius: 3,
     color: settings.mud,
     fontFamily: settings.monospace,
-    fontSize: "0.85em",
-    padding: "0 5px"
+    fontSize: "0.75em",
+    padding: "0.33em 0.333em 0.28em"
   },
   ".highlight code": {
     background: "transparent",
@@ -222,10 +232,10 @@ export default {
   /*
   * Rendered Markdown
   */
-  ".Main pre": {
+  ".Markdown pre": {
     margin: `0 ${settings.gutter * -1}px` // break grid
   },
-  ".Main pre pre": {
+  ".Markdown pre pre": {
     margin: 0
   },
   /*
@@ -238,25 +248,31 @@ export default {
     overflow: "hidden" // Hide horizontal scrollbars for playgrounds.
   },
   ".Overview pre code": { // Non-ecology code blocks
-    background: settings.palestSand,
+    background: settings.whiteSand,
     borderRadius: 0,
     color: settings.darkMud,
     display: "block",
     fontFamily: settings.monospace,
-    lineHeight: 1.2,
+    lineHeight: 1.3,
     margin: `${settings.gutter}px 0 !important`,
     padding: `${settings.gutter}px ${settings.gutter * 3}px`
   },
   ".fancyBorder": {
-    borderLeft: `4px solid ${settings.darkerSand}`,
-    borderTop: `4px solid ${settings.darkerSand}`,
+    borderLeft: `4px solid ${settings.sand}`,
+    borderTop: `4px solid ${settings.sand}`,
     boxShadow:
-      `0 0 0 1px ${settings.darkerSand},
+      `0 0 0 1px ${settings.sand},
        0 0 0 5px ${settings.palerSand},
-       0 0 0 6px ${settings.darkerSand},
-       -1px 11px 0 0 ${settings.darkerSand},
-       11px 11px 0 0 ${settings.darkerSand},
-       11px -1px 0 0 ${settings.darkerSand}`
+       0 0 0 6px ${settings.sand},
+       -1px 11px 0 0 ${settings.sand},
+       11px 11px 0 0 ${settings.sand},
+       11px -1px 0 0 ${settings.sand}`
+  },
+  /*
+   * Use this class to restrict the height of the playgrounds
+   */
+  ".playgroundsMaxHeight .Interactive .playgroundStage": {
+    maxHeight: "340px"
   },
   /*
    * Vertically stacked playground for Recipes
@@ -267,6 +283,9 @@ export default {
    *          |- .playgroundCode
    *          |- .playgroundPreview
    */
+  ".Recipe .Interactive": {
+    margin: `${settings.gutter}px 0 0`
+  },
   ".Recipe .Interactive .playground": {
     flexDirection: "column"
   },
@@ -313,7 +332,6 @@ export default {
     padding: `${settings.gutter}px ${settings.gutter}px`,
     width: "100%",
     height: "100%",
-    maxHeight: "340px",
     overflow: "auto"
   },
   ".Interactive .playgroundPreview": {
@@ -397,7 +415,7 @@ export default {
     marginTop: "40px"
   },
   ".Interactive .previewArea .playgroundDatasetSelect": {
-    border: `1px solid ${settings.paleSand}`,
+    border: `1px solid ${settings.whiteSand}`,
     fontSize: "14px"
   },
   ".Interactive .previewArea .playgroundDatasetSelectLabel": {
@@ -423,11 +441,15 @@ export default {
   },
   ".Interactive .Toolbar button": {
     margin: "0px 2.5px",
+    padding: "0 1em",
     border: `1px solid ${settings.sand}`,
     borderRadius: "1px",
     backgroundColor: "transparent",
     fontFamily: settings.monospace,
     fontSize: "11px",
+    letterSpacing: "0.15em",
+    lineHeight: 1.6,
+    textTransform: "uppercase",
     color: settings.sand,
     cursor: "Pointer"
   },
@@ -494,15 +516,15 @@ export default {
   **/
   mediaQueries: {
     [settings.mediaQueries.small]: {
+      ".playgroundsMaxHeight .Intereactive .playgroundStage": {
+        maxHeight: playgroundSettings.playgroundHeight
+      },
       ".Interactive .playground": {
         flexDirection: "row",
         flexWrap: "nowrap"
       },
       ".Intereactive .playgroundCode": {
         flex: "1 0 45%"
-      },
-      ".Intereactive .playgroundStage": {
-        maxHeight: playgroundSettings.playgroundHeight
       },
       ".Interactive .playgroundPreview": {
         flex: "0 1 55%"
@@ -515,7 +537,6 @@ export default {
       },
       ".Interactive .Toolbar button": {
         border: `1px solid ${settings.darkerSand}`,
-        fontSize: "9px",
         color: settings.sand
       },
       ".Interactive .Toolbar button:hover": {
@@ -540,10 +561,10 @@ export default {
       ".Documentation": {
         paddingRight: `${settings.gutter}px`
       },
-      ".Main pre": {
+      ".Markdown pre": {
         margin: `0 ${settings.gutter * -2}px` // break grid
       },
-      ".Main pre pre": {
+      ".Markdown pre pre": {
         margin: 0
       }
     },
@@ -552,10 +573,10 @@ export default {
         fontSize: "24px",
         lineHeight: 1.4
       },
-      ".Main pre": {
+      ".Markdown pre": {
         margin: `0 ${settings.gutter * -3}px` // break grid
       },
-      ".Main pre pre": {
+      ".Markdown pre pre": {
         margin: 0
       },
       ".Interactive": {
@@ -563,15 +584,12 @@ export default {
       },
       ".Interactive pre, .CodeMirror-code": {
         fontFamily: settings.monospace,
-        fontSize: "18px",
-        lineHeight: 1.2
+        fontSize: "82.5%",
+        lineHeight: 1.3
       },
       ".Interactive .playground": {
         alignItems: "stretch",
         justifyContent: "space-between",
-        padding: 0
-      },
-      ".Interactive .playgroundCode": {
         display: "flex",
         flex: "3 2 55%",
         margin: 0,
@@ -585,6 +603,9 @@ export default {
         left: 0,
         right: 0,
         bottom: 0
+      },
+      ".Recipe .Interactive": {
+        margin: `${settings.gutter * 2}px 0 0`
       },
       ".Recipe .Interactive .playground": {
         marginLeft: 0

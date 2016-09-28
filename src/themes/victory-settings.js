@@ -5,22 +5,22 @@ export default {
   // ---------------------
   sansSerif: "'Gill Sans', 'Trebuchet MS', Helvetica, sans-serif",
   serif: "'Cardo', 'Georgia', 'Cambria', serif",
-  monospace: "'Source Code Pro', 'Inconsolata', 'Courier New', 'Courier', monospace",
+  monospace: "'akkurat', 'Inconsolata', 'Courier New', 'Courier', monospace",
   serifHeadline: "'Didot', 'Bodoni MT', 'Cochin', 'Baskerville', 'Goudy Old Style', 'Bitstream Charter', serif",
   // ---------------------
   // Colors
   // ---------------------
   // Sand
-  whiteSand: "#f6f2ee",
-  palestSand: "#e8e0d8",
-  palerSand: "#e1d7cd", //bg
+  whiteSand: "#FFFEFC",
+  palestSand: "#FFFCFA",
+  palerSand: "#f6f2ee", //bg
   paleSand: "#d1c7bc",
   sand: "#b5aca3",
   darkSand: "#948d85",
   darkerSand: "#807973",
   darkestSand: "#67615c",
   // Mud
-  palerMud: "#736357",
+  palerMud: "#595551",
   paleMud: "#4d4945",
   mud: "#34302e",
   darkMud: "#181615",
