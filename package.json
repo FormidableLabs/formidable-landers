@@ -24,6 +24,11 @@
     "url": "https://github.com/FormidableLabs/formidable-landers/issues"
   },
   "homepage": "https://github.com/FormidableLabs/formidable-landers#readme",
+  "greenkeeper": {
+    "ignore": [
+      "radium"
+    ]
+  },
   "dependencies": {
     "babel-cli": "^6.6.5",
     "babel-core": "^6.6.4",
@@ -33,7 +38,7 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-1": "^6.5.0",
     "lodash": "^4.15.0",
-    "radium": "^0.18.1",
+    "radium": "^0.17.1",
     "react": "^15.1.0",
     "rimraf": "^2.4.4"
   },
