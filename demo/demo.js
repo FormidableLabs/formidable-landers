@@ -6,6 +6,7 @@ require("normalize.css");
 
 import { Header, Footer } from "../src/index";
 import ProjectXLogo from "./logo-project-x.svg";
+import demoStyles from "./demo.css"; // eslint-disable-line
 
 class Demo extends React.Component {
   getStyles() {
@@ -50,6 +51,7 @@ class Demo extends React.Component {
         <Header
           theme="dark"
           logoProject={projectTextLogo}
+          className="headerDemo"
           padding="60px"
           styleBy={{ textIndent: "2px" }}
           styleContainer={{ margin: "0 auto", maxWidth: "640px" }}
@@ -57,8 +59,7 @@ class Demo extends React.Component {
         <Header
           theme="dark"
           logoProject={projectSVGLogo}
-          style={{ background: "#c43a31" }}
-          styleBy={{ textIndent: "12px", color: "#fff" }}
+          className="redBg"
         >
           <div className="default"> {/* This default class will match the Formidable branding */}
             <a href="#about">About</a>
@@ -71,7 +72,7 @@ class Demo extends React.Component {
           <h1>Project X</h1>
           <p>Content</p>
         </main>
-        <Footer theme="light" />
+        <Footer theme="dark" />
         <Footer theme="light" trademark={trademark} />
       </div>
     );

@@ -1,5 +1,9 @@
 /*globals __dirname:false */
 
+const postcssImport = require("postcss-import");
+const postcssNext = require("postcss-cssnext");
+const postcssInlineSvg = require("postcss-inline-svg");
+
 const DashboardPlugin = require("webpack-dashboard/plugin");
 
 module.exports = {
@@ -52,6 +56,13 @@ module.exports = {
         loader: "json-loader"
       }
     ]
+  },
+  postcss: (webpack) => { // eslint-disable-line no-shadow
+    return [
+      postcssImport({ addDependencyTo: webpack }),
+      postcssNext,
+      postcssInlineSvg
+    ];
   },
   plugins: [
     new DashboardPlugin()
