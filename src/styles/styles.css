@@ -1,0 +1,105 @@
+/** VARIABLES
+*/
+:root {
+  /* COLORS */
+  --black: #242121;
+  --gray: #898685;
+  --lightGray: #e7e5e3;
+  --white: #ffffff;
+
+  --red: #c43a31;
+  --lightRed: #DC7A6B;
+
+  /* FONTS */
+  --monospace: "akkurat", "Inconsolata", monospace;
+}
+
+/** BASE
+* Common styles between <Header> & <Footer>
+*
+*/
+.formidableHeader svg,
+.formidableFooter svg {
+  fill: currentColor;
+}
+
+.formidableHeader a:link,
+.formidableFooter a:link {
+  text-decoration: none;
+  transition: color 250ms ease-in, fill 300ms ease-in;
+}
+
+.formidableHeader a:focus,
+.formidableHeader a:hover,
+.formidableFooter a:focus,
+.formidableFooter a:hover {
+  transition: color 400ms ease-out, fill 500ms ease-out;
+}
+
+.formidableHeader-container,
+.formidableFooter-container {
+  /* Looks */
+  font-family: inherit;
+  font-size: inherit;
+  /* Structure */
+  align-items: center;
+  display: flex;
+  flex: none;  /* Sticky header/footer setup */
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 60px 0;
+}
+
+/** DARK THEME
+* .isDark class
+*/
+.formidableHeader.isDark a:link,
+.formidableFooter.isDark a:link {
+  color: var(--white);
+}
+
+.formidableHeader.isDark a:visited,
+.formidableFooter.isDark a:visited {
+  color: var(--lightGray);
+}
+
+.formidableHeader.isDark a:focus,
+.formidableHeader.isDark a:hover,
+.formidableFooter.isDark a:focus,
+.formidableFooter.isDark a:hover {
+  color: var(--lightRed);
+}
+
+/** LIGHT THEME
+* .isLight class
+*/
+.formidableHeader.isLight,
+.formidableFooter.isLight {
+  background: var(--white);
+  color: var(--black);
+}
+
+.formidableHeader.isLight a:link,
+.formidableFooter.isLight a:link {
+  color: var(--black);
+}
+
+.formidableHeader.isLight a:visited,
+.formidableFooter.isLight a:visited {
+  color: var(--black);
+}
+
+.formidableHeader.isLight a:focus,
+.formidableHeader.isLight a:hover,
+.formidableFooter.isLight a:focus,
+.formidableFooter.isLight a:hover {
+  color: var(--red) !important;
+}
+
+
+/**
+* COMPONENTS
+*/
+@import "./components/header.css";
+@import "./components/footer.css";

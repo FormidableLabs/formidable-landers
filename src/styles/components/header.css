@@ -1,0 +1,55 @@
+/** FORMIDABLE HEADER
+* A <Header> component retaining colors, fonts, and space-theme associated with
+* the Formidable brand.
+*
+* -logos        wrapper for both the project logo and the Formidable Open Source logo
+* -logos-oss    the Formidable Open Source logo
+* -by           the word "by" might need `text-indent` to optically align with the project logo
+* .default      wrapper for project-specific links that retain Formidable brand
+*/
+.formidableHeader {
+  margin: 0;
+}
+
+.formidableHeader-logos {
+  margin: 0 auto 0 0;
+}
+
+.formidableHeader-logos-oss {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 30px;
+  overflow: hidden;
+}
+
+.formidableHeader-by {
+  margin-top: 3px;
+  margin-right: 0.5em;
+  font-family: var(--monospace);
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1;
+}
+
+.formidableHeader .default {
+  margin-bottom: 20px; /* Align baseline of Project with baseline of links */
+  font-family: var(--monospace);
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  line-height: 2;
+  text-transform: uppercase;
+}
+
+.formidableHeader .default * {
+  display: inline-block;
+  margin-left: 2em;
+}
+
+/** DARK THEME
+*/
+.formidableHeader.isDark {
+  background: var(--black); /* TODO: Fix assets url("../../assets/bg.jpg") bottom right; */
+  color: var(--gray);
+}
