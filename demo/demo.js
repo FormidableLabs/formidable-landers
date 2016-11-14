@@ -1,7 +1,6 @@
 /*global document:false*/
 import React from "react";
 import ReactDOM from "react-dom";
-import Radium from "radium";
 require("normalize.css");
 
 import { Header, Footer } from "../src/index";
@@ -77,9 +76,9 @@ class Demo extends React.Component {
       </div>
     );
   }
-}
+
 
 ReactDOM.render(
-  React.createElement(Radium(Demo)), //eslint-disable-line new-cap
+  React.createElement(Demo), //eslint-disable-line new-cap
   document.getElementById("content")
 );
