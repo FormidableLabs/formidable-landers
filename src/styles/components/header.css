@@ -50,6 +50,6 @@
 /** DARK THEME
 */
 .formidableHeader.isDark {
-  background: var(--black); /* TODO: Fix assets url("../../assets/bg.jpg") bottom right; */
+  background: var(--black) url("../../assets/bg.jpg") bottom right;
   color: var(--gray);
 }
