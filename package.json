@@ -4,7 +4,7 @@
   "description": "Reusable components for Formidable's marketing sites",
   "main": "lib/index.js",
   "scripts": {
-    "demo": "webpack-dashboard -- webpack-dev-server --port 3030 --config demo/webpack.config.dev.js --colors --content-base demo",
+    "demo": "webpack-dashboard -- webpack-dev-server --port 5678 --config demo/webpack.config.demo.js --colors --content-base demo",
     "lint": "eslint --ext .js,.jsx src",
     "test": "karma start ./karma.conf.js",
     "test-travis": "karma start ./karma.conf.js --singleRun=true",
@@ -34,12 +34,10 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-1": "^6.5.0",
     "lodash": "^4.15.0",
-    "radium": "^0.17.1",
     "react": "^15.1.0",
     "rimraf": "^2.4.4"
   },
   "devDependencies": {
-    "autoprefixer-loader": "^3.2.0",
     "babel-eslint": "^7.1.0",
     "babel-loader": "^6.2.0",
     "chai": "^3.5.0",
@@ -67,12 +65,13 @@
     "postcss-import": "^8.2.0",
     "postcss-inline-svg": "^2.2.0",
     "postcss-loader": "^1.1.1",
+    "postcss-url": "^5.1.2",
     "raw-loader": "^0.5.1",
     "react-addons-test-utils": "^15.1.0",
     "react-dom": "^15.1.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
-    "webpack": "^1.12.14",
+    "webpack": "^1.13.2",
     "webpack-dashboard": "^0.2.0",
     "webpack-dev-server": "^1.14.1"
   }

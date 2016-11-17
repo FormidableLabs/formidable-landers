@@ -16,20 +16,27 @@ module.exports = {
         exclude: path.resolve(__dirname, "node_modules"), //eslint-disable-line no-undef
         loader: require.resolve("babel-loader")
       }, {
-        test: /\.json$/,
-        loader: "json"
-      }, {
         test: /\.css$/,
-        loader: "style-loader!css-loader!autoprefixer-loader"
+        loaders: [
+          require.resolve("style-loader"),
+          require.resolve("css-loader"),
+          require.resolve("postcss-loader")
+        ]
       }, {
-        test: /\.(png|jpg)$/,
-        loader: "url-loader?limit=8192"
-      }, {
-        test: /.svg$/,
+        test: /\.svg$/,
         loaders: [
           require.resolve("raw-loader"),
           require.resolve("image-webpack-loader")
         ]
+      }, {
+        test: /\.(png|jpg|gif)$/,
+        loaders: [
+          require.resolve("file-loader"),
+          require.resolve("image-webpack-loader")
+        ]
+      }, {
+        test: /\.json$/,
+        loader: "json"
       }
     ]
   },

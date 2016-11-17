@@ -76,7 +76,7 @@ class Demo extends React.Component {
       </div>
     );
   }
-
+}
 
 ReactDOM.render(
   React.createElement(Demo),
