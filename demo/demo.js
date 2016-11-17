@@ -79,6 +79,6 @@ class Demo extends React.Component {
 
 
 ReactDOM.render(
-  React.createElement(Demo), //eslint-disable-line new-cap
+  React.createElement(Demo),
   document.getElementById("content")
 );
