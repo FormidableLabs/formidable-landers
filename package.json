@@ -47,7 +47,7 @@
     "babel-eslint": "^7.1.0",
     "babel-loader": "^6.2.0",
     "chai": "^3.5.0",
-    "css-loader": "^0.25.0",
+    "css-loader": "^0.26.0",
     "enzyme": "^2.3.0",
     "eslint": "^3.9.1",
     "eslint-config-defaults": "^9.0.0",
