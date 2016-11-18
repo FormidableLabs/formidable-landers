@@ -7,14 +7,9 @@ import Footer from "../../../lib/components/footer";
 describe("Footer", () => {
 
   describe("<footer>", () => {
-    it.skip("has default styles", () => {
-      const footer = shallow(<Footer />);
-      expect(footer.props()).to.have.property("style");
-    });
-
-    it("accepts custom styles", () => {
-      const footer = shallow(<Footer style={{margin: "20px 40px 60px"}} />);
-      expect(footer.props().style).to.have.property("margin", "20px 40px 60px");
+    it("accepts custom class name", () => {
+      const footer = shallow(<Footer className="bigRed" />);
+      expect(footer.props().className).to.contain("bigRed");
     });
 
     it("has default theme prop of dark", () => {
@@ -22,14 +17,9 @@ describe("Footer", () => {
       expect(footer.props().theme).to.equal("dark");
     });
 
-    it("has default styles for dark theme", () => {
-      const footerStyle = shallow(<Footer />).find("Style");
-      const darkThemeLinkStyles = {
-        textDecoration: "none",
-        transition: "color 250ms ease-in, fill 300ms ease-in",
-        color: "#fff"
-      };
-      expect(footerStyle.props().rules).to.have.property("a:link").that.deep.equals(darkThemeLinkStyles);
+    it("has default .isDark class name", () => {
+      const footer = shallow(<Footer />);
+      expect(footer.props().className).to.contain("isDark");
     });
   });
 

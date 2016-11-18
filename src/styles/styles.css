@@ -1,0 +1,15 @@
+/** VARIABLES
+*/
+@import "./base/variables.css";
+
+/** BASE
+* Common styles between <Header> & <Footer>
+*
+*/
+@import "./base/base.css";
+
+/**
+* COMPONENTS
+*/
+@import "./components/header.css";
+@import "./components/footer.css";

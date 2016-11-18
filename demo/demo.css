@@ -1,0 +1,23 @@
+/* Demo Header with Plain Red Background */
+.formidableHeader.redBg {
+  background: #c43a31;
+}
+
+.formidableHeader.redBg .formidableHeader-by {
+  color: #fff;
+  text-indent: 12px;
+}
+
+/* Demo Header with Text Logo */
+.formidableHeader.headerDemo {
+  padding: 0 60px;
+}
+
+.formidableHeader.headerDemo .formidableHeader-by {
+  text-indent: 2px;
+}
+
+.formidableHeader.headerDemo .formidableHeader-container {
+  margin: 0 auto;
+  max-width: 640px;
+}

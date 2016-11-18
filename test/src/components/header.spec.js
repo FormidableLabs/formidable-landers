@@ -7,14 +7,9 @@ import Header from "../../../lib/components/header";
 describe("Header", () => {
 
   describe("<header>", () => {
-    it("has default styles", () => {
-      const header = shallow(<Header />);
-      expect(header.props()).to.have.property("style");
-    });
-
-    it("accepts custom styles", () => {
-      const header = shallow(<Header style={{textAlign: "left"}} />);
-      expect(header.props().style).to.have.property("textAlign", "left");
+    it("accepts custom class name", () => {
+      const header = shallow(<Header className="bigRed" />);
+      expect(header.props().className).to.contain("bigRed");
     });
 
     it("has default theme prop of dark", () => {
@@ -22,14 +17,9 @@ describe("Header", () => {
       expect(header.props().theme).to.equal("dark");
     });
 
-    it("has default styles for dark theme", () => {
-      const headerStyle = shallow(<Header />).find("Style");
-      const darkThemeLinkStyles = {
-        textDecoration: "none",
-        transition: "color 250ms ease-in, fill 300ms ease-in",
-        color: "#fff"
-      };
-      expect(headerStyle.props().rules).to.have.property("a:link").that.deep.equals(darkThemeLinkStyles);
+    it("has default .isDark class name", () => {
+      const header = shallow(<Header />);
+      expect(header.props().className).to.contain("isDark");
     });
   });
 
@@ -66,17 +56,9 @@ describe("Header", () => {
   });
 
   describe("props", () => {
-    it("accepts custom padding", () => {
-      const headerContainer = shallow(<Header padding="20px 20px" />).find(".formidableHeader-container");
-      expect(headerContainer.props().style).to.have.property("padding", "20px 20px");
-    });
-
     it("can change to light theme", () => {
-      const headerStyle = shallow(<Header theme="light" />).find("Style");
-      const lightVisitedLinkStyles = {
-        color: "#242121"
-      };
-      expect(headerStyle.props().rules).to.have.property("a:visited").that.deep.equals(lightVisitedLinkStyles);
+      const header = shallow(<Header theme="light" />);
+      expect(header.props().className).to.contain("isLight");
     });
   });
 });
