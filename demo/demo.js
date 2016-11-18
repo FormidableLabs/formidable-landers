@@ -51,9 +51,6 @@ class Demo extends React.Component {
           theme="dark"
           logoProject={projectTextLogo}
           className="headerDemo"
-          padding="60px"
-          styleBy={{ textIndent: "2px" }}
-          styleContainer={{ margin: "0 auto", maxWidth: "640px" }}
         />
         <Header
           theme="dark"

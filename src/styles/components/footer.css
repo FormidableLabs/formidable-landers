@@ -49,6 +49,6 @@
 /** DARK THEME
 */
 .formidableFooter.isDark {
-  background: #242121 linear-gradient(to top, rgba(10,9,9,0) 85%, rgba(10,9,9,0.75) 100%);
-  color: #d1cecd;
+  background: var(--black) linear-gradient(to top, rgba(10,9,9,0) 85%, rgba(10,9,9,0.75) 100%);
+  color: var(--gray);
 }

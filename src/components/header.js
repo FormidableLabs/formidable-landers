@@ -1,10 +1,7 @@
 import React from "react";
-// import Radium, { Style } from "radium";
-// import { merge } from "lodash";
 
 // Assets
 import LOGO_OSS from "../assets/logo-oss.svg";
-// import BG from "../assets/bg.jpg";
 import LOGO_GITHUB from "../assets/logo-github.svg";
 import LOGO_TWITTER from "../assets/logo-twitter.svg";
 import styles from "../styles/styles.css"; // eslint-disable-line no-unused-vars
