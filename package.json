@@ -63,7 +63,7 @@
     "phantomjs-prebuilt": "^2.1.4",
     "postcss-cssnext": "^2.8.0",
     "postcss-import": "^8.2.0",
-    "postcss-inline-svg": "^2.2.0",
+    "postcss-inline-svg": "^3.0.0",
     "postcss-loader": "^1.1.1",
     "postcss-url": "^5.1.2",
     "raw-loader": "^0.5.1",
