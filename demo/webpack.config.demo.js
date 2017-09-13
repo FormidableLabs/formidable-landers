@@ -65,10 +65,10 @@ module.exports = {
       }
     ]
   },
-  postcss: (webpack) => { // eslint-disable-line no-shadow
+  postcss: () => {
     return [
-      postcssImport({ addDependencyTo: webpack }),
-      postcssUrl,
+      postcssImport,
+      postcssUrl({url: "inline"}),
       postcssNext,
       postcssInlineSvg
     ];
