@@ -12,6 +12,11 @@ branches:
   only:
     - master
 
+# Resolves `npm prune --production` bug in npm@5.3.0
+# https://github.com/npm/npm/issues/17781
+before_install:
+  - npm install -g npm@5.4
+
 script:
   - npm run build
   - npm run test-travis
