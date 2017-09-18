@@ -64,7 +64,7 @@
     "postcss-cssnext": "^3.0.2",
     "postcss-import": "^10.0.0",
     "postcss-inline-svg": "^2.2.0",
-    "postcss-loader": "^1.1.1",
+    "postcss-loader": "^2.0.6",
     "postcss-url": "^7.1.2",
     "raw-loader": "^0.5.1",
     "react-addons-test-utils": "^15.1.0",
