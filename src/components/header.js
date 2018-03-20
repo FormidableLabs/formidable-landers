@@ -4,7 +4,7 @@ import React from "react";
 import LOGO_OSS from "../assets/logo-oss.svg";
 import LOGO_GITHUB from "../assets/logo-github.svg";
 import LOGO_TWITTER from "../assets/logo-twitter.svg";
-import styles from "../styles/styles.css"; // eslint-disable-line no-unused-vars
+import styles from "../styles/components/header.css"; // eslint-disable-line no-unused-vars
 
 class Header extends React.Component {
   render() {
@@ -24,9 +24,7 @@ class Header extends React.Component {
           <div className="formidableHeader-logos">
             {this.props.logoProject}
             <div className="formidableHeader-logos-oss">
-              <span className="formidableHeader-by">
-                by
-              </span>
+              <span className="formidableHeader-by">by</span>
               <a
                 href="https://formidable.com/open-source/"
                 target="_blank"
@@ -49,15 +47,18 @@ Header.propTypes = {
   theme: React.PropTypes.oneOf(["light", "dark"])
 };
 
-const defaultHeaderChildren =
+const defaultHeaderChildren = (
   <div className="default">
-    <a href="https://twitter.com/FormidableLabs"
+    <a
+      href="https://twitter.com/FormidableLabs"
       dangerouslySetInnerHTML={{ __html: LOGO_TWITTER }}
     />
-    <a href="https://github.com/FormidableLabs/"
+    <a
+      href="https://github.com/FormidableLabs/"
       dangerouslySetInnerHTML={{ __html: LOGO_GITHUB }}
     />
-  </div>;
+  </div>
+);
 
 Header.defaultProps = {
   children: defaultHeaderChildren,

@@ -12,7 +12,7 @@
     "babel": "rimraf lib && babel src/ -d lib/",
     "copy-assets": "rimraf lib/assets/ && cp -r src/assets/ lib/assets/",
     "copy-styles":
-      "rimraf lib/styles/ && postcss src/styles/styles.css --verbose --o lib/styles/styles.css",
+      "rimraf lib/styles/ && postcss src/styles/components/ --verbose --dir lib/styles/",
     "build": "npm run babel && npm run copy-assets && npm run copy-styles",
     "prepublish": "npm run build",
     "postinstall":

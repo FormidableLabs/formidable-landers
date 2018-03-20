@@ -5,7 +5,7 @@ import LOGO from "../assets/logo.svg";
 import LOGO_GITHUB from "../assets/logo-github.svg";
 import LOGO_TWITTER from "../assets/logo-twitter.svg";
 // Styles
-import styles from "../styles/styles.css"; //eslint-disable-line
+import styles from "../styles/components/footer.css"; //eslint-disable-line
 
 class Footer extends React.Component {
   render() {
@@ -45,17 +45,20 @@ Footer.propTypes = {
   theme: React.PropTypes.oneOf(["light", "dark"])
 };
 
-const defaultFooterChildren =
+const defaultFooterChildren = (
   <div className="default">
     <a href="https://formidable.com/contact/">Contact</a>
     <a href="https://formidable.com/careers/">Careers</a>
-    <a href="https://twitter.com/FormidableLabs"
+    <a
+      href="https://twitter.com/FormidableLabs"
       dangerouslySetInnerHTML={{ __html: LOGO_TWITTER }}
     />
-    <a href="https://github.com/FormidableLabs/"
+    <a
+      href="https://github.com/FormidableLabs/"
       dangerouslySetInnerHTML={{ __html: LOGO_GITHUB }}
     />
-  </div>;
+  </div>
+);
 
 Footer.defaultProps = {
   children: defaultFooterChildren,
