@@ -1,3 +1,13 @@
+/** VARIABLES
+*/
+@import "./base/variables.css";
+
+/** BASE
+* Common styles between <Header> & <Footer>
+*
+*/
+@import "./base/base.css";
+
 /** FORMIDABLE Footer
 * A <Footer> component retaining colors, fonts, and space-theme associated with
 * the Formidable brand.
@@ -40,7 +50,8 @@
   margin-right: 0;
 }
 
-.formidableFooter .default:last-child { /* Target the trademark */
+.formidableFooter .default:last-child {
+  /* Target the trademark */
   flex: 0 0 100%;
   margin-top: 8px;
   text-align: right;
@@ -49,6 +60,6 @@
 /** DARK THEME
 */
 .formidableFooter.isDark {
-  background: var(--black) linear-gradient(to top, rgba(10,9,9,0) 85%, rgba(10,9,9,0.75) 100%);
+  background: var(--black) linear-gradient(to top, rgba(10, 9, 9, 0) 85%, rgba(10, 9, 9, 0.75) 100%);
   color: var(--gray);
 }
