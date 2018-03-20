@@ -1,12 +1,12 @@
 /** VARIABLES
 */
-@import "../base/variables.css";
+@import "./base/variables.css";
 
 /** BASE
 * Common styles between <Header> & <Footer>
 *
 */
-@import "../base/base.css";
+@import "./base/base.css";
 
 /** FORMIDABLE Footer
 * A <Footer> component retaining colors, fonts, and space-theme associated with

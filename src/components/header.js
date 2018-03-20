@@ -4,7 +4,7 @@ import React from "react";
 import LOGO_OSS from "../assets/logo-oss.svg";
 import LOGO_GITHUB from "../assets/logo-github.svg";
 import LOGO_TWITTER from "../assets/logo-twitter.svg";
-import styles from "../styles/components/header.css"; // eslint-disable-line no-unused-vars
+import styles from "../styles/header.css"; // eslint-disable-line no-unused-vars
 
 class Header extends React.Component {
   render() {

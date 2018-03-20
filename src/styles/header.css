@@ -1,12 +1,12 @@
 /** VARIABLES
 */
-@import "../base/variables.css";
+@import "./base/variables.css";
 
 /** BASE
 * Common styles between <Header> & <Footer>
 *
 */
-@import "../base/base.css";
+@import "./base/base.css";
 
 /** FORMIDABLE HEADER
 * A <Header> component retaining colors, fonts, and space-theme associated with
@@ -60,6 +60,6 @@
 /** DARK THEME
 */
 .formidableHeader.isDark {
-  background: var(--black) url("../../assets/bg.jpg") bottom right;
+  background: var(--black) url("../assets/bg.jpg") bottom right;
   color: var(--gray);
 }

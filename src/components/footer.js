@@ -5,7 +5,7 @@ import LOGO from "../assets/logo.svg";
 import LOGO_GITHUB from "../assets/logo-github.svg";
 import LOGO_TWITTER from "../assets/logo-twitter.svg";
 // Styles
-import styles from "../styles/components/footer.css"; //eslint-disable-line
+import styles from "../styles/footer.css"; //eslint-disable-line
 
 class Footer extends React.Component {
   render() {
