@@ -39,7 +39,7 @@
     "postcss-import": "^10.0.0",
     "postcss-inline-svg": "^2.2.0",
     "postcss-url": "^7.1.2",
-    "react": "^15.6.1",
+    "react": "^16.3.1",
     "rimraf": "^2.4.4"
   },
   "devDependencies": {
