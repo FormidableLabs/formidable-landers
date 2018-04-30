@@ -60,7 +60,7 @@ export default class Header extends Component {
     const { isOpen } = this.props;
     return (
       <div>
-        <header className={`site-header isOpen-${this.props.isOpen}`}>
+        <div className={`site-header isOpen-${this.props.isOpen}`}>
           {/* Site-Header: Logo */}
           <a href="/" className="site-header__logo" title="Formidable">
             <svg
@@ -100,7 +100,7 @@ export default class Header extends Component {
               <span className="site-header__menu-bar" />
             </button>
           </div>
-        </header>
+        </div>
         {/* SITE MENU FOR MOBILE */}
         <nav className="site-menu" aria-hidden={!isOpen}>
           <ul className="site-menu__nav">
