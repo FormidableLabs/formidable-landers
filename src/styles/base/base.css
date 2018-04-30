@@ -11,6 +11,7 @@
 .formidableFooter a:link {
   text-decoration: none;
   transition: color 250ms ease-in, fill 300ms ease-in;
+  padding: 10px 15px;
 }
 
 .formidableHeader a:focus,
@@ -29,10 +30,21 @@
   align-items: center;
   display: flex;
   flex: none;  /* Sticky header/footer setup */
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 60px 0;
+}
+.formidableHeader-container {
+  /* height: 275px; */
+  margin: 3em auto 0 auto;
+  padding: 60px 0 30px 0;
+}
+
+.formidableFooter-container {
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 60px auto;
+  padding: 0 3vw;
 }
 
 /** DARK THEME

@@ -20,10 +20,8 @@ class Demo extends React.Component {
       },
       demoHeading: {
         fontFamily: "sharp",
-        fontSize: "60px",
+        fontSize: "40px",
         fontWeight: "normal",
-        lineHeight: 1.2,
-        margin: 0
       }
     };
   }
@@ -40,7 +38,7 @@ class Demo extends React.Component {
     const projectSVGLogo =
       <a
         href="/"
-        style={{display: "block", height: "50px"}}
+        style={{display: "block", height: "60px"}}
         title="Project X"
         dangerouslySetInnerHTML={{__html: ProjectXLogo}}
       />;
@@ -64,7 +62,7 @@ class Demo extends React.Component {
             <a href="#">Github</a>
           </div>
         </Header>
-        <main style={{flex: 1}}>
+        <main style={{flex: '1 1 auto', padding: '0 3vw'}}>
           <h1>Project X</h1>
           <p>Content</p>
         </main>

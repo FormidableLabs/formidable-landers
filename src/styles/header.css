@@ -19,10 +19,15 @@
 */
 .formidableHeader {
   margin: 0;
+  background-color: #000;
 }
 
 .formidableHeader-logos {
-  margin: 0 auto 0 0;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 40px;
+  font-size: 40px;
 }
 
 .formidableHeader-logos-oss {
@@ -44,18 +49,18 @@
 }
 
 .formidableHeader .default {
-  margin-bottom: 20px; /* Align baseline of Project with baseline of links */
+  padding: 20px 0;
   font-family: var(--monospace);
   font-size: 13px;
   letter-spacing: 0.15em;
-  line-height: 2;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .formidableHeader .default * {
   display: inline-block;
-  margin-left: 2em;
 }
+
 
 /** DARK THEME
 */
