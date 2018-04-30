@@ -6,7 +6,47 @@ import LOGO_GITHUB from "../assets/logo-github.svg";
 import LOGO_TWITTER from "../assets/logo-twitter.svg";
 import styles from "../styles/header.css"; // eslint-disable-line no-unused-vars
 
+// Formidable Header
+import FormidableHeader from "./formidable-header";
+import BodyClassName from "./body-class-name";
+
+
 class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    // Fade in the very first page after load.
+    this.state = {
+      pageClass: "",
+      navOpen: false
+    };
+  }
+
+  /* eslint-disable no-invalid-this */
+  handleToggleMenu = navOpen => {
+    this.setState({
+      navOpen
+    });
+    this.toggleBodyClasses(navOpen);
+  };
+  /*eslint-enable no-invalid-this */
+
+  toggleBodyClasses(navOpen) {
+    console.log("toggling");
+    const isOpenClass = "js-menu--is-open";
+
+    if (navOpen) {
+      const initialPageClass = this.state.pageClass;
+      // Menu is opening, add isOpening class
+      this.setState({
+        pageClass: `${initialPageClass} ${isOpenClass}`
+      });
+    } else {
+      this.setState({
+        pageClass: ""
+      });
+    }
+  }
+
   render() {
     let classes = "formidableHeader";
     if (this.props.theme === "light") {
@@ -19,6 +59,13 @@ class Header extends React.Component {
     }
 
     return (
+      <div>
+      <BodyClassName className={this.state.pageClass} />
+      <FormidableHeader 
+        onToggleMenu={this.handleToggleMenu}
+        isOpen={this.state.navOpen}
+        location={this.props.location}
+      />
       <header className={classes}>
         <div className="formidableHeader-container">
           <div className="formidableHeader-logos">
@@ -36,6 +83,7 @@ class Header extends React.Component {
           {this.props.children}
         </div>
       </header>
+      </div>
     );
   }
 }
@@ -64,7 +112,8 @@ Header.defaultProps = {
   children: defaultHeaderChildren,
   className: "",
   logoProject: "",
-  theme: "dark"
+  theme: "dark",
+  location: {pathname: '/open-source/'}
 };
 
 export default Header;
