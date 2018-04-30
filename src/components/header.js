@@ -58,31 +58,29 @@ class Header extends React.Component {
     }
 
     return (
-      <div>
-      <BodyClassName className={this.state.pageClass} />
-      <FormidableHeader 
-        onToggleMenu={this.handleToggleMenu}
-        isOpen={this.state.navOpen}
-        location={this.props.location}
-      />
-      {
-        this.props.subheader ? 
-        (
-          <header className={classes}>
-              <div className="formidableHeader-container">
-                <div className="formidableHeader-logos">
-                  {this.props.logoProject}
-                </div>
-                {this.props.children}
+      <header className={classes}>
+        <BodyClassName className={this.state.pageClass} />
+        <FormidableHeader 
+          onToggleMenu={this.handleToggleMenu}
+          isOpen={this.state.navOpen}
+          location={this.props.location}
+        />
+        {
+          this.props.subheader ? 
+          (
+            <div className="formidableHeader-container">
+              <div className="formidableHeader-logos">
+                {this.props.logoProject}
               </div>
-            </header>
-          
-        ) : (
-          <div style={{marginTop: '3em'}} />
-        )
-      }
+              {this.props.children}
+            </div>
+            
+          ) : (
+            <div style={{marginTop: '3em'}} />
+          )
+        }
       
-      </div>
+      </header>
     );
   }
 }
