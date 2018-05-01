@@ -7,7 +7,7 @@ import LOGO_TWITTER from "../assets/logo-twitter.svg";
 import styles from "../styles/header.css";
 import formidableStyles from "../styles/formidable-header.css"; // eslint-disable-line no-unused-vars
 
-// Formidable Header
+// Formidable.com Header
 import FormidableHeader from "../partials/formidable-header";
 import BodyClassName from "../partials/body-class-name";
 
