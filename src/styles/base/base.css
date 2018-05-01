@@ -36,8 +36,8 @@
 }
 .formidableHeader-container {
   /* height: 275px; */
-  margin: 3em auto 0 auto;
-  padding: 60px 0 30px 0;
+  margin: 3em auto 0;
+  padding: 60px 0 30px;
 }
 
 .formidableFooter-container {

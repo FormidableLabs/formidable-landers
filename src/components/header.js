@@ -26,25 +26,8 @@ class Header extends React.Component {
     this.setState({
       navOpen
     });
-    this.toggleBodyClasses(navOpen);
   };
   /*eslint-enable no-invalid-this */
-
-  toggleBodyClasses(navOpen) {
-    const isOpenClass = "js-menu--is-open";
-
-    if (navOpen) {
-      const initialPageClass = this.state.pageClass;
-      // Menu is opening, add isOpening class
-      this.setState({
-        pageClass: `${initialPageClass} ${isOpenClass}`
-      });
-    } else {
-      this.setState({
-        pageClass: ""
-      });
-    }
-  }
 
   render() {
     let classes = "formidableHeader";
@@ -58,8 +41,8 @@ class Header extends React.Component {
     }
 
     return (
-      <header className={classes}>
-        <BodyClassName className={this.state.pageClass} />
+      <div>
+        <BodyClassName className={this.state.navOpen ? "js-menu--is-open" : ""} />
         <FormidableHeader 
           onToggleMenu={this.handleToggleMenu}
           isOpen={this.state.navOpen}
@@ -68,19 +51,21 @@ class Header extends React.Component {
         {
           this.props.subheader ? 
           (
+            <header className={classes}>
             <div className="formidableHeader-container">
               <div className="formidableHeader-logos">
                 {this.props.logoProject}
               </div>
               {this.props.children}
             </div>
+            </header>
             
           ) : (
             <div style={{marginTop: '3em'}} />
           )
         }
       
-      </header>
+      </div>
     );
   }
 }

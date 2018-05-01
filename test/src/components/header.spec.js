@@ -8,7 +8,7 @@ describe("Header", () => {
 
   describe("<header>", () => {
     it("accepts custom class name", () => {
-      const header = shallow(<Header className="bigRed" />);
+      const header = shallow(<Header className="bigRed" />).find("header");
       expect(header.props().className).to.contain("bigRed");
     });
 
@@ -18,7 +18,7 @@ describe("Header", () => {
     });
 
     it("has default .isDark class name", () => {
-      const header = shallow(<Header />);
+      const header = shallow(<Header />).find("header");
       expect(header.props().className).to.contain("isDark");
     });
   });
@@ -42,22 +42,22 @@ describe("Header", () => {
 
   describe("children", () => {
     it("links to Twitter and Github by default", () => {
-      const headerLink = shallow(<Header />).find("a");
-      expect(headerLink).to.have.length(3);
-      expect(headerLink.at(1).prop("href")).to.equal("https://twitter.com/FormidableLabs");
-      expect(headerLink.at(2).prop("href")).to.equal("https://github.com/FormidableLabs/");
+      const headerLink = shallow(<Header />).find("header").find("a");
+      expect(headerLink).to.have.length(2);
+      expect(headerLink.at(0).prop("href")).to.equal("https://twitter.com/FormidableLabs");
+      expect(headerLink.at(1).prop("href")).to.equal("https://github.com/FormidableLabs/");
     });
 
     it("accepts custom children", () => {
       const headerChild = shallow(<Header>Need help leveling up? Contact us!</Header>);
-      expect(headerChild.text()).to.contain("Need help leveling up? Contact us!");
-      expect(headerChild.find("a")).to.have.length(1);
+      expect(headerChild.find("header").text()).to.contain("Need help leveling up? Contact us!");
+      expect(headerChild.find("a")).to.have.length(0);
     });
   });
 
   describe("props", () => {
     it("can change to light theme", () => {
-      const header = shallow(<Header theme="light" />);
+      const header = shallow(<Header theme="light" />).find("header");
       expect(header.props().className).to.contain("isLight");
     });
   });
