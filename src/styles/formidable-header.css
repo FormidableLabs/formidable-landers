@@ -92,7 +92,8 @@ body{
     font-family:akkurta,Inconsolata,monospace;
     font-feature-settings:"liga" 0;
     line-height:1.8;
-    font-size:100%
+    font-size:100%;
+    background-color: #fff;
 }
 body,html{
     overflow-x:hidden;

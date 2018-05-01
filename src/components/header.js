@@ -4,11 +4,12 @@ import React from "react";
 import LOGO_OSS from "../assets/logo-oss.svg";
 import LOGO_GITHUB from "../assets/logo-github.svg";
 import LOGO_TWITTER from "../assets/logo-twitter.svg";
-import styles from "../styles/header.css"; // eslint-disable-line no-unused-vars
+import styles from "../styles/header.css";
+import formidableStyles from "../styles/formidable-header.css"; // eslint-disable-line no-unused-vars
 
 // Formidable Header
-import FormidableHeader from "./formidable-header";
-import BodyClassName from "./body-class-name";
+import FormidableHeader from "../partials/formidable-header";
+import BodyClassName from "../partials/body-class-name";
 
 
 class Header extends React.Component {
@@ -16,7 +17,6 @@ class Header extends React.Component {
     super(props);
     // Fade in the very first page after load.
     this.state = {
-      pageClass: "",
       navOpen: false
     };
   }

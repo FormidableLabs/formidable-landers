@@ -62,7 +62,7 @@ class Demo extends React.Component {
             <a href="#">Github</a>
           </div>
         </Header>
-        <main style={{flex: '1 1 auto', padding: '0 3vw'}}>
+        <main style={{flex: '1 1 auto', padding: '0 3vw', backgroundColor: '#fff'}}>
           <h1>Project X</h1>
           <p>Content</p>
         </main>
