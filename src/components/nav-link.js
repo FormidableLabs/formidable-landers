@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import '../styles/formidable-header.css';
 
 export default class NavLink extends Component {
   static displayName = "NavLink";

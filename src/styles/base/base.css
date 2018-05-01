@@ -90,5 +90,5 @@
 .formidableHeader.isLight a:hover,
 .formidableFooter.isLight a:focus,
 .formidableFooter.isLight a:hover {
-  color: var(--red) !important;
+  color: var(--red);
 }
