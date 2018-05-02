@@ -35,12 +35,28 @@ export default class Header extends Component {
 
   componentDidMount() {
     document.addEventListener("keydown", this.onEscape);
+    window.addEventListener("resize", this.onResize);
   }
 
   componentWillUnmount() {
     document.removeEventListener("keydown", this.onEscape);
+    document.removeEventListener("resize", this.onResize);
   }
 
+    /**
+   * Close hamburger dropdown menu items when in desktop size
+   */
+  onResize = () => {
+    const mobileVersion = document.getElementsByClassName("display-mobile-only")[0];
+    const style = getComputedStyle(mobileVersion);
+    if (style.display === "none" && this.props.isOpen === true) {
+      this.props.onToggleMenu(!this.props.isOpen);
+    }
+  }
+
+  /**
+   * Closes the hamburger menu when the escape key is pressed
+   */
   onEscape = ({ keyCode }) => {
     if (this.props.isOpen === true) {
       // If pressed escape key
@@ -50,7 +66,9 @@ export default class Header extends Component {
     }
   };
 
-  // TODO: Toggle menu when pressing esc, `(e.which === 27)`
+  /**
+   * Toggles open and closed the hamburger menu when clickong on the menu button
+   */
   toggleMenu = () => {
     this.props.onToggleMenu(!this.props.isOpen);
   };
