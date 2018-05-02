@@ -40,7 +40,7 @@ export default class Header extends Component {
 
   componentWillUnmount() {
     document.removeEventListener("keydown", this.onEscape);
-    document.removeEventListener("resize", this.onResize);
+    window.removeEventListener("resize", this.onResize);
   }
 
     /**
