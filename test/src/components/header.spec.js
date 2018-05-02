@@ -69,7 +69,7 @@ describe("Header", () => {
 
     it("resize window to mobile size", () => {  
       /* Force page to a width of 400px */      
-      global.innerWidth = mobileWidth; 
+      window.innerWidth = mobileWidth; 
       expect(window.innerWidth).to.equal(mobileWidth);
     });
 
@@ -85,7 +85,7 @@ describe("Header", () => {
 
     it("resize window to desktop size", () => {
       /* Force page to a width of 1400px */      
-      global.innerWidth = desktopWidth;
+      window.innerWidth = desktopWidth;
       expect(window.innerWidth).to.equal(desktopWidth);
     });
 
