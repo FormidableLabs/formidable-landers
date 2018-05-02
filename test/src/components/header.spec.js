@@ -63,16 +63,15 @@ describe("Header", () => {
   });
 
   describe("closes mobile menu on resize to desktop width", () => {
-    it("resizes window to mobile size", () => {
+    let header = mount(<Header />);
+    let mobileWidth = 400;
+    let desktopWidth = 1400;
+
+    it("resize window to mobile size", () => {  
       /* Force page to a width of 400px */      
-      global.innerWidth = 400;
-      expect(window.innerWidth).to.equal(400);
+      global.innerWidth = mobileWidth; 
+      expect(window.innerWidth).to.equal(mobileWidth);
     });
-    /* Force page to a width of 400px */      
-    global.innerWidth = 400;       
-    
-    /* find header */
-    const header = mount(<Header />);
 
     it("finds mobile menu button", () => {
       /* Button exists */
@@ -84,13 +83,13 @@ describe("Header", () => {
       expect(header.find("nav").at(1).prop("aria-hidden")).to.equal(false);
     });
 
-    it("resizes window to desktop size", () => {
+    it("resize window to desktop size", () => {
       /* Force page to a width of 1400px */      
-      global.innerWidth = 1400;
-      expect(window.innerWidth).to.equal(1400);
+      global.innerWidth = desktopWidth;
+      expect(window.innerWidth).to.equal(desktopWidth);
     });
 
-    it("verifies menu has closed", () => {
+    it("verify menu has closed", () => {
       header.find("button").simulate("click");
       expect(header.find("nav").at(1).prop("aria-hidden")).to.equal(true);
     });
