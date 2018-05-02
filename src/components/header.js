@@ -4,9 +4,31 @@ import React from "react";
 import LOGO_OSS from "../assets/logo-oss.svg";
 import LOGO_GITHUB from "../assets/logo-github.svg";
 import LOGO_TWITTER from "../assets/logo-twitter.svg";
-import styles from "../styles/header.css"; // eslint-disable-line no-unused-vars
+import styles from "../styles/header.css";
+import formidableStyles from "../styles/formidable-header.css"; // eslint-disable-line no-unused-vars
+
+// Formidable.com Header
+import FormidableHeader from "../partials/formidable-header";
+import BodyClassName from "../partials/body-class-name";
+
 
 class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    // Fade in the very first page after load.
+    this.state = {
+      navOpen: false
+    };
+  }
+
+  /* eslint-disable no-invalid-this */
+  handleToggleMenu = navOpen => {
+    this.setState({
+      navOpen
+    });
+  };
+  /*eslint-enable no-invalid-this */
+
   render() {
     let classes = "formidableHeader";
     if (this.props.theme === "light") {
@@ -19,23 +41,31 @@ class Header extends React.Component {
     }
 
     return (
-      <header className={classes}>
-        <div className="formidableHeader-container">
-          <div className="formidableHeader-logos">
-            {this.props.logoProject}
-            <div className="formidableHeader-logos-oss">
-              <span className="formidableHeader-by">by</span>
-              <a
-                href="https://formidable.com/open-source/"
-                target="_blank"
-                style={{ display: "flex", height: "inherit" }}
-                dangerouslySetInnerHTML={{ __html: LOGO_OSS }}
-              />
+      <div>
+        <BodyClassName className={this.state.navOpen ? "js-menu--is-open" : ""} />
+        <FormidableHeader 
+          onToggleMenu={this.handleToggleMenu}
+          isOpen={this.state.navOpen}
+          location={this.props.location}
+        />
+        {
+          this.props.subheader ? 
+          (
+            <header className={classes}>
+            <div className="formidableHeader-container">
+              <div className="formidableHeader-logos">
+                {this.props.logoProject}
+              </div>
+              {this.props.children}
             </div>
-          </div>
-          {this.props.children}
-        </div>
-      </header>
+            </header>
+            
+          ) : (
+            <div style={{marginTop: '3em'}} />
+          )
+        }
+      
+      </div>
     );
   }
 }
@@ -44,7 +74,9 @@ Header.propTypes = {
   children: React.PropTypes.node,
   className: React.PropTypes.string,
   logoProject: React.PropTypes.node,
-  theme: React.PropTypes.oneOf(["light", "dark"])
+  theme: React.PropTypes.oneOf(["light", "dark"]),
+  location: React.PropTypes.object,
+  subheader: React.PropTypes.bool
 };
 
 const defaultHeaderChildren = (
@@ -64,7 +96,9 @@ Header.defaultProps = {
   children: defaultHeaderChildren,
   className: "",
   logoProject: "",
-  theme: "dark"
+  theme: "dark",
+  location: {pathname: '/open-source/'},
+  subheader: true
 };
 
 export default Header;
