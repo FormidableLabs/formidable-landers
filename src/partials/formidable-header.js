@@ -67,7 +67,7 @@ export default class Header extends Component {
   };
 
   /**
-   * Toggles open and closed the hamburger menu when clickong on the menu button
+   * Toggles open and closed the hamburger menu when clicking on the menu button
    */
   toggleMenu = () => {
     this.props.onToggleMenu(!this.props.isOpen);
