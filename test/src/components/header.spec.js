@@ -63,7 +63,7 @@ describe("Header", () => {
   });
 
   describe("closes mobile menu on resize to desktop width", () => {
-    const OrigWindowWidth;
+    let OrigWindowWidth;
     const mobileWidth = 400;
     const desktopWidth = 1400;
 
