@@ -3,6 +3,7 @@ import React from "react";
 import { mount, shallow, render } from "enzyme";
 
 import Header from "../../../lib/components/header";
+import { constants } from "zlib";
 
 describe("Header", () => {
   describe("<header>", () => {
@@ -62,9 +63,9 @@ describe("Header", () => {
   });
 
   describe("closes mobile menu on resize to desktop width", () => {
-    let OrigWindowWidth;
-    let mobileWidth = 400;
-    let desktopWidth = 1400;
+    const OrigWindowWidth;
+    const mobileWidth = 400;
+    const desktopWidth = 1400;
 
     before(() => {
       OrigWindowWidth = window.innerWidth;
@@ -75,7 +76,7 @@ describe("Header", () => {
     });
 
     it("resize window to mobile size", () => {  
-      let header = mount(<Header />);
+      const header = mount(<Header />);
       /* Force page to a width of 400px */      
       window.innerWidth = mobileWidth; 
       expect(window.innerWidth).to.equal(mobileWidth);
