@@ -5,7 +5,6 @@ import { mount, shallow, render } from "enzyme";
 import Header from "../../../lib/components/header";
 
 describe("Header", () => {
-
   describe("<header>", () => {
     it("accepts custom class name", () => {
       const header = shallow(<Header className="bigRed" />).find("header");
@@ -63,33 +62,36 @@ describe("Header", () => {
   });
 
   describe("closes mobile menu on resize to desktop width", () => {
-    let header = mount(<Header />);
+    let OrigWindowWidth;
     let mobileWidth = 400;
     let desktopWidth = 1400;
 
+    before(() => {
+      OrigWindowWidth = window.innerWidth;
+    }); 
+
+    after(() => {
+      window.innerWidth = OrigWindowWidth;
+    });
+
     it("resize window to mobile size", () => {  
+      let header = mount(<Header />);
       /* Force page to a width of 400px */      
       window.innerWidth = mobileWidth; 
       expect(window.innerWidth).to.equal(mobileWidth);
-    });
 
-    it("finds mobile menu button", () => {
       /* Button exists */
       expect(header.find("button").text()).to.contain("Menu");
-    });
 
-    it("opens menu by clicking on the button", () => {
+      /* click on button */
       header.find("button").simulate("click");
       expect(header.find("nav").at(1).prop("aria-hidden")).to.equal(false);
-    });
 
-    it("resize window to desktop size", () => {
       /* Force page to a width of 1400px */      
       window.innerWidth = desktopWidth;
       expect(window.innerWidth).to.equal(desktopWidth);
-    });
 
-    it("verify menu has closed", () => {
+      /* menu should have closed */
       header.find("button").simulate("click");
       expect(header.find("nav").at(1).prop("aria-hidden")).to.equal(true);
     });
