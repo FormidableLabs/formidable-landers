@@ -3,9 +3,9 @@ import React from "react";
 import { mount, shallow, render } from "enzyme";
 
 import Header from "../../../lib/components/header";
+import { constants } from "zlib";
 
 describe("Header", () => {
-
   describe("<header>", () => {
     it("accepts custom class name", () => {
       const header = shallow(<Header className="bigRed" />).find("header");
@@ -59,6 +59,42 @@ describe("Header", () => {
     it("can change to light theme", () => {
       const header = shallow(<Header theme="light" />).find("header");
       expect(header.props().className).to.contain("isLight");
+    });
+  });
+
+  describe("closes mobile menu on resize to desktop width", () => {
+    let OrigWindowWidth;
+    const mobileWidth = 400;
+    const desktopWidth = 1400;
+
+    before(() => {
+      OrigWindowWidth = window.innerWidth;
+    }); 
+
+    after(() => {
+      window.innerWidth = OrigWindowWidth;
+    });
+
+    it("resize window to mobile size", () => {  
+      const header = mount(<Header />);
+      /* Force page to a width of 400px */      
+      window.innerWidth = mobileWidth; 
+      expect(window.innerWidth).to.equal(mobileWidth);
+
+      /* Button exists */
+      expect(header.find("button").text()).to.contain("Menu");
+
+      /* click on button */
+      header.find("button").simulate("click");
+      expect(header.find("nav").at(1).prop("aria-hidden")).to.equal(false);
+
+      /* Force page to a width of 1400px */      
+      window.innerWidth = desktopWidth;
+      expect(window.innerWidth).to.equal(desktopWidth);
+
+      /* menu should have closed */
+      header.find("button").simulate("click");
+      expect(header.find("nav").at(1).prop("aria-hidden")).to.equal(true);
     });
   });
 });
