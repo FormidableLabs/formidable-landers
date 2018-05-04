@@ -2,11 +2,11 @@ const path = require("path");
 
 module.exports = {
   resolve: {
-    extensions: ["", ".js", ".jsx", ".json"]
+    extensions: ["*", ".js", ".jsx", ".json"]
   },
   // devtool: "inline-source-map", //just do inline source maps instead of the default
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: path.resolve(__dirname, "node_modules"), //eslint-disable-line no-undef
@@ -36,7 +36,8 @@ module.exports = {
         ]
       }, {
         test: /\.json$/,
-        loader: "json"
+        exclude: path.resolve(__dirname, "node_modules"), //eslint-disable-line no-undef
+        loader: "json-loader"
       }
     ]
   },

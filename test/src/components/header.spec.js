@@ -1,6 +1,8 @@
 /* eslint-disable max-len, no-unused-expressions */
 import React from "react";
-import { mount, shallow, render } from "enzyme";
+import { configure, mount, render, shallow } from "enzyme";
+import Adapter from 'enzyme-adapter-react-15';
+configure({ adapter: new Adapter() });
 
 import Header from "../../../lib/components/header";
 import { constants } from "zlib";
