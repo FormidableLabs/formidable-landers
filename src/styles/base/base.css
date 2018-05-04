@@ -36,7 +36,7 @@
 }
 .formidableHeader-container {
   margin: 0 auto;
-  padding: 60px 0 30px;
+  ppadding: calc(45px + 3em) 0 30px;
 }
 
 .formidableFooter-container {

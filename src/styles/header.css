@@ -26,26 +26,8 @@
   display: block;
   margin: 0 auto;
   text-align: center;
-  line-height: 40px;
-  font-size: 40px;
-}
-
-.formidableHeader-logos-oss {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  height: 30px;
-  overflow: hidden;
-}
-
-.formidableHeader-by {
-  margin-top: 3px;
-  margin-right: 0.5em;
-  font-family: var(--monospace);
-  font-size: 14px;
-  font-weight: normal;
-  line-height: 1;
+  line-height: 50px;
+  font-size: 50px;
 }
 
 .formidableHeader .default {

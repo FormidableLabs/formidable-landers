@@ -20,7 +20,7 @@ class Demo extends React.Component {
       },
       demoHeading: {
         fontFamily: "sharp",
-        fontSize: "40px",
+        fontSize: "50px",
         fontWeight: "normal",
       }
     };
