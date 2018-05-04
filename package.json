@@ -6,7 +6,7 @@
   "scripts": {
     "demo": "webpack-dashboard -- webpack-dev-server --port 5678 --config demo/webpack.config.demo.js --colors --content-base demo --mode=development",
     "lint": "eslint --ext .js,.jsx src",
-    "test": "karma start ./karma.conf.js --mode=production",
+    "test": "karma start ./karma.conf.js",
     "test-travis": "karma start ./karma.conf.js --singleRun=true",
     "babel": "rimraf lib && babel src/ -d lib/",
     "copy-assets": "rimraf lib/assets/ && cp -r src/assets/ lib/assets/",
