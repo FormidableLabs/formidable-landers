@@ -8,40 +8,36 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
-        exclude: path.resolve(__dirname, "node_modules"), //eslint-disable-line no-undef
-        loader: require.resolve("babel-loader")
-      }, {
-        test: /\.jsx?$/,
-        exclude: path.resolve(__dirname, "node_modules"), //eslint-disable-line no-undef
-        loader: require.resolve("babel-loader")
+        test: /\.(js|jsx)?$/,
+        exclude: /node_modules/, //eslint-disable-line no-undef
+        loader: "babel-loader",
       }, {
         test: /\.css$/,
-        loaders: [
-          require.resolve("style-loader"),
-          require.resolve("css-loader"),
-          require.resolve("postcss-loader")
+        use: [
+          "style-loader",
+          "css-loader",
+          "postcss-loader",
         ]
       }, {
         test: /\.svg$/,
-        loaders: [
-          require.resolve("raw-loader"),
-          require.resolve("image-webpack-loader")
+        use: [
+          "raw-loader",
+          "image-webpack-loader",
         ]
       }, {
         test: /\.(png|jpg|gif)$/,
-        loaders: [
-          require.resolve("file-loader"),
-          require.resolve("image-webpack-loader")
+        use: [
+          "file-loader",
+          "image-webpack-loader",
         ]
       }
     ]
   },
   externals: {
     "jsdom": "window",
-    "react/lib/ExecutionEnvironment": "react/lib/ExecutionEnvironment",
-    "react/lib/ReactContext": "react/lib/ReactContext",
-    "react/addons": "react/addons"
+    "react/lib/ExecutionEnvironment": true,
+    "react/lib/ReactContext": true,
+    "react/addons": true
   },
   mode: "production"
 };

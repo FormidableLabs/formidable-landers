@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "demo":
-      "webpack-dashboard -- webpack-dev-server --port 5678 --config demo/webpack.config.demo.js --colors --content-base demo --mode=development",
+      "webpack-dashboard -- webpack-dev-server --port 5678 --config demo/webpack.config.demo.js --colors --content-base demo",
     "lint": "eslint --ext .js,.jsx src",
     "test": "karma start ./karma.conf.js",
     "test-travis": "karma start ./karma.conf.js --singleRun=true",
