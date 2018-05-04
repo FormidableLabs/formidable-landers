@@ -43,8 +43,8 @@ module.exports = {
   },
   externals: {
     "jsdom": "window",
-    "react/lib/ExecutionEnvironment": true,
-    "react/lib/ReactContext": true,
-    "react/addons": true
+    "react/lib/ExecutionEnvironment": "react/lib/ExecutionEnvironment",
+    "react/lib/ReactContext": "react/lib/ReactContext",
+    "react/addons": "react/addons"
   }
 };
