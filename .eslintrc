@@ -7,7 +7,6 @@
     "react/jsx-uses-react": 2,
     "react/react-in-jsx-scope": 2,
     "no-extra-parens": 0,
-    "no-empty-label": 0,
-    "filenames/filenames": 0
+    "no-empty-label": 0
   }
 }
