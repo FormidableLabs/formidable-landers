@@ -61,7 +61,7 @@ class Header extends React.Component {
             </header>
             
           ) : (
-            ""
+            <div style={{marginTop: '3em'}} />
           )
         }
       
