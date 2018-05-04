@@ -1,10 +1,9 @@
 import React from "react";
 
 // Assets
-import LOGO_OSS from "../assets/logo-oss.svg";
 import LOGO_GITHUB from "../assets/logo-github.svg";
 import LOGO_TWITTER from "../assets/logo-twitter.svg";
-import styles from "../styles/header.css";
+import "../styles/header.css";
 import formidableStyles from "../styles/formidable-header.css"; // eslint-disable-line no-unused-vars
 
 // Formidable.com Header

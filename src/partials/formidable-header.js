@@ -45,8 +45,11 @@ export default class Header extends Component {
 
     /**
    * Close hamburger dropdown menu items when in desktop size
+   * 
+   * @returns {void}
    */
   onResize = () => {
+    // eslint-disable-next-line no-magic-numbers
     const mobileVersion = document.getElementsByClassName("display-mobile-only")[0];
     const style = getComputedStyle(mobileVersion);
     if (style.display === "none" && this.props.isOpen === true) {
@@ -56,6 +59,9 @@ export default class Header extends Component {
 
   /**
    * Closes the hamburger menu when the escape key is pressed
+   * @param {number} keyCode accepts keycode from event
+   * @memberof Header
+   * @returns {void}
    */
   onEscape = ({ keyCode }) => {
     if (this.props.isOpen === true) {
@@ -68,6 +74,8 @@ export default class Header extends Component {
 
   /**
    * Toggles open and closed the hamburger menu when clicking on the menu button
+   * 
+   * @returns {void}
    */
   toggleMenu = () => {
     this.props.onToggleMenu(!this.props.isOpen);

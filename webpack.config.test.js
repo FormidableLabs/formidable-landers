@@ -36,7 +36,6 @@ module.exports = {
         ]
       }, {
         test: /\.json$/,
-        exclude: path.resolve(__dirname, "node_modules"), //eslint-disable-line no-undef
         loader: "json-loader"
       }
     ]
@@ -47,5 +46,5 @@ module.exports = {
     "react/lib/ReactContext": "react/lib/ReactContext",
     "react/addons": "react/addons"
   },
-  mode: 'production'
+  mode: "production"
 };
