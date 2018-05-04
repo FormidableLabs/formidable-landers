@@ -7,14 +7,23 @@ node_js:
 # Use container-based Travis infrastructure.
 sudo: false
 
+# need this updated image (may have changed)
+dist: trusty
+
 branches:
   only:
     - master
+
+# gets you chrome
+addons:
+  chrome: stable
 
 # Resolves `npm prune --production` bug in npm@5.3.0
 # https://github.com/npm/npm/issues/17781
 before_install:
   - npm install -g npm@5.4
+  # Headless chrome
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 
 script:
   - npm run build

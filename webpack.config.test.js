@@ -46,5 +46,6 @@ module.exports = {
     "react/lib/ExecutionEnvironment": "react/lib/ExecutionEnvironment",
     "react/lib/ReactContext": "react/lib/ReactContext",
     "react/addons": "react/addons"
-  }
+  },
+  mode: 'production'
 };

@@ -4,7 +4,15 @@ module.exports = function (config) {
   config.set({
     basePath: "",
     frameworks: ["mocha"],
-    browsers: ["PhantomJS"],
+    // Run a customized instance of headless chrome for dev + Travis CI.
+    browsers: ['ChromeHeadlessCustom'],
+    customLaunchers: {
+      ChromeHeadlessCustom: {
+        base: 'ChromeHeadless',
+        // --no-sandbox for https://github.com/travis-ci/docs-travis-ci-com/pull/1671/files
+        flags: ['--no-sandbox']
+      }
+    },
     reporters: ["spec"],
     port: 9876,
     colors: true,
@@ -30,8 +38,7 @@ module.exports = function (config) {
     webpack: webpackConfig,
 
     webpackServer: {
-      noInfo: true,
-      mode: 'production'
+      noInfo: true
     },
 
     client: {
