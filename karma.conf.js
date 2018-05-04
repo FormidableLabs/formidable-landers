@@ -1,5 +1,4 @@
 const webpackConfig = require("./webpack.config.test");
-const merge = require('deepmerge');
 
 module.exports = function (config) {
   config.set({
@@ -28,7 +27,7 @@ module.exports = function (config) {
     // karma watches the test entry points
     // (you don't need to specify the entry option)
     // webpack watches dependencies
-    webpack: merge(webpackConfig, {mode: 'production'}),
+    webpack: {...webpackConfig, mode: 'production'},
 
     webpackServer: {
       noInfo: true
