@@ -27,7 +27,7 @@ module.exports = function (config) {
     // karma watches the test entry points
     // (you don't need to specify the entry option)
     // webpack watches dependencies
-    webpack: webpackConfig,
+    webpack: {...webpackConfig, mode: 'production'},
 
     webpackServer: {
       noInfo: true
