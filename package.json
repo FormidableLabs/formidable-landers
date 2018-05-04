@@ -12,7 +12,7 @@
     "copy-assets": "rimraf lib/assets/ && cp -r src/assets/ lib/assets/",
     "copy-styles": "rimraf lib/styles/ && postcss src/styles/*.css --verbose --dir lib/styles/",
     "build": "npm run babel && npm run copy-assets && npm run copy-styles --mode=production",
-    "prepare": "npm run build",
+    "prepublishOnly": "npm run build",
     "postinstall": "node -e \"require('fs').stat('lib', function(e,s){process.exit(e || !s.isDirectory() ? 1 : 0)})\" || npm run build"
   },
   "repository": {
