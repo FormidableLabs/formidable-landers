@@ -34,9 +34,6 @@ module.exports = {
           require.resolve("file-loader"),
           require.resolve("image-webpack-loader")
         ]
-      }, {
-        test: /\.json$/,
-        loader: "json-loader"
       }
     ]
   },

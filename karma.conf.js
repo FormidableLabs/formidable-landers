@@ -50,7 +50,6 @@ module.exports = function (config) {
     plugins: [
       "karma-chrome-launcher",
       "karma-mocha",
-      "karma-phantomjs-launcher",
       "karma-sourcemap-loader",
       "karma-spec-reporter",
       "karma-webpack"
