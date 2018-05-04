@@ -1,4 +1,5 @@
 const webpackConfig = require("./webpack.config.test");
+const merge = require('deepmerge');
 
 module.exports = function (config) {
   config.set({
