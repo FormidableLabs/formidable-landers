@@ -132,7 +132,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  color: #242121;
   font-family: akkurta, Inconsolata, monospace;
   font-feature-settings: 'liga' 0;
   line-height: 1.8;
@@ -142,9 +141,10 @@ body,
 html {
   overflow-x: hidden;
 }
-*,
-:after,
-:before {
+
+.site-header *,
+.site-header :after,
+.site-header :before {
   box-sizing: border-box;
 }
 * {
