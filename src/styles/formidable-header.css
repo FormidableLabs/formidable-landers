@@ -174,6 +174,43 @@ html input[disabled] {
   }
 
 
+@media (min-width: 32em) {
+    body {
+      font-size: 105%;
+    }
+  }
+  @media (min-width: 54em) {
+    body {
+      font-size: 107%;
+    }
+  }
+  @media (min-width: 65em) {
+    body {
+      font-size: 110%;
+    }
+  }
+  @media (min-width: 75em) {
+    body {
+      font-size: 117%;
+    }
+  }
+  @media (min-width: 91em) {
+    body {
+      font-size: 125%;
+    }
+  }
+  @media (min-width: 115em) {
+    body {
+      font-size: 135%;
+    }
+  }
+  @media (min-width: 130em) {
+    body {
+      font-size: 150%;
+    }
+  }
+
+
 [hidden],
 template {
   display: none;
