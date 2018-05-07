@@ -7,6 +7,8 @@ const postcssInlineSvg = require("postcss-inline-svg");
 
 const DashboardPlugin = require("webpack-dashboard/plugin");
 
+const webpack = require("webpack");
+
 module.exports = {
   devServer: {
     contentBase: __dirname,
@@ -29,35 +31,45 @@ module.exports = {
     reasons: true
   },
   resolve: {
-    extensions: ["", ".js", ".jsx"]
+    extensions: ["*", ".js", ".jsx"]
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
         exclude: [/node_modules/],
-        loader: require.resolve("babel-loader"),
+        loader: "babel-loader",
         query: {
-          presets: ["es2015", "stage-1", "react"]
+          presets: ["env", "stage-1", "react"]
         }
       }, {
         test: /\.css$/,
-        loaders: [
-          require.resolve("style-loader"),
-          require.resolve("css-loader"),
-          require.resolve("postcss-loader")
+        use: [
+          "style-loader",
+          "css-loader",
+          { 
+            loader: "postcss-loader",
+            options: {
+              ident: 'postcss',
+              plugins: (loader) => [
+                postcssImport,
+                postcssUrl({url: "inline"}),
+                postcssNext,
+                postcssInlineSvg
+              ]
+            }
+          }
         ]
       }, {
         test: /\.svg$/,
-        loaders: [
-          require.resolve("raw-loader"),
-          require.resolve("image-webpack-loader")
+        use: [
+          "raw-loader",
         ]
       }, {
         test: /\.(png|jpg|gif)$/,
-        loaders: [
-          require.resolve("file-loader"),
-          require.resolve("image-webpack-loader")
+        use: [
+          "file-loader",
+          "image-webpack-loader"
         ]
       }, {
         test: /\.json$/,
@@ -65,15 +77,8 @@ module.exports = {
       }
     ]
   },
-  postcss: () => {
-    return [
-      postcssImport,
-      postcssUrl({url: "inline"}),
-      postcssNext,
-      postcssInlineSvg
-    ];
-  },
   plugins: [
-    new DashboardPlugin()
-  ]
+    new DashboardPlugin(), 
+  ],
+  mode: 'development'
 };

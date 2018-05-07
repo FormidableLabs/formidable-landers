@@ -1,6 +1,8 @@
 /* eslint-disable max-len, no-unused-expressions */
 import React from "react";
-import { mount, render, shallow } from "enzyme";
+import { configure, mount, render, shallow } from "enzyme";
+import Adapter from "enzyme-adapter-react-15";
+configure({ adapter: new Adapter() });
 
 import Footer from "../../../lib/components/footer";
 
