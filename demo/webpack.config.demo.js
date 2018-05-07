@@ -40,7 +40,7 @@ module.exports = {
         exclude: [/node_modules/],
         loader: "babel-loader",
         query: {
-          presets: ["es2015", "stage-1", "react"]
+          presets: ["env", "stage-1", "react"]
         }
       }, {
         test: /\.css$/,
@@ -64,7 +64,6 @@ module.exports = {
         test: /\.svg$/,
         use: [
           "raw-loader",
-          "image-webpack-loader"
         ]
       }, {
         test: /\.(png|jpg|gif)$/,

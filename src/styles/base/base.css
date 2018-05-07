@@ -7,11 +7,25 @@
   fill: currentColor;
 }
 
+.formidableHeader .social {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.formidableHeader .social svg {
+  position: absolute;
+  vertical-align: middle;
+  width:100%;
+  height:100%;
+}
+
 .formidableHeader a:link,
 .formidableFooter a:link {
   text-decoration: none;
   transition: color 250ms ease-in, fill 300ms ease-in;
   padding: 10px 15px;
+  position: relative;
 }
 
 .formidableHeader a:focus,
@@ -29,7 +43,7 @@
   /* Structure */
   align-items: center;
   display: flex;
-  flex: none;  /* Sticky header/footer setup */
+  flex: none; /* Sticky header/footer setup */
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;

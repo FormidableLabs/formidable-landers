@@ -22,7 +22,6 @@ module.exports = {
         test: /\.svg$/,
         use: [
           "raw-loader",
-          "image-webpack-loader",
         ]
       }, {
         test: /\.(png|jpg|gif)$/,
