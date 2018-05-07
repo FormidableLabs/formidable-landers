@@ -1,12 +1,12 @@
 /** VARIABLES
 */
-@import "./base/variables.css";
+@import './base/variables.css';
 
 /** BASE
 * Common styles between <Header> & <Footer>
 *
 */
-@import "./base/base.css";
+@import './base/base.css';
 
 /** FORMIDABLE Footer
 * A <Footer> component retaining colors, fonts, and space-theme associated with
@@ -18,7 +18,7 @@
 * .default:last-child   wrapper for trademark prop
 */
 .formidableFooter {
-  padding: 2rem 0 0;
+  padding: 2rem 0;
 }
 
 .formidableFooter-logo {
@@ -33,7 +33,7 @@
 
 .formidableFooter .default {
   margin-top: 16px; /* Align baseline of logo with baseline of link text */
-  font-family: "akkurat", "Inconsolata", monospace;
+  font-family: 'akkurat', 'Inconsolata', monospace;
   font-size: 13px;
 }
 
