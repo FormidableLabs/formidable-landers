@@ -1,4 +1,4 @@
-.site-header button {
+button {
   display: inline-block;
   width: auto;
   padding: 0;
@@ -11,30 +11,29 @@
   cursor: pointer;
 }
 
-.site-header button,
-.site-header input,
-.site-header optgroup,
-.site-header select,
-.site-header textarea {
+button,
+input,
+optgroup,
+select,
+textarea {
   color: inherit;
   margin: 0;
   font-size: 100%;
   vertical-align: middle;
 }
-.site-header button,
-.site-header input {
+button,
+input {
   overflow: visible;
   line-height: normal;
 }
-.site-header button,
-.site-header select {
+button,
+select {
   text-transform: none;
 }
-
-.site-header [type='button'],
-.site-header [type='reset'],
-.site-header [type='submit'],
-.site-header button {
+[type='button'],
+[type='reset'],
+[type='submit'],
+button {
   display: inline-block;
   width: auto;
   padding: 0;
@@ -46,26 +45,26 @@
   outline: 0;
   cursor: pointer;
 }
-.site-header button,
-.site-header input,
-.site-header label,
-.site-header select {
+button,
+input,
+label,
+select {
   cursor: pointer;
 }
-.site-header button[disabled],
+button[disabled],
 html input[disabled] {
   cursor: default;
 }
-.site-header button::-moz-focus-inner,
-.site-header input::-moz-focus-inner {
+button::-moz-focus-inner,
+input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
-.site-header .btn:focus,
-.site-header button:focus,
-.site-header input:focus,
-.site-header select:focus,
-.site-header textarea:focus {
+.btn:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
   outline: none;
 }
 
@@ -125,114 +124,115 @@ html input[disabled] {
     top: 2em;
   }
 }
+body {
+  font-weight: 400;
+  font-style: normal;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  color: #242121;
+  font-family: akkurta, Inconsolata, monospace;
+  font-feature-settings: 'liga' 0;
+  line-height: 1.8;
+  font-size: 100%;
+}
+body,
+html {
+  overflow-x: hidden;
+}
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+* {
+  min-height: 0;
+  min-width: 0;
+}
 
-.site-header a {
-    background-color: transparent;
-    outline: 0;
-    color: rgba(0, 0, 0, 0.8);
-    text-decoration: none;
-    line-height: inherit;
-  }
-  .site-header a,
-  .site-header a:focus,
-  .site-header a:hover {
-    transition: color 0.4s ease-in-out;
-  }
-  .site-header a:focus,
-  .site-header a:hover {
-    color: #c43a31;
-    cursor: pointer;
-  }
-  .site-header a:active {
-    color: #5e1c18;
-  }
-  .site-header abbr[title] {
-    border-bottom: 1px dotted;
-  }
-  .site-header b,
-  .site-header strong {
-    font-weight: 700;
-  }
-  .site-header h1 {
-    font-size: 2em;
-    margin: 0.67em 0;
-  }
-  .site-header dd,
-  .site-header dl,
-  .site-header h1,
-  .site-header h2,
-  .site-header h3,
-  .site-header h4,
-  .site-header h5,
-  .site-header h6,
-  .site-header li,
-  .site-header ol,
-  .site-header small,
-  .site-header ul {
-    margin: 0;
-    padding: 0;
-  }
-
-
-@media (min-width: 32em) {
-    body {
-      font-size: 105%;
-    }
-  }
-  @media (min-width: 54em) {
-    body {
-      font-size: 107%;
-    }
-  }
-  @media (min-width: 65em) {
-    body {
-      font-size: 110%;
-    }
-  }
-  @media (min-width: 75em) {
-    body {
-      font-size: 117%;
-    }
-  }
-  @media (min-width: 91em) {
-    body {
-      font-size: 125%;
-    }
-  }
-  @media (min-width: 115em) {
-    body {
-      font-size: 135%;
-    }
-  }
-  @media (min-width: 130em) {
-    body {
-      font-size: 150%;
-    }
-  }
-
+footer,
+header,
+menu,
+nav {
+  display: block;
+}
 
 [hidden],
 template {
   display: none;
 }
-
-.site-header img {
+a {
+  background-color: transparent;
+  outline: 0;
+  text-decoration: none;
+  line-height: inherit;
+}
+a,
+a:focus,
+a:hover {
+  transition: color 0.4s ease-in-out;
+}
+a:focus,
+a:hover {
+  cursor: pointer;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+img {
   -ms-interpolation-mode: bicubic;
   border: 0;
 }
-.site-header svg:not(:root) {
+svg:not(:root) {
   overflow: hidden;
 }
 
-.site-header p {
+@media (min-width: 32em) {
+  body {
+    font-size: 105%;
+  }
+}
+@media (min-width: 54em) {
+  body {
+    font-size: 107%;
+  }
+}
+@media (min-width: 65em) {
+  body {
+    font-size: 110%;
+  }
+}
+@media (min-width: 75em) {
+  body {
+    font-size: 117%;
+  }
+}
+@media (min-width: 91em) {
+  body {
+    font-size: 125%;
+  }
+}
+@media (min-width: 115em) {
+  body {
+    font-size: 135%;
+  }
+}
+@media (min-width: 130em) {
+  body {
+    font-size: 150%;
+  }
+}
+p {
   margin-top: 0;
   font-size: 0.8em;
 }
-.site-header p,
-.site-header small {
+p,
+small {
   margin-bottom: 1em;
 }
-.site-header small {
+small {
   display: block;
   font-size: 80%;
 }
