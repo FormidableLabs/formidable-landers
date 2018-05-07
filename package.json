@@ -4,8 +4,7 @@
   "description": "Reusable components for Formidable's marketing sites",
   "main": "lib/index.js",
   "scripts": {
-    "demo":
-      "webpack-dashboard -- webpack-dev-server --port 5678 --config demo/webpack.config.demo.js --colors --content-base demo",
+    "demo": "webpack-dashboard -- webpack-dev-server --port 5678 --config demo/webpack.config.demo.js --colors --content-base demo",
     "lint": "eslint --ext .js,.jsx src",
     "test": "karma start ./karma.conf.js",
     "test-travis": "karma start ./karma.conf.js --singleRun=true",
@@ -14,8 +13,7 @@
     "copy-styles": "rimraf lib/styles/ && postcss src/styles/*.css --verbose --dir lib/styles/",
     "build": "npm run babel && npm run copy-assets && npm run copy-styles",
     "prepublishOnly": "npm run build",
-    "postinstall":
-      "node -e \"require('fs').stat('lib', function(e,s){process.exit(e || !s.isDirectory() ? 1 : 0)})\" || npm run build"
+    "postinstall": "node -e \"require('fs').stat('lib', function(e,s){process.exit(e || !s.isDirectory() ? 1 : 0)})\" || npm run build"
   },
   "repository": {
     "type": "git",
