@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 
 // Assets
 import LOGO_GITHUB from "../assets/logo-github.svg";
@@ -42,13 +44,13 @@ class Header extends React.Component {
     return (
       <div>
         <BodyClassName className={this.state.navOpen ? "js-menu--is-open" : ""} />
-        <FormidableHeader 
+        <FormidableHeader
           onToggleMenu={this.handleToggleMenu}
           isOpen={this.state.navOpen}
           location={this.props.location}
         />
         {
-          this.props.subheader ? 
+          this.props.subheader ?
           (
             <header className={classes}>
             <div className="formidableHeader-container">
@@ -58,24 +60,24 @@ class Header extends React.Component {
               {this.props.children}
             </div>
             </header>
-            
+
           ) : (
             ""
           )
         }
-      
+
       </div>
     );
   }
 }
 
 Header.propTypes = {
-  children: React.PropTypes.node,
-  className: React.PropTypes.string,
-  logoProject: React.PropTypes.node,
-  theme: React.PropTypes.oneOf(["light", "dark"]),
-  location: React.PropTypes.object,
-  subheader: React.PropTypes.bool
+  children: PropTypes.node,
+  className: PropTypes.string,
+  logoProject: PropTypes.node,
+  theme: PropTypes.oneOf(["light", "dark"]),
+  location: PropTypes.object,
+  subheader: PropTypes.bool
 };
 
 const defaultHeaderChildren = (
