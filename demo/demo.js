@@ -3,7 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 require("normalize.css");
 
-import { Header, Footer } from "../src/index";
+import { Header, Footer, CookieBanner } from "../src/index";
 import ProjectXLogo from "./logo-project-x.svg";
 import demoStyles from "./demo.css"; // eslint-disable-line
 
@@ -21,7 +21,7 @@ class Demo extends React.Component {
       demoHeading: {
         fontFamily: "sharp",
         fontSize: "50px",
-        fontWeight: "normal",
+        fontWeight: "normal"
       }
     };
   }
@@ -30,32 +30,28 @@ class Demo extends React.Component {
     // The `.default` class will match the Formidable branding.
     const trademark = <div className="default">Formidable Labs, Inc. has several trademarks.</div>;
 
-    const projectTextLogo =
+    const projectTextLogo = (
       <a href="/" style={styles.demoHeading}>
         Project
-      </a>;
+      </a>
+    );
 
-    const projectSVGLogo =
+    const projectSVGLogo = (
       <a
         href="/"
-        style={{display: "block", height: "60px"}}
+        style={{ display: "block", height: "60px" }}
         title="Project X"
-        dangerouslySetInnerHTML={{__html: ProjectXLogo}}
-      />;
+        dangerouslySetInnerHTML={{ __html: ProjectXLogo }}
+      />
+    );
 
     return (
       <div style={styles.demo}>
-        <Header
-          theme="dark"
-          logoProject={projectTextLogo}
-          className="headerDemo"
-        />
-        <Header
-          theme="dark"
-          logoProject={projectSVGLogo}
-          className="redBg"
-        >
-          <div className="default"> {/* This default class will match the Formidable branding */}
+        <Header theme="dark" logoProject={projectTextLogo} className="headerDemo" />
+        <Header theme="dark" logoProject={projectSVGLogo} className="redBg">
+          <div className="default">
+            {" "}
+            {/* This default class will match the Formidable branding */}
             <a href="#about">About</a>
             <a href="#">Docs</a>
             <a href="#">Issues</a>
@@ -70,12 +66,10 @@ class Demo extends React.Component {
         </main>
         <Footer theme="dark" />
         <Footer theme="light" trademark={trademark} />
+        <CookieBanner />
       </div>
     );
   }
 }
 
-ReactDOM.render(
-  React.createElement(Demo),
-  document.getElementById("content")
-);
+ReactDOM.render(React.createElement(Demo), document.getElementById("content"));
