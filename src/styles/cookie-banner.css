@@ -63,7 +63,8 @@
   transition: background-color 0.4s ease-in-out;
 }
 
-.formidaCookie-button[type="button"]:hover {
+.formidaCookie-button[type="button"]:hover,
+.formidaCookie-button[type="button"]:focus {
   background-color: var(--lightGray);
   transition: background-color 0.4s ease-in-out;
 }
