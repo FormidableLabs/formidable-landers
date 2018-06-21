@@ -44,7 +44,9 @@ describe("Header", () => {
 
   describe("children", () => {
     it("links to Twitter and Github by default", () => {
-      const headerLink = shallow(<Header />).find("header").find("a");
+      const headerLink = shallow(<Header />)
+        .find("header")
+        .find("a");
       expect(headerLink).to.have.length(2);
       expect(headerLink.at(0).prop("href")).to.equal("https://twitter.com/FormidableLabs");
       expect(headerLink.at(1).prop("href")).to.equal("https://github.com/FormidableLabs/");
@@ -71,32 +73,46 @@ describe("Header", () => {
 
     before(() => {
       OrigWindowWidth = window.innerWidth;
-    }); 
+    });
 
     after(() => {
       window.innerWidth = OrigWindowWidth;
     });
 
-    it("resize window to mobile size", () => {  
+    it("resize window to mobile size", () => {
       const header = mount(<Header />);
-      /* Force page to a width of 400px */      
-      window.innerWidth = mobileWidth; 
+      /* Force page to a width of 400px */
+
+      window.innerWidth = mobileWidth;
       expect(window.innerWidth).to.equal(mobileWidth);
 
-      /* Button exists */
-      expect(header.find("button").text()).to.contain("Menu");
+      const menuButton = header.find("button").last();
 
-      /* click on button */
-      header.find("button").simulate("click");
-      expect(header.find("nav").at(1).prop("aria-hidden")).to.equal(false);
+      /* Menu Button exists */
+      expect(menuButton.text()).to.contain("Menu");
 
-      /* Force page to a width of 1400px */      
+      /* click on menu button */
+      menuButton.simulate("click");
+      expect(
+        header
+          .find("nav")
+          .at(1)
+          .prop("aria-hidden")
+      ).to.equal(false);
+
+      /* Force page to a width of 1400px */
+
       window.innerWidth = desktopWidth;
       expect(window.innerWidth).to.equal(desktopWidth);
 
       /* menu should have closed */
-      header.find("button").simulate("click");
-      expect(header.find("nav").at(1).prop("aria-hidden")).to.equal(true);
+      menuButton.simulate("click");
+      expect(
+        header
+          .find("nav")
+          .at(1)
+          .prop("aria-hidden")
+      ).to.equal(true);
     });
   });
 });
