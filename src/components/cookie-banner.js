@@ -50,7 +50,7 @@ class CookieBanner extends Component {
             these policies and terms.
           </p>
           <button type="button" onClick={this.handleClose} className="formidaCookie-button">
-            Accept & Close
+            Ok
           </button>
         </div>
       </div>

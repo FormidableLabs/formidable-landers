@@ -47,7 +47,7 @@
   margin-right: auto;
 }
 
-.formidaCookie-button {
+.formidaCookie-button[type="button"] {
   display: block;
   margin: 0 auto;
   padding: 0.6em 2em 0.45em;
@@ -63,7 +63,7 @@
   transition: background-color 0.4s ease-in-out;
 }
 
-.formidaCookie-button:hover {
+.formidaCookie-button[type="button"]:hover {
   background-color: var(--lightGray);
   transition: background-color 0.4s ease-in-out;
 }

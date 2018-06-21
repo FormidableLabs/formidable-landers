@@ -3,7 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 require("normalize.css");
 
-import { Header, Footer, CookieBanner } from "../src/index";
+import { Header, Footer } from "../src/index";
 import ProjectXLogo from "./logo-project-x.svg";
 import demoStyles from "./demo.css"; // eslint-disable-line
 
@@ -66,7 +66,6 @@ class Demo extends React.Component {
         </main>
         <Footer theme="dark" />
         <Footer theme="light" trademark={trademark} />
-        <CookieBanner />
       </div>
     );
   }
