@@ -44,7 +44,7 @@ class CookieBanner extends Component {
           <p className="formidaCookie-content">
             This site uses cookies to gather analytics data that helps us improve our website. By
             using our site, you acknowledge that you have read and understand our{" "}
-            <a href="https://formidable.com/privacy-policy/#cookie-policy">Cookie Policy</a> and{" "}
+            <a href="https://formidable.com/privacy-policy/#cookies-policy">Cookie Policy</a> and{" "}
             <a href="https://formidable.com/privacy-policy">Privacy Policy</a>. Your use of
             Formidable’s Products & Services, including our Open Source Software, is subject to
             these policies and terms.
