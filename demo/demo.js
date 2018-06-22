@@ -21,7 +21,7 @@ class Demo extends React.Component {
       demoHeading: {
         fontFamily: "sharp",
         fontSize: "50px",
-        fontWeight: "normal",
+        fontWeight: "normal"
       }
     };
   }
@@ -30,32 +30,28 @@ class Demo extends React.Component {
     // The `.default` class will match the Formidable branding.
     const trademark = <div className="default">Formidable Labs, Inc. has several trademarks.</div>;
 
-    const projectTextLogo =
+    const projectTextLogo = (
       <a href="/" style={styles.demoHeading}>
         Project
-      </a>;
+      </a>
+    );
 
-    const projectSVGLogo =
+    const projectSVGLogo = (
       <a
         href="/"
-        style={{display: "block", height: "60px"}}
+        style={{ display: "block", height: "60px" }}
         title="Project X"
-        dangerouslySetInnerHTML={{__html: ProjectXLogo}}
-      />;
+        dangerouslySetInnerHTML={{ __html: ProjectXLogo }}
+      />
+    );
 
     return (
       <div style={styles.demo}>
-        <Header
-          theme="dark"
-          logoProject={projectTextLogo}
-          className="headerDemo"
-        />
-        <Header
-          theme="dark"
-          logoProject={projectSVGLogo}
-          className="redBg"
-        >
-          <div className="default"> {/* This default class will match the Formidable branding */}
+        <Header theme="dark" logoProject={projectTextLogo} className="headerDemo" />
+        <Header theme="dark" logoProject={projectSVGLogo} className="redBg">
+          <div className="default">
+            {" "}
+            {/* This default class will match the Formidable branding */}
             <a href="#about">About</a>
             <a href="#">Docs</a>
             <a href="#">Issues</a>
@@ -75,7 +71,4 @@ class Demo extends React.Component {
   }
 }
 
-ReactDOM.render(
-  React.createElement(Demo),
-  document.getElementById("content")
-);
+ReactDOM.render(React.createElement(Demo), document.getElementById("content"));
