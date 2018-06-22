@@ -1,6 +1,6 @@
 {
   "name": "formidable-landers",
-  "version": "8.3.0",
+  "version": "8.3.1",
   "description": "Reusable components for Formidable's marketing sites",
   "main": "lib/index.js",
   "scripts": {
