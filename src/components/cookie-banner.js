@@ -4,9 +4,15 @@ import "../styles/cookie-banner.css";
 
 class CookieBanner extends Component {
   state = {
-    close: localStorage.getItem("closed_cookie_banner") || false
+    close: true
   };
-  
+
+  componentDidMount() {
+    this.setState({
+      close: localStorage.getItem("closed_cookie_banner") || false
+    });
+  }
+
   handleClose = () => {
     try {
       localStorage.setItem("closed_cookie_banner", true);
