@@ -3,20 +3,14 @@ import PropTypes from "prop-types";
 import "../styles/cookie-banner.css";
 
 class CookieBanner extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      close: false
-    };
-  }
+  state = {
+    close: true
+  };
 
   componentDidMount() {
-    const didClose = localStorage.getItem("closed_cookie_banner") || false;
-    if (didClose) {
-      this.setState({
-        close: true
-      });
-    }
+    this.setState({
+      close: localStorage.getItem("closed_cookie_banner") || false
+    });
   }
 
   handleClose = () => {
