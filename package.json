@@ -53,7 +53,7 @@
     "enzyme-adapter-react-15": "^1.0.5",
     "eslint": "^4.19.1",
     "eslint-config-defaults": "^9.0.0",
-    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-prettier": "^3.0.0",
     "eslint-plugin-filenames": "^1.2.0",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.7.0",
