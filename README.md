@@ -38,6 +38,7 @@ $ yarn run check
 ```
 
 ### Kicking the Tires
+
 Before publishing, if you want to test the changes you’ve made to
 `formidable-landers`, you can build what you have and use `npm link` in the repo
 where you want to see teh changes.

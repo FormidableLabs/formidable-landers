@@ -7,9 +7,6 @@ node_js:
 # Use container-based Travis infrastructure.
 sudo: false
 
-# need this updated image (may have changed)
-dist: trusty # TODO: TRY TO REMOVE AND SEE IF PASSES
-
 cache: yarn
 
 branches:
