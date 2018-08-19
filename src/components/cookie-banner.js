@@ -8,12 +8,16 @@ class CookieBanner extends Component {
   };
 
   componentDidMount() {
+    // TODO: We should have a comment as to why we're doing this here and
+    // if there are other better alternatives.
+    //
+    // eslint-disable-next-line react/no-did-mount-set-state
     this.setState({
       close: localStorage.getItem("closed_cookie_banner") || false
     });
   }
 
-  handleClose = () => {
+  handleClose() {
     try {
       localStorage.setItem("closed_cookie_banner", true);
     } catch (err) {
@@ -22,7 +26,7 @@ class CookieBanner extends Component {
     this.setState({
       close: true
     });
-  };
+  }
 
   render() {
     let classes = "formidaCookie";

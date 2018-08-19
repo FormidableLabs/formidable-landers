@@ -8,7 +8,7 @@ node_js:
 sudo: false
 
 # need this updated image (may have changed)
-dist: trusty
+dist: trusty # TODO: TRY TO REMOVE AND SEE IF PASSES
 
 cache: yarn
 

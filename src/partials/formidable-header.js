@@ -48,14 +48,14 @@ export default class Header extends Component {
    *
    * @returns {void}
    */
-  onResize = () => {
+  onResize() {
     // eslint-disable-next-line no-magic-numbers
     const mobileVersion = document.getElementsByClassName("display-mobile-only")[0];
     const style = getComputedStyle(mobileVersion);
     if (style.display === "none" && this.props.isOpen === true) {
       this.props.onToggleMenu(!this.props.isOpen);
     }
-  };
+  }
 
   /**
    * Closes the hamburger menu when the escape key is pressed
@@ -77,9 +77,9 @@ export default class Header extends Component {
    *
    * @returns {void}
    */
-  toggleMenu = () => {
+  toggleMenu() {
     this.props.onToggleMenu(!this.props.isOpen);
-  };
+  }
 
   render() {
     const { isOpen } = this.props;
