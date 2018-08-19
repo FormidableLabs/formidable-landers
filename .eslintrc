@@ -1,12 +1,10 @@
-{
-  "extends": ["defaults/configurations/walmart/es6-browser", "prettier"],
-  "parser": "babel-eslint",
-  "plugins": ["react", "prettier", "filenames"],
-  "rules": {
-    "react/jsx-uses-vars": 2,
-    "react/jsx-uses-react": 2,
-    "react/react-in-jsx-scope": 2,
-    "no-extra-parens": 0,
-    "no-empty-label": 0
-  }
-}
+---
+extends:
+  - formidable/configurations/es6-react
+  - prettier
+
+plugins:
+  - prettier
+
+rules:
+  prettier/prettier: error

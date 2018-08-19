@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-
 // Assets
 import LOGO from "../assets/logo.svg";
 import LOGO_GITHUB from "../assets/logo-github.svg";
@@ -43,8 +42,8 @@ class Footer extends React.Component {
 Footer.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  trademark: PropTypes.node,
-  theme: PropTypes.oneOf(["light", "dark"])
+  theme: PropTypes.oneOf(["light", "dark"]),
+  trademark: PropTypes.node
 };
 
 const defaultFooterChildren = (

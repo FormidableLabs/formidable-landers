@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 export default {
   code: (code, lang) => {
-    const escape = (html) => {
+    const escape = html => {
       return html
         .replace(/&/g, "&amp;")
         .replace(/</g, "&lt;")
@@ -11,14 +11,11 @@ export default {
     };
 
     if (!lang) {
-      return (
-        `<pre><code>${escape(code)}</code></pre>`
-      );
+      return `<pre><code>${escape(code)}</code></pre>`;
     }
 
     if (lang === "playground" || lang === "playground_norender") {
-      return (
-        `<pre style="line-height: 0">
+      return `<pre style="line-height: 0">
             <div class="lang-${escape(lang)}">
                 <span class="ecologyCode" style="display:none;">${escape(code)}</span>
                 <div class="Interactive">
@@ -31,12 +28,9 @@ export default {
                     </div>
                 </div>
             </div>
-        </pre>`
-      );
+        </pre>`;
     }
 
-    return (
-      `<pre><code class="lang-${escape(lang)}">${escape(code)}</code></pre>`
-    );
+    return `<pre><code class="lang-${escape(lang)}">${escape(code)}</code></pre>`;
   }
 };

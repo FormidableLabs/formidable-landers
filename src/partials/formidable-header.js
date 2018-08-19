@@ -43,9 +43,9 @@ export default class Header extends Component {
     window.removeEventListener("resize", this.onResize);
   }
 
-    /**
+  /**
    * Close hamburger dropdown menu items when in desktop size
-   * 
+   *
    * @returns {void}
    */
   onResize = () => {
@@ -55,7 +55,7 @@ export default class Header extends Component {
     if (style.display === "none" && this.props.isOpen === true) {
       this.props.onToggleMenu(!this.props.isOpen);
     }
-  }
+  };
 
   /**
    * Closes the hamburger menu when the escape key is pressed
@@ -74,7 +74,7 @@ export default class Header extends Component {
 
   /**
    * Toggles open and closed the hamburger menu when clicking on the menu button
-   * 
+   *
    * @returns {void}
    */
   toggleMenu = () => {
@@ -131,10 +131,7 @@ export default class Header extends Component {
           <ul className="site-menu__nav">
             {navItems.map((item, i) => {
               return (
-                <li
-                  key={`navlink-${item}-${i}`}
-                  className="site-menu__nav-item"
-                >
+                <li key={`navlink-${item}-${i}`} className="site-menu__nav-item">
                   <NavLink
                     className="site-menu__nav-item-link"
                     onClick={this.toggleMenu}

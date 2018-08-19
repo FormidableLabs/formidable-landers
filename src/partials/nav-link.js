@@ -14,11 +14,7 @@ export default class NavLink extends Component {
     const { className, current, item, onClick } = this.props;
     const isActive = current === item.path ? "active" : "inactive";
     return (
-      <a 
-        href={item.path}
-        className={`${className} ${isActive}`}
-        onClick={onClick}
-      >
+      <a href={item.path} className={`${className} ${isActive}`} onClick={onClick}>
         {item.title}
       </a>
     );

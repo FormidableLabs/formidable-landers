@@ -7,10 +7,8 @@ export default {
   link: (href, title, text) => {
     const Icon = href.includes("formidable.com") ? IconInternalLink : IconExternalLink;
 
-    return (
-      `<a href=${href} title=${title || ""}>
+    return `<a href=${href} title=${title || ""}>
         ${text} <span style="margin: 0; padding: 0; display: inline-block; vertical-align: middle;">${Icon}</span>
-      </a>`
-    );
+      </a>`;
   }
 };

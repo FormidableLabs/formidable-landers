@@ -68,10 +68,10 @@ class Header extends React.Component {
 Header.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  logoProject: PropTypes.node,
-  theme: PropTypes.oneOf(["light", "dark"]),
   location: PropTypes.object,
-  subheader: PropTypes.bool
+  logoProject: PropTypes.node,
+  subheader: PropTypes.bool,
+  theme: PropTypes.oneOf(["light", "dark"])
 };
 
 const defaultHeaderChildren = (

@@ -2,12 +2,11 @@
 import React from "react";
 import { configure, mount, render, shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-15";
-configure({ adapter: new Adapter() });
 
 import Footer from "../../../lib/components/footer";
+configure({ adapter: new Adapter() });
 
 describe("Footer", () => {
-
   describe("<footer>", () => {
     it("accepts custom class name", () => {
       const footer = shallow(<Footer className="bigRed" />);
@@ -50,8 +49,12 @@ describe("Footer", () => {
     });
 
     it("accepts a custom message", () => {
-      const footer = shallow(<Footer>Formidable means “wonderful” in French. Do we look French to you?</Footer>).find(".formidableFooter-container");
-      expect(footer.props().children).to.contain("Formidable means “wonderful” in French. Do we look French to you?");
+      const footer = shallow(
+        <Footer>Formidable means “wonderful” in French. Do we look French to you?</Footer>
+      ).find(".formidableFooter-container");
+      expect(footer.props().children).to.contain(
+        "Formidable means “wonderful” in French. Do we look French to you?"
+      );
     });
   });
 });
