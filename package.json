@@ -5,15 +5,16 @@
   "main": "lib/index.js",
   "scripts": {
     "demo": "webpack-dashboard -- webpack-dev-server --port 5678 --config demo/webpack.config.demo.js --colors --content-base demo",
-    "lint": "eslint --ext .js,.jsx src",
-    "test": "karma start ./karma.conf.js",
-    "test-travis": "karma start ./karma.conf.js --singleRun=true",
-    "babel": "rimraf lib && babel src/ -d lib/",
-    "copy-assets": "rimraf lib/assets/ && cp -r src/assets/ lib/assets/",
-    "copy-styles": "rimraf lib/styles/ && postcss src/styles/*.css --verbose --dir lib/styles/",
-    "build": "npm run babel && npm run copy-assets && npm run copy-styles",
-    "prepublishOnly": "npm run build",
-    "postinstall": "node -e \"require('fs').stat('lib', function(e,s){process.exit(e || !s.isDirectory() ? 1 : 0)})\" || npm run build"
+    "lint": "eslint src",
+    "test": "karma start karma.conf.js",
+    "test-travis": "karma start karma.conf.js --singleRun=true",
+    "check": "yarn run lint && yarn run test",
+    "babel": "rimraf lib && babel src -d lib",
+    "copy-assets": "rimraf lib/assets && cp -r src/assets lib/assets",
+    "copy-styles": "rimraf lib/styles && postcss 'src/styles/*.css' --verbose --dir lib/styles",
+    "build": "yarn run babel && yarn run copy-assets && yarn run copy-styles",
+    "preversion": "yarn run check",
+    "version": "yarn run build"
   },
   "repository": {
     "type": "git",
@@ -74,9 +75,9 @@
     "react-dom": "^15.1.0",
     "react-test-renderer": "^15.6.1",
     "style-loader": "^0.21.0",
-    "webpack-cli": "^2.1.2",
     "webpack": "^4.7.0",
-    "webpack-dashboard": "^1.1.1",
+    "webpack-cli": "^2.1.2",
+    "webpack-dashboard": "^2.0.0",
     "webpack-dev-server": "^3.1.4"
   }
 }
