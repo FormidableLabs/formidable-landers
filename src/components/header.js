@@ -16,19 +16,20 @@ import BodyClassName from "../partials/body-class-name";
 class Header extends React.Component {
   constructor(props) {
     super(props);
+
     // Fade in the very first page after load.
     this.state = {
       navOpen: false
     };
+
+    this.handleToggleMenu = this.handleToggleMenu.bind(this);
   }
 
-  /* eslint-disable no-invalid-this */
-  handleToggleMenu = navOpen => {
+  handleToggleMenu(navOpen) {
     this.setState({
       navOpen
     });
-  };
-  /*eslint-enable no-invalid-this */
+  }
 
   render() {
     let classes = "formidableHeader";

@@ -3,9 +3,13 @@ import PropTypes from "prop-types";
 import "../styles/cookie-banner.css";
 
 class CookieBanner extends Component {
-  state = {
-    close: true
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      close: true
+    };
+    this.handleClose = this.handleClose.bind(this);
+  }
 
   componentDidMount() {
     // TODO: We should have a comment as to why we're doing this here and
