@@ -1,17 +1,17 @@
-import React from "react";
-import PropTypes from "prop-types";
-import CookieBanner from "./cookie-banner";
+import React from 'react';
+import PropTypes from 'prop-types';
+import CookieBanner from './cookie-banner';
 
 // Assets
-import LOGO_GITHUB from "../assets/logo-github.svg";
-import LOGO_TWITTER from "../assets/logo-twitter.svg";
-import "../styles/header.css";
-import formidableStyles from "../styles/formidable-header.css"; // eslint-disable-line no-unused-vars
-import "../styles/cookie-banner.css";
+import LOGO_GITHUB from '../assets/logo-github.svg';
+import LOGO_TWITTER from '../assets/logo-twitter.svg';
+import '../styles/header.css';
+import formidableStyles from '../styles/formidable-header.css'; // eslint-disable-line no-unused-vars
+import '../styles/cookie-banner.css';
 
 // Formidable.com Header
-import FormidableHeader from "../partials/formidable-header";
-import BodyClassName from "../partials/body-class-name";
+import FormidableHeader from '../partials/formidable-header';
+import BodyClassName from '../partials/body-class-name';
 
 class Header extends React.Component {
   constructor(props) {
@@ -31,8 +31,8 @@ class Header extends React.Component {
   /*eslint-enable no-invalid-this */
 
   render() {
-    let classes = "formidableHeader";
-    if (this.props.theme === "light") {
+    let classes = 'formidableHeader';
+    if (this.props.theme === 'light') {
       classes = `${classes} isLight`;
     } else {
       classes = `${classes} isDark`;
@@ -44,8 +44,9 @@ class Header extends React.Component {
     return (
       <div>
         <CookieBanner />
-        <BodyClassName className={this.state.navOpen ? "js-menu--is-open" : ""} />
+        <BodyClassName className={this.state.navOpen ? 'js-menu--is-open' : ''} />
         <FormidableHeader
+          navItem={this.props.navItem}
           onToggleMenu={this.handleToggleMenu}
           isOpen={this.state.navOpen}
           location={this.props.location}
@@ -58,7 +59,7 @@ class Header extends React.Component {
             </div>
           </header>
         ) : (
-          ""
+          ''
         )}
       </div>
     );
@@ -68,10 +69,11 @@ class Header extends React.Component {
 Header.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  logoProject: PropTypes.node,
-  theme: PropTypes.oneOf(["light", "dark"]),
   location: PropTypes.object,
-  subheader: PropTypes.bool
+  logoProject: PropTypes.node,
+  navItem: PropTypes.func,
+  subheader: PropTypes.bool,
+  theme: PropTypes.oneOf(['light', 'dark'])
 };
 
 const defaultHeaderChildren = (
@@ -89,11 +91,12 @@ const defaultHeaderChildren = (
 
 Header.defaultProps = {
   children: defaultHeaderChildren,
-  className: "",
-  logoProject: "",
-  theme: "dark",
-  location: { pathname: "/open-source/" },
-  subheader: true
+  className: '',
+  location: { pathname: '/open-source/' },
+  logoProject: '',
+  navItem: href => <a href={href} />,
+  subheader: true,
+  theme: 'dark'
 };
 
 export default Header;

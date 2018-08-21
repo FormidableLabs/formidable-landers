@@ -451,8 +451,7 @@ small {
   color: #fff !important;
   transition: color 0.3s ease 0.1s;
 }
-.site-header__nav-links:active,
-.site-header__nav-links:focus,
+
 .site-header__nav-links:hover {
   cursor: pointer;
   color: #ade8e8 !important;
