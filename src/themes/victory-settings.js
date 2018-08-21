@@ -6,7 +6,8 @@ export default {
   sansSerif: "'Gill Sans', 'Trebuchet MS', Helvetica, sans-serif",
   serif: "'Cardo', 'Georgia', 'Cambria', serif",
   monospace: "'akkurat', 'Inconsolata', 'Courier New', 'Courier', monospace",
-  serifHeadline: "'Didot', 'Bodoni MT', 'Cochin', 'Baskerville', 'Goudy Old Style', 'Bitstream Charter', serif",
+  serifHeadline:
+    "'Didot', 'Bodoni MT', 'Cochin', 'Baskerville', 'Goudy Old Style', 'Bitstream Charter', serif",
   // ---------------------
   // Colors
   // ---------------------

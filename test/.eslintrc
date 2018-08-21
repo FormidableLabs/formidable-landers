@@ -1,11 +1,13 @@
-{
-  "extends": "defaults/configurations/walmart/es6-test",
-  "parser": "babel-eslint",
-  "plugins": [ "react" ],
-  "globals": { "expect": true },
-  "rules": {
-    "react/jsx-uses-vars": 2,
-    "react/jsx-uses-react": 2,
-    "react/react-in-jsx-scope": 2,
-  }
-}
+---
+extends:
+  - formidable/configurations/es6-test
+  - prettier
+
+plugins:
+  - prettier
+
+globals:
+  expect: true
+
+rules:
+  prettier/prettier: error

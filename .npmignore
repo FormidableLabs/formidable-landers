@@ -1,4 +1,4 @@
-src
-.babelrc
-.eslintrc
-npm-debug\.log*
+/*
+!/lib
+!README.md
+!package.json

@@ -6,7 +6,7 @@ class BodyClassName extends Component {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string
-  }
+  };
 
   render() {
     const { children } = this.props;
@@ -14,15 +14,12 @@ class BodyClassName extends Component {
   }
 }
 
-const reducePropsToState = (propsList) => {
-  return propsList.map((props) => props.className).join(" ");
+const reducePropsToState = propsList => {
+  return propsList.map(props => props.className).join(" ");
 };
 
-const handleStateChangeOnClient = (className) => {
+const handleStateChangeOnClient = className => {
   document.body.className = className;
 };
 
-export default withSideEffect(
-  reducePropsToState,
-  handleStateChangeOnClient
-)(BodyClassName);
+export default withSideEffect(reducePropsToState, handleStateChangeOnClient)(BodyClassName);

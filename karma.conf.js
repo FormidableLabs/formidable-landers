@@ -17,7 +17,7 @@ module.exports = function (config) {
     port: 9876,
     colors: true,
     autoWatch: true,
-    singleRun: false,
+    singleRun: true,
 
     files: [
       "test/setup.js",

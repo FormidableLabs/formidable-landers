@@ -2,10 +2,10 @@
 import React from "react";
 import { configure, mount, render, shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-15";
-configure({ adapter: new Adapter() });
 
 import Header from "../../../lib/components/header";
-import { constants } from "zlib";
+
+configure({ adapter: new Adapter() });
 
 describe("Header", () => {
   describe("<header>", () => {
@@ -47,7 +47,7 @@ describe("Header", () => {
       const headerLink = shallow(<Header />)
         .find("header")
         .find("a");
-      expect(headerLink).to.have.length(2);
+      expect(headerLink).to.have.length(2); // eslint-disable-line no-magic-numbers
       expect(headerLink.at(0).prop("href")).to.equal("https://twitter.com/FormidableLabs");
       expect(headerLink.at(1).prop("href")).to.equal("https://github.com/FormidableLabs/");
     });

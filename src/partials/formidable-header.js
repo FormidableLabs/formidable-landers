@@ -1,4 +1,3 @@
-/* eslint no-invalid-this: 0 */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import NavLink from "./nav-link";
@@ -31,6 +30,9 @@ export default class Header extends Component {
 
   constructor(props) {
     super(props);
+    this.onResize = this.onResize.bind(this);
+    this.onEscape = this.onEscape.bind(this);
+    this.handleToggleMenu = this.handleToggleMenu.bind(this);
   }
 
   componentDidMount() {
@@ -43,12 +45,12 @@ export default class Header extends Component {
     window.removeEventListener("resize", this.onResize);
   }
 
-    /**
+  /**
    * Close hamburger dropdown menu items when in desktop size
-   * 
+   *
    * @returns {void}
    */
-  onResize = () => {
+  onResize() {
     // eslint-disable-next-line no-magic-numbers
     const mobileVersion = document.getElementsByClassName("display-mobile-only")[0];
     const style = getComputedStyle(mobileVersion);
@@ -63,23 +65,23 @@ export default class Header extends Component {
    * @memberof Header
    * @returns {void}
    */
-  onEscape = ({ keyCode }) => {
+  onEscape({ keyCode }) {
     if (this.props.isOpen === true) {
       // If pressed escape key
       if (keyCode === ESCSAPE_KEY_CODE) {
         this.props.onToggleMenu(!this.props.isOpen);
       }
     }
-  };
+  }
 
   /**
    * Toggles open and closed the hamburger menu when clicking on the menu button
-   * 
+   *
    * @returns {void}
    */
-  toggleMenu = () => {
+  handleToggleMenu() {
     this.props.onToggleMenu(!this.props.isOpen);
-  };
+  }
 
   render() {
     const { isOpen } = this.props;
@@ -118,7 +120,7 @@ export default class Header extends Component {
               title="navigation menu"
               aria-label="navigation menu"
               role="button"
-              onClick={this.toggleMenu}
+              onClick={this.handleToggleMenu}
             >
               Menu
               <span className="site-header__menu-text" />
@@ -131,13 +133,10 @@ export default class Header extends Component {
           <ul className="site-menu__nav">
             {navItems.map((item, i) => {
               return (
-                <li
-                  key={`navlink-${item}-${i}`}
-                  className="site-menu__nav-item"
-                >
+                <li key={`navlink-${item}-${i}`} className="site-menu__nav-item">
                   <NavLink
                     className="site-menu__nav-item-link"
-                    onClick={this.toggleMenu}
+                    onClick={this.handleToggleMenu}
                     item={item}
                     current={this.props.location.pathname}
                     key={i}
