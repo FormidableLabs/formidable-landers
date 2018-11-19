@@ -19,13 +19,17 @@ export default class Header extends Component {
   static displayName = "Header";
 
   static propTypes = {
+    activeLink: PropTypes.func,
     isOpen: PropTypes.bool,
+    linkRenderer: PropTypes.func,
     location: PropTypes.object,
-    onToggleMenu: PropTypes.func
+    onToggleMenu: PropTypes.func,
+    preventSamePathReload: PropTypes.bool
   };
 
   static defaultProps = {
-    isOpen: false
+    isOpen: false,
+    preventSamePathReload: true
   };
 
   constructor(props) {
@@ -33,6 +37,7 @@ export default class Header extends Component {
     this.onResize = this.onResize.bind(this);
     this.onEscape = this.onEscape.bind(this);
     this.handleToggleMenu = this.handleToggleMenu.bind(this);
+    this.handleAnchorClick = this.handleAnchorClick.bind(this);
   }
 
   componentDidMount() {
@@ -75,21 +80,24 @@ export default class Header extends Component {
   }
 
   /**
+   * @param {object} e React synthetic event object
    * Toggles open and closed the hamburger menu when clicking on the menu button
-   *
+   * and prevents reload if the path selected is the same as the current path
    * @returns {void}
    */
-  handleToggleMenu() {
+  handleToggleMenu(e) {
     this.props.onToggleMenu(!this.props.isOpen);
+    this.handleAnchorClick(e);
   }
 
   handleAnchorClick(e) {
-    //if (typeof window !== undefined) {
-    if (this.props.location.pathname === e.target.getAttribute("href")) {
+    if (
+      this.props.location.pathname === e.target.getAttribute("href") &&
+      this.props.preventSamePathReload
+    ) {
       e.preventDefault();
       e.stopPropagation();
     }
-    //}
   }
 
   render() {
@@ -98,7 +106,12 @@ export default class Header extends Component {
       <div>
         <div className={`site-header isOpen-${this.props.isOpen}`}>
           {/* Site-Header: Logo */}
-          <a href="/" className="site-header__logo" title="Formidable">
+          <a
+            onClick={this.handleAnchorClick}
+            href="/"
+            className="site-header__logo"
+            title="Formidable"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 97 18"
@@ -117,6 +130,9 @@ export default class Header extends Component {
                   className="site-header__nav-links"
                   item={item}
                   current={this.props.location.pathname}
+                  onClick={this.handleAnchorClick}
+                  linkRenderer={this.props.linkRenderer}
+                  activeLink={this.props.activeLink}
                   key={i}
                 />
               );
@@ -148,6 +164,8 @@ export default class Header extends Component {
                     onClick={this.handleToggleMenu}
                     item={item}
                     current={this.props.location.pathname}
+                    linkRenderer={this.props.linkRenderer}
+                    activeLink={this.props.activeLink}
                     key={i}
                   />
                 </li>

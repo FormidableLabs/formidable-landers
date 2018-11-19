@@ -50,6 +50,8 @@ class Header extends React.Component {
           onToggleMenu={this.handleToggleMenu}
           isOpen={this.state.navOpen}
           location={this.props.location}
+          linkRenderer={this.props.linkRenderer}
+          activeLink={this.props.activeLink}
         />
         {this.props.subheader ? (
           <header className={classes}>
@@ -67,8 +69,11 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
+  activeLink: PropTypes.func,
   children: PropTypes.node,
   className: PropTypes.string,
+  isActiveLink: PropTypes.func,
+  linkRenderer: PropTypes.func,
   location: PropTypes.object,
   logoProject: PropTypes.node,
   subheader: PropTypes.bool,
@@ -94,7 +99,8 @@ Header.defaultProps = {
   logoProject: "",
   theme: "dark",
   location: { pathname: "/open-source/" },
-  subheader: true
+  subheader: true,
+  activeLink: props => props.current === props.item.path
 };
 
 export default Header;
