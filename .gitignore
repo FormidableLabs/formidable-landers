@@ -21,3 +21,6 @@ Icon
 # Windows image file caches
 ehthumbs.db
 Thumbs.db
+
+### IDE ###
+.idea/

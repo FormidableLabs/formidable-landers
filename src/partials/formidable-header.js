@@ -83,6 +83,15 @@ export default class Header extends Component {
     this.props.onToggleMenu(!this.props.isOpen);
   }
 
+  handleAnchorClick(e) {
+    //if (typeof window !== undefined) {
+    if (this.props.location.pathname === e.target.getAttribute("href")) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    //}
+  }
+
   render() {
     const { isOpen } = this.props;
     return (
