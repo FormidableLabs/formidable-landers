@@ -52,6 +52,7 @@ class Header extends React.Component {
           location={this.props.location}
           linkRenderer={this.props.linkRenderer}
           activeLink={this.props.activeLink}
+          preventSamePathReload={this.props.preventSamePathReload}
         />
         {this.props.subheader ? (
           <header className={classes}>
@@ -76,6 +77,7 @@ Header.propTypes = {
   linkRenderer: PropTypes.func,
   location: PropTypes.object,
   logoProject: PropTypes.node,
+  preventSamePathReload: PropTypes.bool,
   subheader: PropTypes.bool,
   theme: PropTypes.oneOf(["light", "dark"])
 };
@@ -100,7 +102,8 @@ Header.defaultProps = {
   theme: "dark",
   location: { pathname: "/open-source/" },
   subheader: true,
-  activeLink: props => props.current === props.item.path
+  activeLink: props => props.current === props.item.path,
+  preventSamePathReload: true
 };
 
 export default Header;

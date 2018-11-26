@@ -28,8 +28,7 @@ export default class Header extends Component {
   };
 
   static defaultProps = {
-    isOpen: false,
-    preventSamePathReload: true
+    isOpen: false
   };
 
   constructor(props) {
