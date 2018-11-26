@@ -73,7 +73,6 @@ Header.propTypes = {
   activeLink: PropTypes.func,
   children: PropTypes.node,
   className: PropTypes.string,
-  isActiveLink: PropTypes.func,
   linkRenderer: PropTypes.func,
   location: PropTypes.object,
   logoProject: PropTypes.node,
