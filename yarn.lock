@@ -5153,14 +5153,16 @@ inquirer@^5.2.0:
     strip-ansi "^4.0.0"
     through "^2.3.6"
 
-inspectpack@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/inspectpack/-/inspectpack-3.0.1.tgz#676134e139aef14de5c0d1d8ab482ba629ecef28"
+inspectpack@^4.0.0:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/inspectpack/-/inspectpack-4.1.2.tgz#b07dd10f1131c290d2076270470787d61b47097e"
+  integrity sha512-bd0iIr5P2xRMtjQQkPnUYJSNa3mUFYER/2eQOPAoXrWBnZXMeFVAgRt/Dny8XVdSkkFoNKhumPjjV9QgTDcVxQ==
   dependencies:
     chalk "^2.4.0"
     io-ts "^1.0.5"
     io-ts-reporters "^0.0.20"
     pify "^3.0.0"
+    semver-compare "^1.0.0"
     yargs "^11.0.0"
 
 internal-ip@1.2.0:
@@ -8930,6 +8932,11 @@ selfsigned@^1.9.1:
   dependencies:
     node-forge "0.7.5"
 
+semver-compare@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/semver-compare/-/semver-compare-1.0.0.tgz#0dee216a1c941ab37e9efb1788f6afc5ff5537fc"
+  integrity sha1-De4hahyUGrN+nvsXiPavxf9VN/w=
+
 semver-regex@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/semver-regex/-/semver-regex-1.0.0.tgz#92a4969065f9c70c694753d55248fc68f8f652c9"
@@ -10356,16 +10363,17 @@ webpack-cli@^2.1.2:
     yeoman-environment "^2.1.1"
     yeoman-generator "^2.0.5"
 
-webpack-dashboard@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/webpack-dashboard/-/webpack-dashboard-2.0.0.tgz#70db22e7bb5b12b4a7fde82de87ce01eed8d921c"
+webpack-dashboard@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/webpack-dashboard/-/webpack-dashboard-2.1.0.tgz#b5f0ffec686a5a7efa36f4757eee79acb273fd9f"
+  integrity sha512-psG8JInvWSGEreLX9wbaWZq2hsf2cxUYYwUyOTtzcommLOqJ/z0B9JD/cJNN/bNZNbS3XidgEqwKsqFd3BQpnQ==
   dependencies:
     blessed "^0.1.81"
     commander "^2.15.1"
     cross-spawn "^6.0.5"
     filesize "^3.6.1"
     handlebars "^4.0.11"
-    inspectpack "^3.0.1"
+    inspectpack "^4.0.0"
     most "^1.7.3"
     socket.io "^2.1.1"
     socket.io-client "^2.1.1"
