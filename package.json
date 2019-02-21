@@ -27,7 +27,7 @@
   "homepage": "https://github.com/FormidableLabs/formidable-landers#readme",
   "dependencies": {
     "prop-types": "^15.5.8",
-    "react": "^15.6.1",
+    "react": "^16.8.3",
     "react-side-effect": "^1.1.5"
   },
   "devDependencies": {
