@@ -39,7 +39,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
     "chai": "^4.1.2",
-    "css-loader": "^0.28.11",
+    "css-loader": "^3.4.0",
     "enzyme-adapter-react-15": "^1.0.5",
     "enzyme": "^3.3.0",
     "eslint-config-formidable": "^3.0.0",
