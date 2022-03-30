@@ -46,7 +46,7 @@
     "eslint-config-prettier": "^2.3.0",
     "eslint-plugin-filenames": "^1.2.0",
     "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.1.0",
     "eslint": "^4.15.0",
     "file-loader": "^1.1.11",
